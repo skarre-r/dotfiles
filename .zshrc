@@ -39,89 +39,48 @@ alias manage='python3 manage.py'
 
 # git
 alias g='git'
-
 ## status 
 alias gs='git status -sb'
 alias gst='git status'
-alias status='git status'
-
 ## add
-alias ga='git add'
-alias gadd='git add'
 alias add='git add'
-
 ## commit
 alias cmt='git commit -m'
-alias gcmt='git commit -m'
-alias commit='git commit -m'
 alias amend='git commit --amend'
-alias ammend='git commit --amend'
-
-## tag
-alias gt='git tag'
-alias gtag='git tag'
-alias tag='git tag'
-
 ## push
 alias gp='git push'
 alias gpush='git push'
 alias push='git push'
-
-## push tags
-alias tpush='git push --tags'
-alias pusht='git push --tags'
-alias pushat='git push --tags'
-alias pushtags='git push --tags'
-
 ## push branch to origin
-alias pusho='git push -u origin'
 alias origin='git push -u origin'
-
 ## pull
 alias pull='git pull'
-
 ## log
 alias gl='git log --oneline -n 20'
 alias glog='git log --oneline'
-
 ## diff
 alias gif='git diff'
-
 # diff --staged
 alias gifs='git diff --staged'
-
 ## branch
 alias gb='git branch'
-
 ## branch delete
 alias gbd='git branch -D'
-
-## describe
-alias gd='git describe --tags'
-alias gdesc='git describe --tags'
-alias desc='git describe --tags'
-alias describe='git describe --tags'
-
 ## checkout
 alias checkout='git checkout'
-
 ## discard
 alias discard='git checkout --'
-
 ## push no ci pipeline
 alias pushnoci='git push -o ci.skip'
-
 # git checkout new branch and push branch to origin
 new-branch() {
 	if [[ -d .git ]]; then
 		git checkout -b "$1" && git push -u origin "$1"
 	fi
 }
-
 # git commit with title and message body
 cmtm() {
 	if [[ -d .git ]]; then
 		git commit -m "$1" -m "$2"
 	fi
 }
-alias commitm='cmtm'
