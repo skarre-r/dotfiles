@@ -7,6 +7,7 @@ alias dush='du -sh *'
 
 cdl() { cd "$@" && ls; }
 b64() { echo -n "${1}" | base64; }
+sub() { open "$@" -a "/Applications/Sublime Text.app"; }
 
 # python poetry
 make-virtualenv () {
