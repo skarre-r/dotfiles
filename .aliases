@@ -29,3 +29,12 @@ alias manage='python3 manage.py'
 # docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"'
 alias dpsp='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}"'
+
+# network
+alias ip="ipconfig getifaddr en0"
+
+# week number
+alias week='date +%V'
+
+# macos
+alias plistbuddy="/usr/libexec/PlistBuddy"
