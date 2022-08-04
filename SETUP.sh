@@ -10,7 +10,9 @@ symlink_dotfile() {
     destination="$HOME/$file"
 
     if [[ -f "$destination" ]]; then
-        echo "$file: $destination already exists"
+        echo "$file: $destination file already exists"
+    elif [[ -d "$destination" ]]; then
+        echo "$file: $destination directory already exists"
     else
         ln -s "$source" "$destination"
         echo "$file: $source >>> $destination — symlink created"
