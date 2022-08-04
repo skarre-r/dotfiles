@@ -21,7 +21,7 @@ for file_name in $(ls -a $dotfiles_directory); do
     # find dotfiles
     if [[ $file_name == .* ]]; then
         # ignore 'current dir', 'parent dir', and the '.git' directory
-        if [[ "$file_name" != "." ]] && [[ $file_name != ".." ]] && [[ $file_name != ".git" ]]; then
+        if [[ "$file_name" != "." ]] && [[ $file_name != ".." ]] && [[ $file_name != ".git" ]] && [[ $file_name != '.DS_Store' ]]; then
             # run the 'symlink_dotfile' function
             symlink_dotfile $file_name
         fi
