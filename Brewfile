@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-drivers"
 tap "microsoft/mssql-release"
@@ -59,6 +60,9 @@ cask "webstorm"
 cask "datagrip"
 cask "goland"
 cask "displaylink"
+cask "starship"
+cask "font-menlo-for-powerline"
+cask "font-meslo-lg-nerd-font"
 
 mas "1Password 7", id: 1333542190
 mas "AdGuard for Safari", id: 1440147259
