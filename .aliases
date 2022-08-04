@@ -1,0 +1,28 @@
+alias ls='ls -lG'
+alias cd..='cd ..'
+alias dush='du -sh *'
+
+# git
+alias g='git'
+alias gs='git status -sb'
+alias gst='git status'
+alias add='git add'
+alias cmt='git commit -m'
+alias amend='git commit --amend'
+alias push='git push'
+alias pull='git pull'
+alias gl='git log --oneline -n 20'
+alias glog='git log --oneline'
+alias gif='git diff'
+alias gifs='git diff --staged'
+alias gb='git branch'
+alias gbd='git branch -D'
+alias checkout='git checkout'
+alias discard='git checkout --'
+
+# python/ django
+alias manage='python3 manage.py'
+
+# docker
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"'
+alias dpsp='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}"'
