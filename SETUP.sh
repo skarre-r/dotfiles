@@ -5,12 +5,16 @@ dotfiles_directory="$( cd "$( dirname "$0" )" && pwd )"
 
 
 symlink_dotfile() {
-    dotfile=$1
-    if [[ -f "$HOME/$dotfile" ]]; then
-        echo "WARNING: $HOME/$dotfile already exists"
+    file=$1
+
+    source="$dotfiles_directory/$file"
+    destination="$HOME/$file"
+
+    if [[ -f "$destination" ]]; then
+        echo "$file: $destination already exists"
     else
-        ln -s "$dotfiles_directory/$dotfile" "$HOME/$dotfile"
-        echo "INFO: $dotfile symlink created ($dotfiles_directory/$dotfile >>> $HOME/$dotfile)"
+        ln -s "$source" "$destination"
+        echo "$file: $source >>> $destination — symlink created"
     fi
 }
 
