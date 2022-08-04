@@ -8,4 +8,7 @@ source $HOME/.exports
 source $HOME/.aliases
 source $HOME/.functions
 
+export STARSHIP_CONFIG="$HOME/.starship.toml";
+eval "$(starship init zsh)"
+
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
