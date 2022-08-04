@@ -16,7 +16,7 @@
 	</array>
 	<key>Custom Color Presets</key>
 	<dict>
-		<key>Monokai_Classic</key>
+		<key>Monokai Classic</key>
 		<dict>
 			<key>Ansi 0 Color</key>
 			<dict>
@@ -318,7 +318,7 @@
 				<real>0.3411764706</real>
 			</dict>
 		</dict>
-		<key>Monokai_Pro</key>
+		<key>Monokai Pro</key>
 		<dict>
 			<key>Ansi 0 Color</key>
 			<dict>
@@ -620,7 +620,7 @@
 				<real>0.35686274509999999</real>
 			</dict>
 		</dict>
-		<key>Monokai_Pro_(Filter_Machine)</key>
+		<key>Monokai Pro (Filter Machine)</key>
 		<dict>
 			<key>Ansi 0 Color</key>
 			<dict>
@@ -922,7 +922,7 @@
 				<real>0.3294117647</real>
 			</dict>
 		</dict>
-		<key>Monokai_Pro_(Filter_Octagon)</key>
+		<key>Monokai Pro (Filter Octagon)</key>
 		<dict>
 			<key>Ansi 0 Color</key>
 			<dict>
@@ -1224,7 +1224,7 @@
 				<real>0.32549019610000002</real>
 			</dict>
 		</dict>
-		<key>Monokai_Pro_(Filter_Ristretto)</key>
+		<key>Monokai Pro (Filter Ristretto)</key>
 		<dict>
 			<key>Ansi 0 Color</key>
 			<dict>
@@ -1526,7 +1526,7 @@
 				<real>0.35686274509999999</real>
 			</dict>
 		</dict>
-		<key>Monokai_Pro_(Filter_Spectrum)</key>
+		<key>Monokai Pro (Filter Spectrum)</key>
 		<dict>
 			<key>Ansi 0 Color</key>
 			<dict>
