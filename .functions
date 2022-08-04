@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cdl() { cd "$@" && ls; }
 b64() { echo -n "${1}" | base64; }
 
