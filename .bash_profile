@@ -3,9 +3,8 @@
 PROMPT='%~ $ '
 CLICOLOR=1
 
-source ~/.exports
-source ~/.aliases
-source ~/.functions
-
+source $HOME/.exports
+source $HOME/.aliases
+source $HOME/.functions
 
 [[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && . "$HOME/.fig/shell/bash_profile.post.bash"
