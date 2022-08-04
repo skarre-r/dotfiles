@@ -1,0 +1,40 @@
+cdl() { cd "$@" && ls; }
+b64() { echo -n "${1}" | base64; }
+
+# python — venv
+mkenv () {
+	if [[ -f pyproject.toml ]]; then
+		poetry config virtualenvs.in-project true
+		poetry shell
+	else
+        echo "pyproject.toml not found"
+	fi
+}
+
+acvenv() {
+	if [[ -f pyproject.toml && -d .venv ]]; then
+		poetry shell
+	else
+		echo "virtualenv not found"
+	fi
+}
+
+# python — django
+pysh() { python3 manage.py shell -i ipython; }
+migrate() { python3 manage.py migrate; }
+makemigrations() { python3 manage.py makemigrations; }
+runserver() { python3 manage.py runserver 127.0.0.1:8080; }
+
+
+# git
+gbn() {
+	if [[ -d .git ]]; then
+		git checkout -b "$1" && git push -u origin "$1"
+	fi
+}
+
+cmtm() {
+	if [[ -d .git ]]; then
+		git commit -m "$1" -m "$2"
+	fi
+}
