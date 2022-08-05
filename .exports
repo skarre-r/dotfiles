@@ -2,3 +2,4 @@
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH;
 export EDITOR='vim';
+export STARSHIP_CONFIG="$HOME/.starship.toml";
