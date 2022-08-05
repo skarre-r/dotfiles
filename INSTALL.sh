@@ -12,14 +12,4 @@ else
 fi
 
 echo
-
-# install oh-my-zsh: https://ohmyz.sh
-if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
-    echo "oh-my-zsh is not installed"
-    echo "Installing oh-my-zsh..."
-    /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-else
-    echo "oh-my-zsh is already installed"
-fi
-
 exit 0
