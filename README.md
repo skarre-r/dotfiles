@@ -18,3 +18,18 @@ In addition to:
 2. Run `bash SETUP.sh` to symlink all the dotfiles & directories to your home directory (`$HOME`)
 
 Both scripts are designed to be safe to run multiple times!
+
+<br/>
+
+---
+
+<br/>
+
+**Todo**:
+- [ ] .macos
+- [ ] .bashrc
+- [ ] .profile
+- [ ] .gitignore
+- [ ] .gitconfig
+- [ ] .gitattributes
+- [ ] .config/fish/???
