@@ -8,6 +8,7 @@ tap "microsoft/mssql-release"
 tap "ngrok/ngrok"
 
 brew "bash"
+brew "fish"
 brew "cmake"
 brew "unixodbc"
 brew "freetds"
