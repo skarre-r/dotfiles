@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+bindkey -e
+bindkey "^[b" backward-word
+bindkey '^[f' forward-word
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
