@@ -8,3 +8,7 @@ Desktop.ini
 # SSH known hosts files
 known_hosts
 known_hosts.*
+
+# Poetry directories
+.poetry/artifacts
+.poetry/cache
