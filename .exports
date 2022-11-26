@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH;
-export EDITOR='vim';
-export STARSHIP_CONFIG="$HOME/.starship.toml";
-export PATH="$HOME/Library/Python/3.10/bin:$PATH"
+export EDITOR='vim'
+export STARSHIP_CONFIG="$HOME/.starship.toml"
 export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 # https://python-poetry.org/docs/configuration/
@@ -11,3 +9,8 @@ export POETRY_HOME="$HOME/.poetry"
 export POETRY_DATA_DIR="$HOME/.poetry"
 export POETRY_CACHE_DIR="$HOME/.poetry"
 export POETRY_CONFIG_DIR="$HOME/.poetry"
+
+# path
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/Library/Python/3.10/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
