@@ -5,10 +5,16 @@
 .DS_Store
 Desktop.ini
 
-# SSH known hosts files
+# SSH files
 known_hosts
 known_hosts.*
+.ssh/podman-*
 
 # Poetry directories
 .poetry/artifacts
 .poetry/cache
+.poetry/VERSION
+.poetry/bin
+.poetry/pyproject.toml
+.poetry/src
+.poetry/venv
