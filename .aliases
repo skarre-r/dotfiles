@@ -46,3 +46,6 @@ alias week='date +%V'
 
 # macos
 alias plistbuddy="/usr/libexec/PlistBuddy"
+
+# gitlab cli
+alias gitlab='glab'
