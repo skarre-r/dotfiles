@@ -24,11 +24,13 @@ bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
 # aliases
-alias ls='ls -lG'
-alias lsa='ls -lGa'
 alias ..='cd ..'
 alias cd..='cd ..'
+alias ls='ls -lG'
+alias lsa='ls -lGa'
 alias dush='du -sh *'
+alias symlink='ln -s'
+## git
 alias g='git'
 alias gs='git status -sb'
 alias gst='git status'
@@ -49,9 +51,17 @@ alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gss='git stash save'
+## docker / podman
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"'
 alias dpsp='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}"'
-alias symlink='ln -s'
+alias pps='podman ps -a'
+alias ppw='podman ps -a -w 1'
+alias ppsw='podman ps -a -w 1'
+alias ppk='podman kube play'
+alias pkp='podman kube play'
+alias pkr='podman kube play --replace'
+alias pkd='podman kube down'
+
 
 # functions
 gbn() {
