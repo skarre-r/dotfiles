@@ -15,6 +15,11 @@
     "button": false
   },
   "ensure_final_newline_on_save": true,
+  "assistant": {
+    "button": false,
+    "version": "1",
+    "enabled": false
+  },
   // disable everything related to AI
   "features": {
     "copilot": false,
