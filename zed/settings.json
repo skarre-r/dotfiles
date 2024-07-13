@@ -18,7 +18,7 @@
   // disable everything related to AI
   "features": {
     "copilot": false,
-    "inline_completion_provider": "supermaven"
+    "inline_completion_provider": "none"
   },
   "chat_panel": {
     "button": false
