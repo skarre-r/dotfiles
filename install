@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+
+# install brew
+if ! command -v brew > /dev/null; then
+	echo; echo "installing brew...";
+	bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	echo; echo "brew installed; run install again to continue";
+	exit 0
+fi
+
+# install brew dependencies
+if command -v brew > /dev/null; then
+	if ! brew bundle check; then
+		brew bundle install
+	fi
+fi
+
+if [ ! -f $HOME/.iterm2_shell_integration.zsh ]; then
+	echo; echo "installing iterm2 shell integration..."
+	curl -L https://iterm2.com/shell_integration/zsh -o $HOME/.iterm2_shell_integration.zsh
+fi
+
+# TODO make symlinks
+
+exit 0
