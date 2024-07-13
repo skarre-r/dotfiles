@@ -1,0 +1,26 @@
+{
+  "theme": "KTRZ Monokai",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "buffer_font_family": "MesloLGS Nerd Font Mono",
+  "auto_update": true,
+  "vim_mode": false,
+  "confirm_quit": false,
+  "enable_language_server": true,
+  "collaboration_panel": {
+    "button": false
+  },
+  "ensure_final_newline_on_save": true,
+  // disable everything related to AI
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "supermaven"
+  },
+  "chat_panel": {
+    "button": false
+  }
+}
