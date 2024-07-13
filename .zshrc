@@ -4,7 +4,15 @@ PROMPT='%~ $ '
 CLICOLOR=1
 
 # environment variables
+export EDITOR='vim'
+
 export XDG_CONFIG_HOME="$HOME/.config"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
+export POETRY_HOME="$XDG_CONFIG_HOME/pypoetry"
+export POETRY_DATA_DIR="$XDG_CONFIG_HOME/pypoetry"
+export POETRY_CACHE_DIR="$XDG_CONFIG_HOME/pypoetry"
+export POETRY_CONFIG_DIR="$XDG_CONFIG_HOME/pypoetry"
+
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BUNDLE_INSTALL_CLEANUP=1
 
@@ -73,7 +81,7 @@ if [[ -v HOMEBREW_PREFIX ]]; then
 fi
 
 # completions
-autoload -U compinit; compinit
+autoload -Uz compinit; compinit
 
 # starship
 eval "$(starship init zsh)"
