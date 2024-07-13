@@ -15,20 +15,28 @@ brew "bash"
 brew "fish"
 brew "make"
 brew "curl"
+brew "wget"
 brew "tmux"
 brew "tilt"
 brew "kind"
+brew "helm"
+brew "node"
+brew "pnpm"
+brew "deno"
 brew "unzip"
+brew "pyenv"
 brew "poetry"
 brew "neovim"
 brew "docker"
 brew "podman"
 brew "colima"
+brew "chezmoi"
 brew "ansible"
 brew "antigen"
 brew "ripgrep"
 brew "starship"
 brew "opentofu"
+brew "helmfile"
 brew "coreutils"
 brew "pre-commit"
 brew "python@3.12"
@@ -36,6 +44,7 @@ brew "docker-buildx"
 brew "kubernetes-cli"
 
 # casks
+cask "zed"
 cask "iina"
 cask "bruno"
 cask "lasso"
@@ -61,6 +70,7 @@ cask "font-menlo-for-powerline"
 cask "librewolf", args: { no_quarantine: true }
 
 # app store apps
+mas "rcmd", id: 1596283165
 mas "Wipr", id: 1320666476
 mas "Noir", id: 1592917505
 mas "QuickShade", id: 931571202
