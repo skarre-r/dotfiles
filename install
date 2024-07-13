@@ -3,7 +3,7 @@
 home_files=(".zprofile" ".zshrc" ".gitconfig")
 home_directories=(".ssh")
 config_files=("starship.toml")
-config_directories=("alacritty" "iterm2" "nvim" "pypoetry")
+config_directories=("alacritty" "iterm2" "nvim" "pypoetry" "zed")
 
 # install brew
 if ! command -v brew > /dev/null; then
