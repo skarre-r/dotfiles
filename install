@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+home_files=(".zprofile" ".zshrc" ".gitconfig")
+home_directories=(".ssh")
+config_files=("starship.toml")
+config_directories=("alacritty" "iterm2" "nvim" "pypoetry")
+
 # install brew
 if ! command -v brew > /dev/null; then
 	echo; echo "installing brew...";
@@ -8,18 +13,75 @@ if ! command -v brew > /dev/null; then
 	exit 0
 fi
 
+
 # install brew dependencies
 if command -v brew > /dev/null; then
-	if ! brew bundle check; then
+	if ! brew bundle check > /dev/null; then
 		brew bundle install
 	fi
 fi
 
+
+# install iterm2 shell integration
 if [ ! -f $HOME/.iterm2_shell_integration.zsh ]; then
 	echo; echo "installing iterm2 shell integration..."
 	curl -L https://iterm2.com/shell_integration/zsh -o $HOME/.iterm2_shell_integration.zsh
 fi
 
-# TODO make symlinks
+
+# create symlinks
+repo="$( cd "$( dirname "$0" )" && pwd )"
+
+symlink_fn() {
+	file_or_folder=$1
+	target_dir=$2
+
+	source="$repo/$file_or_folder"
+	target="$target_dir/$file_or_folder"
+
+	if [ -f $target ]; then
+		if [ -L $target ]; then
+			echo "'$target' already exists (symlink ok)"
+		else
+			echo "'$target' already exists (CONFLICT)"
+		fi
+	elif [ -d "$target" ]; then
+		if [ -L $target ]; then
+			echo "'$target' already exists (symlink ok)"
+		else
+			echo "'$target' already exists (CONFLICT)"
+		fi
+	else
+		if command -v gln > /dev/null; then
+			gln -svT $source $target
+		else
+			ln -sv $source $target
+		fi
+	fi
+}
+
+for file ("$home_files[@]"); do
+	symlink_fn $file $HOME
+done
+
+for folder ("$home_directories[@]"); do
+	symlink_fn $folder $HOME
+done
+
+for file ("$config_files[@]"); do
+	symlink_fn $file $HOME/.config
+done
+
+for folder ("$config_directories[@]"); do
+	symlink_fn $folder $HOME/.config
+done
+
+
+# configure iterm2
+#if [[ -d "/Applications/iTerm.app" ]]; then
+#    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
+#    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+#fi
+
 
 exit 0
