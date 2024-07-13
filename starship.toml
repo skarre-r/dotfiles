@@ -1,0 +1,18 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+[line_break]
+disabled = false
+
+[directory]
+truncation_length = 5
+truncate_to_repo = false
+read_only = " "
+
+[cmd_duration]
+disabled = true
+
+[lua]
+symbol = "<LUA>"
+
