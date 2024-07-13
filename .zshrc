@@ -3,18 +3,21 @@
 PROMPT='%~ $ '
 CLICOLOR=1
 
-# environment variables
-export EDITOR='vim'
 
+# environment variables
+export LANG=en_US.UTF-8
+export EDITOR='vim'
 export XDG_CONFIG_HOME="$HOME/.config"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
 export POETRY_HOME="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_DATA_DIR="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_CACHE_DIR="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_CONFIG_DIR="$XDG_CONFIG_HOME/pypoetry"
-
+export FPATH="$HOME/.zsh-site-functions:$FPATH"
+export FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BUNDLE_INSTALL_CLEANUP=1
+
 
 # keybindings
 bindkey -e
@@ -22,6 +25,7 @@ bindkey "^[b" backward-word
 bindkey '^[f' forward-word
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
+
 
 # aliases
 alias ..='cd ..'
@@ -70,28 +74,28 @@ gbn() {
 	fi
 }
 
+
 # iterm2 shell integration
 if [ -f $HOME/.iterm2_shell_integration.zsh ]; then
 	source "$HOME/.iterm2_shell_integration.zsh"
 fi
 
+
 # homebrew
 if [[ -v HOMEBREW_PREFIX ]]; then
 	eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
 
-	# zsh plugins
-	if [ -f $HOMEBREW_PREFIX/share/antigen/antigen.zsh ]; then
-		source $HOMEBREW_PREFIX/share/antigen/antigen.zsh
-		antigen bundle zsh-users/zsh-completions
-		antigen bundle zsh-users/zsh-autosuggestions
-		antigen bundle zsh-users/zsh-syntax-highlighting
-		antigen bundle zsh-users/zsh-history-substring-search
-		antigen apply
+	# antidote
+	if [ -f "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh" ]; then
+		source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
+		antidote load
 	fi
 fi
 
-# completions
-autoload -Uz compinit; compinit
 
-# starship
+# completions
+autoload -Uz compinit
+compinit
+
+# starship prompt
 eval "$(starship init zsh)"
