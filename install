@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-home_files=(".gitconfig" ".zprofile" ".zsh_plugins.txt" ".zshrc")
+home_files=(".gitconfig" ".zprofile" ".zshrc")
 home_directories=(".ssh")
 config_files=("starship.toml")
 config_directories=("alacritty" "iterm2" "nvim" "pypoetry" "zed")
@@ -45,23 +45,34 @@ symlink_fn() {
 	source="$repo/$file_or_folder"
 	target="$target_dir/$file_or_folder"
 
-	if [ -f $target ]; then
-		if [ -L $target ]; then
-			echo "'$target' already exists (symlink ok)"
-		else
-			echo "'$target' already exists (CONFLICT)"
+	source_does_not_exist=0
+
+	if [ ! -f $source ]; then
+		if [ ! -d $source ]; then
+			source_does_not_exist=1
 		fi
-	elif [ -d "$target" ]; then
-		if [ -L $target ]; then
-			echo "'$target' already exists (symlink ok)"
-		else
-			echo "'$target' already exists (CONFLICT)"
-		fi
+	fi
+	if [[ $source_does_not_exist = 1 ]]; then
+		echo "'$source': file does not exist (ERROR)"
 	else
-		if command -v gln > /dev/null; then
-			gln -svT $source $target
+		if [ -f $target ]; then
+			if [ -L $target ]; then
+				echo "'$target' already exists (symlink ok)"
+			else
+				echo "'$target' already exists (CONFLICT)"
+			fi
+		elif [ -d "$target" ]; then
+			if [ -L $target ]; then
+				echo "'$target' already exists (symlink ok)"
+			else
+				echo "'$target' already exists (CONFLICT)"
+			fi
 		else
-			ln -sv $source $target
+			if command -v gln > /dev/null; then
+				gln -svT $source $target
+			else
+				ln -sv $source $target
+			fi
 		fi
 	fi
 }
