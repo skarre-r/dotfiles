@@ -1,6 +1,6 @@
 **/.DS_Store
 .ignore/
-Brewfile.lock.json
-
+fish/fish_variables
 zed/*
 !zed/settings.json
+Brewfile.lock.json
