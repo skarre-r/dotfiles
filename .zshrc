@@ -88,10 +88,8 @@ if [ -f $HOME/.iterm2_shell_integration.zsh ]; then
 	source "$HOME/.iterm2_shell_integration.zsh"
 fi
 
-# homebrew + completions
+# completions
 if [[ -v HOMEBREW_PREFIX ]]; then
-	eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
-
 	export FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 	export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/highlighters"
 
