@@ -6,22 +6,22 @@
         "enabled": false,
         "version": "1"
     },
-    "auto_install_extensions": {},
+    //"auto_install_extensions": {},
     "auto_update": true,
-    "auto_update_extensions": {},
+    //"auto_update_extensions": {},
     "autosave": "on_focus_change",
     "base_keymap": "VSCode",
     "buffer_font_family": "Zed Plex Mono",
-    "buffer_font_features": {},
+    //"buffer_font_features": {},
     "buffer_font_size": 13,
     "buffer_font_weight": 500,
     "buffer_line_height": "comfortable",
-    "calls": {},
-    "centered_layout": {},
+    //"calls": {},
+    //"centered_layout": {},
     "chat_panel": {
         "button": false
     },
-    "code_actions_on_format": {},
+    //"code_actions_on_format": {},
     "collaboration_panel": {
         "button": false
     },
@@ -29,7 +29,7 @@
     "confirm_quit": false,
     "current_line_highlight": "all",
     "cursor_blink": true,
-    "dev": {},
+    //"dev": {},
     "diagnostics": {
         "include_warnings": true
     },
@@ -38,17 +38,13 @@
     "enable_language_server": true,
     "ensure_final_newline_on_save": true,
     "expand_excerpt_lines": 3,
-    "experimental.theme_overrides": {},
+    //"experimental.theme_overrides": {},
     "extend_comment_on_newline": true,
     "features": {
-        "copilot": false,
-        "inline_completion_provider": "none"
+        "copilot": false
     },
-    "file_scan_exclusions": [
-        "**/.git",
-        "**/.DS_Store"
-    ],
-    "file_types": {},
+    "file_scan_exclusions": ["**/.git", "**/.DS_Store"],
+    //"file_types": {},
     "format_on_save": "on",
     "formatter": "auto",
     "git": {
@@ -70,21 +66,21 @@
     "inlay_hints": {
         "enabled": true
     },
-    "inline_completions": {},
-    "journal": {},
+    //"inline_completions": {},
+    //"journal": {},
     "jupyter": {
         "enabled": false
     },
-    "language_servers": [],
-    "languages": {},
+    //"language_servers": [],
+    //"languages": {},
     "line_indicator_format": "long",
     "linked_edits": true,
-    "lsp": {},
+    //"lsp": {},
     "message_editor": {
         "auto_replace_emoji_shortcode": true
     },
     "multi_cursor_modifier": "alt",
-    "nightly": {},
+    //"nightly": {},
     "notification_panel": {
         "button": true
     },
@@ -92,14 +88,12 @@
         "button": false
     },
     "preferred_line_length": 80,
-    "prettier": {},
-    "preview": {},
+    //"prettier": {},
+    //"preview": {},
     "preview_tabs": {
         "enabled": true
     },
-    "private_files": [
-        "**/.env"
-    ],
+    "private_files": ["**/.env"],
     "project_panel": {
         "button": true,
         "indent_size": 15
@@ -111,7 +105,7 @@
     "restore_on_startup": "last_workspace",
     "scroll_beyond_last_line": "one_page",
     "scroll_sensitivity": 1.0,
-    "scrollbar": {},
+    //"scrollbar": {},
     "seed_search_query_from_cursor": "always",
     // "server_url": "",
     "show_call_status_icon": false,
@@ -121,24 +115,37 @@
     "show_whitespaces": "none",
     "show_wrap_guides": true,
     "soft_wrap": "none",
-    "stable": {},
+    //"stable": {},
     "tab_bar": {
         "show": true
     },
     "tab_size": 4,
-    "tabs": {},
+    //"tabs": {},
     "task": {
         "show_status_indicator": true
     },
-    "tasks": {
-        "variables": {}
-    },
+    //"tasks": {
+    //    "variables": {}
+    //},
     "telemetry": {
         "diagnostics": false,
         "metrics": false
     },
     "terminal": {
-        "button": true
+        "alternate_scroll": "off",
+        "blinking": "terminal_controlled",
+        "copy_on_select": false,
+        //"env": {},
+        "font_family": "MesloLGS Nerd Font",
+        //"font_features": {},
+        "font_size": 12,
+        "option_as_meta": false,
+        "button": true,
+        "shell": "system",
+        "toolbar": {
+            "title": true
+        },
+        "working_directory": "current_project_directory"
     },
     "theme": "monokai Darker",
     "toolbar": {
@@ -147,16 +154,16 @@
         "selections_menu": true
     },
     "ui_font_family": "Zed Plex Sans",
-    "ui_font_features": {},
+    //"ui_font_features": {},
     "ui_font_size": 16,
     "ui_font_weight": 500,
-    "unstable.ui_density": "default",
+    // "unstable.ui_density": "default",
     "use_auto_surround": true,
     "use_autoclose": true,
     "use_on_type_format": true,
     "vertical_scroll_margin": 3,
-    "vim": {},
+    //"vim": {},
     "vim_mode": false,
-    "when_closing_with_no_tabs": "platform_default",
-    "wrap_guides": []
+    "when_closing_with_no_tabs": "platform_default"
+    //"wrap_guides": []
 }
