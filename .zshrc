@@ -26,7 +26,7 @@ bindkey "^[^[[D" backward-word
 # aliases
 alias ..='cd ..'
 alias cd..='cd ..'
-alias ls='ls -lG'
+alias ls='ls -lGa'
 alias lsa='ls -lGa'
 alias dush='du -sh *'
 
@@ -64,6 +64,12 @@ alias pkr='podman kube play --replace'
 alias pkd='podman kube down'
 
 # functions
+so() {
+    if [ -f $HOME/.zshrc ]; then
+        source $HOME/.zshrc
+    fi
+}
+
 gbn() {
 	if [[ -d .git ]]; then
 		git checkout -b "$1" && git push -u origin "$1"
