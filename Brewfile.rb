@@ -71,6 +71,7 @@ cask "eloston-chromium"
 cask "librewolf", args: { no_quarantine: true }
 
 # fonts
+cask "font-sf-pro"
 cask "font-meslo-lg"
 cask "font-zed-mono"
 cask "font-fira-code"
