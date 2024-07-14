@@ -2,8 +2,5 @@
 .ignore/
 Brewfile.lock.json
 
-zed/conversations/
-zed/embeddings/
-zed/prompts/
-zed/themes/
-zed/.tmp*
+zed/*
+!zed/settings.json
