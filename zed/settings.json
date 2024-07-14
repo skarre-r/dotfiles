@@ -41,6 +41,7 @@
     //"experimental.theme_overrides": {},
     "extend_comment_on_newline": true,
     "features": {
+        "inline_completion_provider": "none",
         "copilot": false
     },
     "file_scan_exclusions": ["**/.git", "**/.DS_Store"],
