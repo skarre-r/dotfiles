@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-home_files=(".bash_profile" ".bashrc" ".gitconfig" ".profile" ".zprofile" ".zshenv" ".zshrc")
+home_files=(".aliases" ".bash_profile" ".bashrc" ".editorconfig" ".exports" ".functions" ".gitconfig" ".profile" ".tmux.conf" ".zprofile" ".zshenv" ".zshrc")
 home_directories=(".ssh")
 config_files=("starship.toml")
 config_directories=("alacritty" "fish" "iterm2" "nvim" "pypoetry" "zed")
