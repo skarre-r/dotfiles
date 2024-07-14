@@ -34,8 +34,8 @@ if [ ! -d "$HOME/.config" ]; then
     mkdir "$HOME/.config"
 fi
 
-if [ ! -d "$HOME/.zsh-site-functions" ]; then
-    mkdir "$HOME/.zsh-site-functions"
+if [ ! -d "$HOME/.zsh_site_functions" ]; then
+    mkdir "$HOME/.zsh_site_functions"
 fi
 
 

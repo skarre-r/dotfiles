@@ -12,7 +12,7 @@ export POETRY_HOME="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_DATA_DIR="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_CACHE_DIR="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_CONFIG_DIR="$XDG_CONFIG_HOME/pypoetry"
-export FPATH="$HOME/.zsh-site-functions:$FPATH"
+export FPATH="$HOME/.zsh_site_functions:$FPATH"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BUNDLE_INSTALL_CLEANUP=1
 
