@@ -68,12 +68,20 @@ cask "sublime-text"
 cask "transmission"
 cask "proton-drive"
 cask "eloston-chromium"
-cask "font-meslo-lg"
-cask "font-meslo-lg-dz"
-cask "font-meslo-lg-nerd-font"
-cask "font-meslo-for-powerline"
-cask "font-menlo-for-powerline"
 cask "librewolf", args: { no_quarantine: true }
+
+# fonts
+cask "font-meslo-lg"
+cask "font-zed-mono"
+cask "font-fira-code"
+cask "font-fira-mono"
+cask "font-jetbrains-mono"
+cask "font-meslo-lg-nerd-font"
+cask "font-zed-mono-nerd-font"
+cask "font-fira-code-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-symbols-only-nerd-font"
 
 # app store apps
 mas "rcmd", id: 1596283165
