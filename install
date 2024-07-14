@@ -16,8 +16,8 @@ fi
 
 # install brew dependencies
 if command -v brew > /dev/null; then
-	if ! brew bundle check > /dev/null; then
-		brew bundle install
+	if ! brew bundle --file Brewfile.rb check > /dev/null; then
+		brew bundle install --no-lock --file Brewfile.rb
 	fi
 fi
 
