@@ -2,4 +2,6 @@
 
 ```shell
 zsh install
+# or
+./install
 ```
