@@ -22,9 +22,19 @@ if command -v brew > /dev/null; then
 fi
 
 
-# install iterm2 shell integration
+# install iterm2 shell integrations
+if [ ! -f $HOME/.iterm2_shell_integration.bash ]; then
+	echo "installing iterm2 bash integration..."
+	curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+fi
+
+if [ ! -f $HOME/.iterm2_shell_integration.fish ]; then
+	echo "installing iterm2 fish integration..."
+	curl -L https://iterm2.com/shell_integration/fish -o ~/.iterm2_shell_integration.fish
+fi
+
 if [ ! -f $HOME/.iterm2_shell_integration.zsh ]; then
-	echo; echo "installing iterm2 shell integration..."
+	echo "installing iterm2 zsh integration..."
 	curl -L https://iterm2.com/shell_integration/zsh -o $HOME/.iterm2_shell_integration.zsh
 fi
 
