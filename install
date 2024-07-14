@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-home_files=(".gitconfig" ".zprofile" ".zshrc")
+home_files=(".bash_profile" ".bashrc" ".gitconfig" ".profile" ".zprofile" ".zshenv" ".zshrc")
 home_directories=(".ssh")
 config_files=("starship.toml")
-config_directories=("alacritty" "iterm2" "nvim" "pypoetry" "zed")
+config_directories=("alacritty" "fish" "iterm2" "nvim" "pypoetry" "zed")
 
 # install brew
 if ! command -v brew > /dev/null; then
@@ -29,8 +29,12 @@ if [ ! -f $HOME/.iterm2_shell_integration.zsh ]; then
 fi
 
 
-# create site functions directory
-if [[ ! -d "$HOME/.zsh-site-functions" ]]; then
+# make sure directories exist
+if [ ! -d "$HOME/.config" ]; then
+    mkdir "$HOME/.config"
+fi
+
+if [ ! -d "$HOME/.zsh-site-functions" ]; then
     mkdir "$HOME/.zsh-site-functions"
 fi
 
@@ -99,6 +103,5 @@ done
 #    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
 #    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 #fi
-
 
 exit 0
