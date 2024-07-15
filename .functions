@@ -1,0 +1,20 @@
+
+so() {
+    if [ -f $HOME/.zshrc ]; then
+        source $HOME/.zshrc
+    fi
+}
+
+gbn() {
+	if [[ -d .git ]]; then
+		git checkout -b "$1" && git push -u origin "$1"
+	fi
+}
+
+symlink() {
+	if type gln &>/dev/null; then
+		gln -svT "$1" "$2"
+	else
+		ln -sv "$1" "$2"
+	fi
+}

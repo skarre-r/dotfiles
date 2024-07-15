@@ -1,0 +1,42 @@
+
+# misc
+alias ..='cd ..'
+alias cd..='cd ..'
+alias ls='ls -lGa'
+alias lsa='ls -lGa'
+alias dush='du -sh *'
+
+# git
+alias g='git'
+alias gs='git status -sb'
+alias gst='git status'
+alias add='git add'
+alias cmt='git commit -m'
+alias amend='git commit --amend'
+alias push='git push'
+alias pull='git pull'
+alias gl='git --no-pager log --oneline -n 20'
+alias glog='git log --oneline'
+alias gif='git --no-pager diff'
+alias gifs='git --no-pager diff --staged'
+alias gb='git --no-pager branch'
+alias gbd='git branch -D'
+alias checkout='git checkout'
+alias discard='git checkout --'
+alias gsl='git stash list'
+alias gsp='git stash pop'
+alias gsa='git stash apply'
+alias gss='git stash save'
+
+## docker
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"'
+alias dpsp='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}"'
+
+# podman
+alias pps='podman ps -a'
+alias ppw='podman ps -a -w 1'
+alias ppsw='podman ps -a -w 1'
+alias ppk='podman kube play'
+alias pkp='podman kube play'
+alias pkr='podman kube play --replace'
+alias pkd='podman kube down'
