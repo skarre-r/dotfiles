@@ -3,12 +3,6 @@
 PROMPT='%~ $ '
 CLICOLOR=1
 
-bindkey -e
-bindkey "^[b" backward-word
-bindkey '^[f' forward-word
-bindkey "^[^[[C" forward-word
-bindkey "^[^[[D" backward-word
-
 if [ -f $HOME/.aliases ]; then
     source "$HOME/.aliases"
 fi
