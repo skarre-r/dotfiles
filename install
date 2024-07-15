@@ -109,9 +109,9 @@ done
 
 
 # configure iterm2
-#if [[ -d "/Applications/iTerm.app" ]]; then
-#    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
-#    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-#fi
+if [[ -d "/Applications/iTerm.app" ]]; then
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
+    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+fi
 
 exit 0
