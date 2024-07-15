@@ -2,6 +2,8 @@
 .ignore/
 .ssh/known_hosts*
 fish/fish_variables
+iterm2/*
+!iterm2/com.googlecode.iterm2.plist
 zed/*
 !zed/settings.json
 Brewfile.lock.json
