@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 
 PROMPT='%~ $ '
 CLICOLOR=1

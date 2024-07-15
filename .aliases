@@ -1,5 +1,5 @@
+#!/usr/bin/env sh
 
-# misc
 alias ..='cd ..'
 alias cd..='cd ..'
 alias ls='ls -lGa'

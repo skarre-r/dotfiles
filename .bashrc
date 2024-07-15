@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 PROMPT='%~ $ '
 CLICOLOR=1
