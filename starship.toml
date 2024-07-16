@@ -1,18 +1,343 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+scan_timeout = 30
+command_timeout = 500
 add_newline = false
+follow_symlinks = true
 
-[line_break]
-disabled = false
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
+[battery]
+disabled = true
+
+[buf]
+disabled = true
+
+[bun]
+symbol = "bun "
+style = "bold red"
+
+[c]
+disabled = true
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
+
+[cmake]
+disabled = true
+
+[cobol]
+disabled = true
+
+[cmd_duration]
+style = "yellow bold"
+
+[conda]
+disabled = true
+
+[container]
+symbol = "container "
+style = "red bold dimmed"
+
+[crystal]
+disabled = true
+
+[daml]
+disabled = true
+
+[dart]
+disabled = true
+
+[deno]
+symbol = "deno "
+style = "green bold"
 
 [directory]
 truncation_length = 5
 truncate_to_repo = false
-read_only = " "
+style = "cyan bold"
+read_only = "ro "
+read_only_style = "red"
+truncation_symbol = "../"
+home_symbol = "~"
+use_os_path_sep = false
 
-[cmd_duration]
+[direnv]
 disabled = true
 
-[lua]
-symbol = "<LUA>"
+[docker_context]
+symbol = "docker "
+style = "blue bold"
 
+[dotnet]
+symbol = ".net "
+style = "blue bold"
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[env_var]
+
+[erlang]
+disabled = true
+
+[fennel]
+disabled = true
+
+[fill]
+disabled = true
+
+[fossil_branch]
+disabled = true
+
+[fossil_metrics]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_branch]
+always_show_remote = false
+symbol = "git "
+style = "bold purple"
+
+[git_commit]
+style = "green bold"
+tag_disabled = true
+tag_symbol = " tag "
+
+[git_state]
+style = "bold yellow"
+
+[git_metrics]
+disabled = true
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+style = "red bold"
+
+[gleam]
+disabled = true
+
+[golang]
+symbol = "go "
+style = "bold cyan"
+not_capable_style = "bold red"
+
+[guix_shell]
+disabled = true
+
+[gradle]
+disabled = true
+
+[haskell]
+disabled = true
+
+[haxe]
+disabled = true
+
+[helm]
+symbol = "helm "
+style = "bold white"
+
+[hostname]
+ssh_only = true
+ssh_symbol = "ssh "
+style = "green dimmed bold"
+
+[java]
+disabled = true
+
+[jobs]
+symbol = "jobs "
+style = "bold blue"
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[kubernetes]
+symbol = "k8s "
+style = "cyan bold"
+detect_extensions = []
+detect_files = []
+detect_folders = []
+detect_env_vars = []
+disabled = true        # todo
+
+[line_break]
+disabled = false
+
+[localip]
+ssh_only = true
+style = "yellow bold"
+
+[lua]
+symbol = "lua "
+style = "bold blue"
+
+[memory_usage]
+symbol = "mem "
+disabled = true
+
+[meson]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[nats]
+disabled = true
+
+[nim]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[nodejs]
+symbol = "node "
+style = "bold green"
+
+[ocaml]
+disabled = true
+
+[odin]
+disabled = true
+
+[opa]
+disabled = true
+
+[openstack]
+disabled = true
+
+[os]
+disabled = true
+
+[package]
+symbol = "pkg "
+style = "208 bold"
+
+[perl]
+disabled = true
+
+[php]
+disabled = true
+
+[pijul_channel]
+disabled = true
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[python]
+symbol = "python "
+style = "yellow bold"
+
+[quarto]
+disabled = true
+
+[rlang]
+disabled = true
+
+[raku]
+disabled = true
+
+[red]
+disabled = true
+
+[ruby]
+symbol = "ruby "
+style = "bold red"
+
+[rust]
+symbol = "rust "
+style = "bold red"
+
+[scala]
+disabled = true
+
+[shell]
+bash_indicator = "bash"
+zsh_indicator = "zsh"
+fish_indicator = "fish"
+unknown_indicator = ""
+style = "white bold"
+disabled = false
+
+[shlvl]
+disabled = true
+
+[singularity]
+disabled = true
+
+[solidity]
+disabled = true
+
+[spack]
+disabled = true
+
+[status]
+symbol = "❌"
+success_symbol = ""
+not_executable_symbol = "not executable"
+not_found_symbol = "not found"
+sigint_symbol = "sigint"
+signal_symbol = "signal"
+style = "bold red"
+disabled = false
+
+[sudo]
+symbol = "sudo "
+style = "bold blue"
+disabled = false
+
+[swift]
+disabled = true
+
+[terraform]
+symbol = "terraform "
+style = "bold 105"
+
+[time]
+disabled = true
+
+[typst]
+disabled = true
+
+[username]
+style_root = "red bold"
+style_user = "yellow bold"
+show_always = false
+
+[vagrant]
+disabled = true
+
+[vlang]
+disabled = true
+
+[vcsh]
+disabled = true
+
+[zig]
+disabled = true
+
+[custom]
