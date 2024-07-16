@@ -178,7 +178,7 @@ detect_extensions = []
 detect_files = []
 detect_folders = []
 detect_env_vars = []
-disabled = true        # todo
+disabled = false
 
 [line_break]
 disabled = false
@@ -276,9 +276,9 @@ style = "bold red"
 disabled = true
 
 [shell]
-bash_indicator = "bash"
-zsh_indicator = "zsh"
-fish_indicator = "fish"
+bash_indicator = "b"
+zsh_indicator = "z"
+fish_indicator = "f"
 unknown_indicator = ""
 style = "white bold"
 disabled = false
@@ -296,7 +296,7 @@ disabled = true
 disabled = true
 
 [status]
-symbol = "❌"
+symbol = "X"
 success_symbol = ""
 not_executable_symbol = "not executable"
 not_found_symbol = "not found"
