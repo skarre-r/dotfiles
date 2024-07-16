@@ -5,6 +5,9 @@ tap "oven-sh/bun"
 # brews
 brew "go"
 brew "uv"
+brew "fd"
+brew "fzf"
+brew "bat"
 brew "rye"
 brew "gcc"
 brew "git"
@@ -33,6 +36,7 @@ brew "neovim"
 brew "docker"
 brew "podman"
 brew "colima"
+brew "ripgrep"
 brew "chezmoi"
 brew "ansible"
 brew "ripgrep"
@@ -67,6 +71,7 @@ cask "proton-mail"
 cask "sublime-text"
 cask "transmission"
 cask "proton-drive"
+cask "betterdisplay"
 cask "eloston-chromium"
 cask "librewolf", args: { no_quarantine: true }
 
@@ -90,5 +95,6 @@ mas "Wipr", id: 1320666476
 mas "Noir", id: 1592917505
 mas "QuickShade", id: 931571202
 mas "The Unarchiver", id: 425424353
+mas "AdGuard for Safari", id: 1440147259
 mas "Save to Raindrop.io", id: 1549370672
 mas "1Password for Safari", id: 1569813296
