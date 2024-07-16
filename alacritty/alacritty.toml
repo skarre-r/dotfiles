@@ -1,0 +1,143 @@
+working_directory = "None"
+live_config_reload = true
+ipc_socket = false
+
+[env]
+ALACRITTY = "1"
+
+[window]
+dimensions = { columns = 0, lines = 0 }
+position = "None"
+padding = { x = 16, y = 16 }
+dynamic_padding = true
+decorations = "buttonless"
+opacity = 1.0
+blur = false
+startup_mode = "Windowed"
+title = "Alacritty"
+dynamic_title = true
+decorations_theme_variant = "None"
+resize_increments = true
+option_as_alt = "None"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+normal = { family = "Menlo", style = "Regular" }
+bold = { style = "Bold" }
+italic = { style = "Italic" }
+bold_italic = { style = "Bold Italic" }
+size = 12.0
+offset = { x = 0, y = 0 }
+builtin_box_drawing = true
+
+[colors]
+indexed_colors = []
+transparent_background_colors = false
+draw_bold_text_with_bright_colors = false
+
+[colors.primary]
+background = "#2c2a2d"
+foreground = "#f9f9f9"
+dim_foreground = "#828482"
+bright_foreground = "None"
+
+[colors.cursor]
+text = "CellBackground"
+cursor = "CellForeground"
+
+[colors.vi_mode_cursor]
+text = "CellBackground"
+cursor = "CellForeground"
+
+[colors.search]
+matches = { foreground = "#181818", background = "#ac4242" }
+focused_match = { foreground = "#181818", background = "#f4bf75" }
+
+[colors.hints]
+start = { foreground = "#181818", background = "#f4bf75" }
+end = { foreground = "#181818", background = "#ac4242" }
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.footer_bar]
+foreground = "#181818"
+background = "#d8d8d8"
+
+[colors.selection]
+text = "CellBackground"
+background = "CellForeground"
+
+[colors.normal]
+black = "#2c2a2d"
+red = "#ec6b88"
+green = "#b3da82"
+yellow = "#f8d977"
+blue = "#ee9c70"
+magenta = "#a89dec"
+cyan = "#90d9e5"
+white = "#fbfcfa"
+
+[colors.bright]
+black = "#717071"
+red = "#ec6b88"
+green = "#b3da82"
+yellow = "#f8d977"
+blue = "#a7aaec"
+magenta = "#d382db"
+cyan = "#90d9e5"
+white = "#fbfcfa"
+
+[colors.dim]
+black = "#0f0f0f"
+red = "#712b2b"
+green = "#5f6f3a"
+yellow = "#a17e4d"
+blue = "#456877"
+magenta = "#704d68"
+cyan = "#4d7770"
+white = "#8e8e8e"
+
+[bell]
+animation = "Linear"
+duration = 0
+color = "#ffffff"
+command = "None"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = false
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = "None"
+blink_interval = 750
+blink_timeout = 5
+unfocused_hollow = true
+thickness = 0.15
+
+[terminal]
+osc52 = "OnlyCopy"
+
+[mouse]
+hide_when_typing = false
+bindings = []
+
+[hints]
+enabled = []
+
+[keyboard]
+bindings = []
+
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "Warn"
+renderer = "None"
+print_events = false
+highlight_damage = false
+prefer_egl = false
