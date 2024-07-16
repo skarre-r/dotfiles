@@ -12,6 +12,7 @@ export XDG_BIN_HOME="$HOME/.local/bin"
 
 # starship
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
+export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
 
 # poetry
 export POETRY_HOME="$XDG_CONFIG_HOME/pypoetry"
