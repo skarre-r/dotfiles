@@ -25,9 +25,9 @@ style = "bold red"
 disabled = true
 
 [character]
-success_symbol = "[>](bold green)"
-error_symbol = "[x](bold red)"
-vimcmd_symbol = "[<](bold green)"
+success_symbol = "[❯](bold green)" # [>]
+error_symbol = "[❯](bold red)"     # [x]
+vimcmd_symbol = "[❮](bold green)"  # [<]
 
 [cmake]
 disabled = true
@@ -122,11 +122,11 @@ style = "bold yellow"
 disabled = true
 
 [git_status]
-ahead = ">"
-behind = "<"
-diverged = "<>"
-renamed = "r"
-deleted = "x"
+ahead = "⇡"        # >
+behind = "⇣"       # <
+diverged = "⇕"     # <>
+renamed = "»"      # r
+deleted = "✘"      # x
 style = "red bold"
 
 [gleam]
@@ -178,7 +178,7 @@ detect_extensions = []
 detect_files = []
 detect_folders = []
 detect_env_vars = []
-disabled = false
+disabled = false       # todo
 
 [line_break]
 disabled = false
@@ -276,12 +276,12 @@ style = "bold red"
 disabled = true
 
 [shell]
-bash_indicator = "b"
-zsh_indicator = "z"
-fish_indicator = "f"
+bash_indicator = "bash"
+zsh_indicator = "zsh"
+fish_indicator = "fish"
 unknown_indicator = ""
 style = "white bold"
-disabled = false
+disabled = true
 
 [shlvl]
 disabled = true
@@ -296,14 +296,14 @@ disabled = true
 disabled = true
 
 [status]
-symbol = "X"
+symbol = "status "
 success_symbol = ""
 not_executable_symbol = "not executable"
 not_found_symbol = "not found"
 sigint_symbol = "sigint"
 signal_symbol = "signal"
 style = "bold red"
-disabled = false
+disabled = true                          # todo
 
 [sudo]
 symbol = "sudo "
