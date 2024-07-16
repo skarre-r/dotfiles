@@ -29,4 +29,8 @@ fi
 autoload -Uz compinit
 compinit
 
+if command -v fzf > /dev/null; then
+    source <(fzf --zsh)
+fi
+
 eval "$(starship init zsh)"
