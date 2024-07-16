@@ -15,8 +15,8 @@ if [ -f $HOME/.functions ]; then
     source "$HOME/.functions"
 fi
 
-if [ -f $HOME/.iterm2_shell_integration.zsh ]; then
-	source "$HOME/.iterm2_shell_integration.zsh"
+if [ -f $HOME/.config/iterm2/.iterm2_shell_integration.zsh ]; then
+	source "$HOME/.config/iterm2/.iterm2_shell_integration.zsh"
 fi
 
 if [ -d /opt/homebrew ]; then
@@ -25,5 +25,8 @@ if [ -d /opt/homebrew ]; then
 	source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 	source "/opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 fi
+
+autoload -Uz compinit
+compinit
 
 eval "$(starship init zsh)"
