@@ -3,6 +3,14 @@
 PROMPT='%~ $ '
 CLICOLOR=1
 
+#bindkey -e
+#bindkey "" backward-word
+#bindkey "" forward-word
+#bindkey "" beginning-of-line
+#bindkey "" beginning-of-buffer-or-history
+#bindkey "" end-of-buffer-or-history
+#bindkey "" end-of-line
+
 if [ -f $HOME/.aliases ]; then
     source "$HOME/.aliases"
 fi
