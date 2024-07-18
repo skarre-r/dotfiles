@@ -26,7 +26,7 @@ multiplier = 3
 
 [font]
 normal = { family = "Menlo", style = "Regular" }
-bold = { style = "Bold" }
+bold = { style = "DemiBold" }
 italic = { style = "Italic" }
 bold_italic = { style = "Bold Italic" }
 size = 12.0
@@ -35,13 +35,13 @@ builtin_box_drawing = true
 
 [colors]
 indexed_colors = []
-transparent_background_colors = false
-draw_bold_text_with_bright_colors = false
+transparent_background_colors = true
+draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "#2c2a2d"
-foreground = "#f9f9f9"
-dim_foreground = "#828482"
+background = "0x2D2A2E"    # "#2c2a2d"
+foreground = "0xfff1f3"    # "#f9f9f9"
+dim_foreground = "None"
 bright_foreground = "None"
 
 [colors.cursor]
@@ -69,38 +69,28 @@ foreground = "#181818"
 background = "#d8d8d8"
 
 [colors.selection]
-text = "CellBackground"
-background = "CellForeground"
+text = "#f9f9f9"
+background = "#5a595b"
 
 [colors.normal]
-black = "#2c2a2d"
-red = "#ec6b88"
-green = "#b3da82"
-yellow = "#f8d977"
-blue = "#ee9c70"
-magenta = "#a89dec"
-cyan = "#90d9e5"
-white = "#fbfcfa"
+black = "0x2c2525"   # "#2c2a2d"
+red = "0xfd6883"     # "#ec6b88"
+green = "0xadda78"   # "#b3da82"
+yellow = "0xf9cc6c"  # "#f8d977"
+blue = "0xf38d70"    # "#ee9c70"
+magenta = "0xa8a9eb" # "#a89dec"
+cyan = "0x85dacc"    # "#90d9e5"
+white = "0xfff1f3"   # "#fbfcfa"
 
 [colors.bright]
-black = "#717071"
-red = "#ec6b88"
-green = "#b3da82"
-yellow = "#f8d977"
-blue = "#a7aaec"
-magenta = "#d382db"
-cyan = "#90d9e5"
-white = "#fbfcfa"
-
-[colors.dim]
-black = "#0f0f0f"
-red = "#712b2b"
-green = "#5f6f3a"
-yellow = "#a17e4d"
-blue = "#456877"
-magenta = "#704d68"
-cyan = "#4d7770"
-white = "#8e8e8e"
+black = "0x72696a"   # "#717071"
+red = "0xfd6883"     # "#ec6b88"
+green = "0xadda78"   # "#b3da82"
+yellow = "0xf9cc6c"  # "#f8d977"
+blue = "0xf38d70"    # "#a7aaec"
+magenta = "0xa8a9eb" # "#d382db"
+cyan = "0x85dacc"    # "#90d9e5"
+white = "0xfff1f3"   # "#fbfcfa"
 
 [bell]
 animation = "Linear"
@@ -130,8 +120,14 @@ bindings = []
 [hints]
 enabled = []
 
-[keyboard]
-bindings = []
+[keyboard] # chars = ansi escape sequences
+bindings = [
+    { key = "Left", mods = "Alt", chars = "\u001bB" },
+    { key = "Right", mods = "Alt", chars = "\u001bF" },
+    { key = "Left", mods = "Command", chars = "\u001bOH" },
+    { key = "Right", mods = "Command", chars = "\u001bOF" },
+    { key = "Back", mods = "Command", chars = "\u0015" },
+]
 
 [debug]
 render_timer = false
