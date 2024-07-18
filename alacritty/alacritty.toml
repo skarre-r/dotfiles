@@ -1,6 +1,12 @@
+
+import = [
+    "~/.config/alacritty/colors.toml",
+    "~/.config/alacritty/keybindings.toml",
+]
+
 working_directory = "None"
 live_config_reload = true
-ipc_socket = false
+ipc_socket = true
 
 [env]
 ALACRITTY = "1"
@@ -33,65 +39,6 @@ size = 12.0
 offset = { x = 0, y = 0 }
 builtin_box_drawing = true
 
-[colors]
-indexed_colors = []
-transparent_background_colors = true
-draw_bold_text_with_bright_colors = true
-
-[colors.primary]
-background = "0x2D2A2E"    # "#2c2a2d"
-foreground = "0xfff1f3"    # "#f9f9f9"
-dim_foreground = "None"
-bright_foreground = "None"
-
-[colors.cursor]
-text = "CellBackground"
-cursor = "CellForeground"
-
-[colors.vi_mode_cursor]
-text = "CellBackground"
-cursor = "CellForeground"
-
-[colors.search]
-matches = { foreground = "#181818", background = "#ac4242" }
-focused_match = { foreground = "#181818", background = "#f4bf75" }
-
-[colors.hints]
-start = { foreground = "#181818", background = "#f4bf75" }
-end = { foreground = "#181818", background = "#ac4242" }
-
-[colors.line_indicator]
-foreground = "None"
-background = "None"
-
-[colors.footer_bar]
-foreground = "#181818"
-background = "#d8d8d8"
-
-[colors.selection]
-text = "#f9f9f9"
-background = "#5a595b"
-
-[colors.normal]
-black = "0x2c2525"   # "#2c2a2d"
-red = "0xfd6883"     # "#ec6b88"
-green = "0xadda78"   # "#b3da82"
-yellow = "0xf9cc6c"  # "#f8d977"
-blue = "0xf38d70"    # "#ee9c70"
-magenta = "0xa8a9eb" # "#a89dec"
-cyan = "0x85dacc"    # "#90d9e5"
-white = "0xfff1f3"   # "#fbfcfa"
-
-[colors.bright]
-black = "0x72696a"   # "#717071"
-red = "0xfd6883"     # "#ec6b88"
-green = "0xadda78"   # "#b3da82"
-yellow = "0xf9cc6c"  # "#f8d977"
-blue = "0xf38d70"    # "#a7aaec"
-magenta = "0xa8a9eb" # "#d382db"
-cyan = "0x85dacc"    # "#90d9e5"
-white = "0xfff1f3"   # "#fbfcfa"
-
 [bell]
 animation = "Linear"
 duration = 0
@@ -119,15 +66,6 @@ bindings = []
 
 [hints]
 enabled = []
-
-[keyboard] # chars = ansi escape sequences
-bindings = [
-    { key = "Left", mods = "Alt", chars = "\u001bB" },
-    { key = "Right", mods = "Alt", chars = "\u001bF" },
-    { key = "Left", mods = "Command", chars = "\u001bOH" },
-    { key = "Right", mods = "Command", chars = "\u001bOF" },
-    { key = "Back", mods = "Command", chars = "\u0015" },
-]
 
 [debug]
 render_timer = false
