@@ -2,9 +2,10 @@
 
 alias ..='cd ..'
 alias cd..='cd ..'
-alias ls='ls -lGa'
+alias ls='ls -lG'
 alias lsa='ls -lGa'
 alias dush='du -sh *'
+alias ff='fastfetch'
 
 # git
 alias g='git'
