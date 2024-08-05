@@ -4,7 +4,7 @@
     "assistant": {
         "button": false,
         "enabled": false,
-        "version": "1"
+        "version": "2"
     },
     //"auto_install_extensions": {},
     "auto_update": true,
