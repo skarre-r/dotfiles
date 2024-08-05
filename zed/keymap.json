@@ -1,0 +1,15 @@
+[
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-k cmd-c": "editor::ToggleComments"
+        }
+    },
+    {
+        "context": "Pane",
+        "bindings": {
+            "cmd-ctrl-right": "pane::SplitRight",
+            "cmd-ctrl-left": "pane::SplitLeft"
+        }
+    }
+]
