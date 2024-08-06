@@ -31,11 +31,11 @@ history = 10000
 multiplier = 3
 
 [font]
-normal = { family = "Menlo", style = "Regular" }
+normal = { family = "MesloLGS Nerd Font", style = "Regular" } # Menlo
 bold = { style = "DemiBold" }
 italic = { style = "Italic" }
 bold_italic = { style = "Bold Italic" }
-size = 12.0
+size = 14.0
 offset = { x = 0, y = 0 }
 builtin_box_drawing = true
 
