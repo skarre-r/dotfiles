@@ -1,7 +1,7 @@
 # dotfiles
 
 ```shell
-./install
+./install [home|work]
 # or
-zsh install
+zsh install [home|work]
 ```
