@@ -29,7 +29,6 @@ brew "helm"
 brew "node"
 brew "pnpm"
 brew "deno"
-brew "gopls"
 brew "unzip"
 brew "pyenv"
 brew "poetry"
@@ -39,9 +38,9 @@ brew "podman"
 brew "colima"
 brew "zellij"
 brew "ripgrep"
+brew "lazygit"
 brew "chezmoi"
 brew "ansible"
-brew "ripgrep"
 brew "starship"
 brew "opentofu"
 brew "helmfile"
@@ -51,23 +50,18 @@ brew "pre-commit"
 brew "python@3.12"
 brew "docker-buildx"
 brew "kubernetes-cli"
-brew "lua-language-server", { link: true }
 brew "zsh-autocomplete"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-history-substring-search"
 
-
 # casks
 cask "zed"
-cask "iina"
 cask "bruno"
 cask "lasso"
 cask "iterm2"
 cask "wezterm"
 cask "spotify"
-cask "calibre"
-cask "freetube"
 cask "obsidian"
 cask "1password"
 cask "alacritty"
@@ -75,11 +69,9 @@ cask "raindropio"
 cask "displaylink"
 cask "proton-mail"
 cask "sublime-text"
-cask "transmission"
 cask "proton-drive"
 cask "betterdisplay"
 cask "eloston-chromium"
-cask "librewolf", args: { no_quarantine: true }
 
 # fonts
 cask "font-sf-pro"
@@ -96,10 +88,8 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-symbols-only-nerd-font"
 
 # app store apps
-mas "rcmd", id: 1596283165
 mas "Wipr", id: 1320666476
 mas "Noir", id: 1592917505
-mas "QuickShade", id: 931571202
 mas "The Unarchiver", id: 425424353
 mas "AdGuard for Safari", id: 1440147259
 mas "Save to Raindrop.io", id: 1549370672
