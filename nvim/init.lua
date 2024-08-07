@@ -47,6 +47,47 @@ require('lazy').setup({
         'lewis6991/gitsigns.nvim',
         opts = {}
     },
+    { -- todo telescope/ trouble integrations: https://github.com/folke/todo-comments.nvim
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {}
+    },
+    {
+        "folke/which-key.nvim",
+        enabled = false, -- todo
+        opts = {}
+    },
+    {
+        "folke/trouble.nvim",
+        enabled = false, -- todo
+        opts = {}
+    },
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.8',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = {}
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        opts = {
+            ensure_installed = { "lua", "vim", "vimdoc" },
+            sync_install = false,
+            auto_install = true,
+            highlight = { enable = true },
+            indent = { enable = true },
+        }
+        -- config = function()
+        --     require("nvim-treesitter.configs").setup({
+        --         ensure_installed = { "lua", "vim", "vimdoc" },
+        --         sync_install = false,
+        --         auto_install = true,
+        --         highlight = { enable = true },
+        --         indent = { enable = true },
+        --     })
+        -- end
+    },
     {
         'neovim/nvim-lspconfig',
         dependencies = {
@@ -78,9 +119,13 @@ require('lazy').setup({
         end
     },
     {
-        'nvim-tree/nvim-tree.lua',
+        'nvim-tree/nvim-web-devicons',
+        opts = {}
+    },
+    {
+        'nvim-tree/nvim-tree.lua', -- todo neo-tree?
         dependencies = {
-            'nvim-tree/nvim-web-devicons'
+            'nvim-tree/nvim-web-devicons',
         },
         opts = {
             renderer = {
@@ -92,11 +137,38 @@ require('lazy').setup({
                     },
                     glyphs = {
                         git = {
-                            unstaged = "x"
+                            unstaged = "x" -- todo
                         }
                     }
                 }
             }
         }
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        enabled = false, --todo
+        dependencies = {
+            'nvim-tree/nvim-web-devicons'
+        },
+        opts = {}
+    },
+    {
+        "ThePrimeagen/harpoon",
+        enabled = false, -- todo
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {}
+    },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        enabled = false, -- todo
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim",
+        },
+        opts = {}
     }
 })
