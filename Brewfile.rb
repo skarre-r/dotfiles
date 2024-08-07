@@ -32,7 +32,6 @@ brew "deno"
 brew "unzip"
 brew "pyenv"
 brew "poetry"
-brew "neovim"
 brew "docker"
 brew "podman"
 brew "colima"
@@ -54,6 +53,7 @@ brew "zsh-autocomplete"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-history-substring-search"
+brew "neovim", args: ['HEAD']
 
 # casks
 cask "zed"
