@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 export LANG=en_US.UTF-8
-export EDITOR='vim'  # todo
+export EDITOR='nvim'
 
 # xdg
 export XDG_CONFIG_HOME="$HOME/.config"
