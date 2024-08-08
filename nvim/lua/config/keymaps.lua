@@ -23,4 +23,5 @@ SHIFT + CMD + arrows (select)
 OPT + backsoace (del word)
 CMD + backspace (del line)
 
+CMD + 1-0 (tabs)
 ]]
