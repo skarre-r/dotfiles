@@ -13,7 +13,7 @@ return {
         "MunifTanjim/nui.nvim",
     },
     opts = {
-        close_if_last_window = true, -- todo
+        close_if_last_window = false, -- todo
         popup_border_style = "rounded",
         enable_git_status = true,
         filesystem = {
