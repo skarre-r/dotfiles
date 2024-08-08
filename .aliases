@@ -6,7 +6,6 @@ alias ls='ls -lG'
 alias lsa='ls -lGa'
 alias lsd='gls -la --color --group-directories-first'
 alias dush='du -sh *'
-alias ff='fastfetch'
 
 # git
 alias g='git'
@@ -30,7 +29,7 @@ alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gss='git stash save'
 
-## docker
+# docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"'
 alias dpsp='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}"'
 
@@ -42,3 +41,12 @@ alias ppk='podman kube play'
 alias pkp='podman kube play'
 alias pkr='podman kube play --replace'
 alias pkd='podman kube down'
+
+# (neo)vim
+alias n='nvim'
+alias nv='nvim'
+alias nvi='nvim'
+alias v='nvim'
+
+# misc
+alias ff='fastfetch'
