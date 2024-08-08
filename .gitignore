@@ -4,7 +4,6 @@
 fish/fish_variables
 iterm2/*
 !iterm2/com.googlecode.iterm2.plist
-nvim/lazy-lock.json
 zed/*
 !zed/*.json
 Brewfile.lock.json
