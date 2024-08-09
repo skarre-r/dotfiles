@@ -19,3 +19,6 @@ symlink() {
 		ln -sv "$1" "$2"
 	fi
 }
+
+# todo: check for python/ js/ go > run dev command
+dev() ()
