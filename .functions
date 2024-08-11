@@ -21,4 +21,6 @@ symlink() {
 }
 
 # todo: check for python/ js/ go > run dev command
-dev() ()
+dev() {
+    echo "not implemented"
+}
