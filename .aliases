@@ -44,9 +44,13 @@ alias pkd='podman kube down'
 
 # (neo)vim
 alias n='nvim'
+alias n.='nvim .'
 alias nv='nvim'
+alias nv.='nvim .'
 alias nvi='nvim'
+alias nvi.='nvim .'
 alias v='nvim'
+alias v.='nvim .'
 
 # misc
 alias ff='fastfetch'
