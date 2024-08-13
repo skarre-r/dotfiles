@@ -1,4 +1,4 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- general
@@ -9,16 +9,54 @@ config.native_macos_fullscreen_mode = false
 config.detect_password_input = true
 
 -- font
-config.font = wezterm.font(
-    "Menlo", { weight = "Medium" } -- or "DemiBold"
-)
-config.font_size = 11
+config.font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Medium" })
+config.font_rules = {
+    {
+        intensity = "Bold",
+        italic = false,
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Bold" })
+    },
+    {
+        intensity = "Bold",
+        italic = true,
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Bold", italic = true })
+    },
+    {
+        intensity = "Normal",
+        italic = false,
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold" })
+    },
+    {
+        intensity = "Normal",
+        italic = true,
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold", italic = true })
+    },
+    {
+        intensity = "Half",
+        italic = false,
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Regular" })
+    },
+    {
+        intensity = "Half",
+        italic = true,
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Regular", italic = true })
+    }
+}
+config.font_size = 14
 config.cell_width = 1.0
 config.line_height = 1.0
-config.bold_brightens_ansi_colors = true
-config.freetype_load_flags = 'NO_HINTING'
+config.bold_brightens_ansi_colors = "BrightAndBold"
+config.freetype_load_flags = "NO_HINTING|NO_AUTOHINT"
+config.freetype_load_target = "Light"
+config.freetype_render_target = "HorizontalLcd"
 config.underline_position = -2
 config.underline_thickness = 1.0 -- does nothing?
+
+-- gpu
+local gpus = wezterm.gui.enumerate_gpus()
+config.webgpu_preferred_adapter = gpus[1]
+config.front_end = "WebGpu" -- "OpenGL" | "Software" | "WebGpu"
+config.webgpu_force_fallback_adapter = true
 
 -- colors
 config.color_scheme = 'Monokai Pro (Gogh)'
@@ -59,7 +97,7 @@ config.show_tabs_in_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = false
 config.show_new_tab_button_in_tab_bar = false
 config.window_frame = {
-    font = wezterm.font { family = "Menlo", weight = "Medium" },
+    font = wezterm.font({ family = "Menlo", weight = "Medium" }),
     font_size = 12.0,
     active_titlebar_bg = "#2c2a2d",
     inactive_titlebar_bg = "#2c2a2d",
