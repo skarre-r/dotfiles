@@ -202,6 +202,7 @@ require("lazy").setup({
             branch = "0.1.x",
             dependencies = {
                 "nvim-lua/plenary.nvim",
+                'nvim-telescope/telescope-fzf-native.nvim',
             },
             cmd = { "Telescope" },
             keys = {
@@ -410,5 +411,34 @@ require("lazy").setup({
             dependencies = { "nvim-lua/plenary.nvim" },
             opts = {},
         },
+        -- TODO: enable
+        {
+            'akinsho/toggleterm.nvim',
+            enabled = false,
+        },
+        {
+            "folke/flash.nvim",
+            enabled = false
+        },
+        {
+            "vim-test/vim-test",
+            enabled = false
+        },
+        {
+            "RRethy/vim-illuminate",
+            enabled = false
+        },
+        {
+            'windwp/nvim-autopairs',
+            enabled = false
+        },
+        {
+            'j-hui/fidget.nvim',
+            enabled = false
+        },
+        {
+            'rafamadriz/friendly-snippets',
+            enabled = false
+        }
     },
 })
