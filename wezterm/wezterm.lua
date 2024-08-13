@@ -14,22 +14,22 @@ config.font_rules = {
     {
         intensity = "Bold",
         italic = false,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Bold" })
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold" })
     },
     {
         intensity = "Bold",
         italic = true,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Bold", italic = true })
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold", italic = true })
     },
     {
         intensity = "Normal",
         italic = false,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold" })
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Medium" })
     },
     {
         intensity = "Normal",
         italic = true,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold", italic = true })
+        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Medium", italic = true })
     },
     {
         intensity = "Half",
