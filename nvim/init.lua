@@ -290,6 +290,7 @@ require("lazy").setup({
                         "stylua",
                         "prettier",
                         "eslint_d",
+                        "goimports",
                         "golangci-lint",
                     },
                     auto_update = true,
@@ -327,11 +328,16 @@ require("lazy").setup({
         {
             "stevearc/conform.nvim",
             opts = {
-                notify_on_error = false,
+                notify_on_error = true,
+                default_format_opts = {
+                    lsp_format = "fallback"
+                },
                 format_on_save = {
-                    lsp_fallback = true,
-                    async = false,
+                    lsp_format = "fallback",
                     timeout_ms = 500,
+                },
+                format_after_save = {
+                    lsp_format = "fallback"
                 },
                 formatters_by_ft = {
                     lua = { "stylua" },
