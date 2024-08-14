@@ -12,7 +12,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.breakindent = true
 vim.opt.list = true -- show invisible characters
-vim.opt.listchars = { trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = ">  ", trail = "-", nbsp = "+" }
 vim.opt.showmode = true
 vim.opt.termguicolors = true
 vim.opt.number = true
@@ -85,7 +85,7 @@ require("lazy").setup({
                     },
                     plugins = {
                         indent_blankline = {
-                            context_highlight = "pro", -- default | pro
+                            context_highlight = "default", -- default | pro
                             context_start_underline = true,
                         },
                     },
