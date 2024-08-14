@@ -270,12 +270,14 @@ require("lazy").setup({
                         function(server_name)
                             require("lspconfig")[server_name].setup({
                                 capabilities = capabilities,
+                                inlay_hints = { enabled = true }
                             })
                         end,
                         -- example: lua language server handler
                         ["lua_ls"] = function()
                             require("lspconfig").lua_ls.setup({
                                 capabilities = capabilities,
+                                inlay_hints = { enabled = true },
                                 on_init = function(client)
                                     lsp_zero.nvim_lua_settings(client, {})
                                 end,
