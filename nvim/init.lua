@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 -- Options
 -------------------------------------------------------------------------------
 vim.g.mapleader = " "
@@ -43,13 +43,16 @@ vim.keymap.set("n", "<S-D-p>", ":")
 -- ALT+delete (delete word right)
 -- CMD+backspace (delete line left)
 -- CMD+delete (delete line right)
--- SHIFT+up (select line up)
--- SHIFT+down (select line down)
+-- SHIFT+up (select line up) TODO: set to jump x lines up
+-- SHIFT+down (select line down) TODO: set to jump x lines down
 -- CTRL+CMD+right (split (and move) right)
 -- CTRL+CMD+left (split (and move) left)
 -- CMD+k (toggle line/ selection comment)
 -- CMD+w (close buffer ???)
 -- CMD+s (save)
+
+-- TODO:
+-- use up/ down arrows in cmdline
 
 -------------------------------------------------------------------------------
 -- Autocommands
@@ -96,6 +99,11 @@ require("lazy").setup({
     performance = { cache = { enabled = true } },
     reset_packpath = true,
     spec = {
+        -- https://github.com/nvim-tree/nvim-web-devicons
+        {
+            "nvim-tree/nvim-web-devicons",
+            opts = { color_icons = true },
+        },
         -- https://github.com/loctvl842/monokai-pro.nvim
         {
             "loctvl842/monokai-pro.nvim",
@@ -134,26 +142,26 @@ require("lazy").setup({
         -- https://github.com/lewis6991/gitsigns.nvim
         {
             "lewis6991/gitsigns.nvim",
-            opts = {}
+            opts = {},
         },
         -- https://github.com/akinsho/bufferline.nvim
         {
             "akinsho/bufferline.nvim",
             version = "*",
             dependencies = {
-                "nvim-tree/nvim-web-devicons"
+                "nvim-tree/nvim-web-devicons",
             },
             opts = {
                 options = {
-                    mode = "buffers", -- "buffers" | "tabs"
+                    mode = "tabs", -- "buffers" | "tabs"
                     diagnostics = "nvim_lsp",
                     offsets = {
                         {
                             filetype = "NvimTree",
-                            text = "nvim-tree",    -- or function,
-                            text_align = "center", -- "left" | "center" | "right"
-                            separator = true
-                        }
+                            text = "NvimTree_1", -- or function,
+                            text_align = "left", -- "left" | "center" | "right"
+                            separator = true,
+                        },
                     },
                     color_icons = true,
                     show_buffer_icons = true,
@@ -164,10 +172,9 @@ require("lazy").setup({
                     always_show_bufferline = true,
                     auto_toggle_bufferline = true,
                     hover = {
-                        enabled = true
-                    }
-
-                }
+                        enabled = true,
+                    },
+                },
             },
         },
         -- https://github.com/nvim-lualine/lualine.nvim
@@ -181,11 +188,6 @@ require("lazy").setup({
                 },
             },
         },
-        -- https://github.com/nvim-tree/nvim-web-devicons
-        {
-            "nvim-tree/nvim-web-devicons",
-            opts = { color_icons = true }
-        },
         -- https://github.com/nvim-tree/nvim-tree.lua
         {
             "nvim-tree/nvim-tree.lua",
@@ -196,39 +198,65 @@ require("lazy").setup({
             },
             keys = {
                 -- TODO: left/ right to open/ close folders
-                { "<S-D-e>", "<CMD>NvimTreeToggle<CR>", mode = { "n", "i", "v" } }
+                { "<S-D-e>", "<CMD>NvimTreeToggle<CR>", mode = { "n", "i", "v" } },
             },
             opts = {
                 on_attach = "default",
                 hijack_cursor = true,
+                auto_reload_on_write = true,
                 disable_netrw = true,
                 hijack_netrw = true,
-                hijack_unnamed_buffer_when_opening = false,
+                hijack_unnamed_buffer_when_opening = true,
+                sync_root_with_cwd = true,
+                respect_buf_cwd = true,
                 view = {
-                    cursor = false,
+                    cursorline = true,
                     side = "left",
+                    number = false,
+                    relativenumber = false,
                     width = 30,
                     float = {
-                        enable = false
-                    }
+                        enable = false,
+                    },
                 },
                 renderer = {
+                    add_trailing = true,
+                    group_empty = true,
                     indent_width = 2,
+                    hightlight_git = "all",
+                    hightlight_diagnostics = "all",
+                    hightlight_opened_files = "all",
+                    hightlight_modified = "all",
+                    hightlight_hidden = "all",
+                    indent_markers = {
+                        enable = true,
+                    },
                     icons = {
                         web_devicons = {
                             file = {
                                 enable = true,
-                                color = false
+                                color = false,
                             },
                             folder = {
                                 enable = true,
-                                color = false
-                            }
-                        }
-                    }
-                }
-            }
-
+                                color = false,
+                            },
+                        },
+                    },
+                },
+                git = {
+                    enable = true,
+                },
+                update_focused_file = {
+                    enable = true,
+                    update_root = {
+                        enable = true,
+                    },
+                },
+                diagnostics = {
+                    enable = true,
+                },
+            },
         },
         -- https://github.com/nvim-neo-tree/neo-tree.nvim
         {
@@ -274,7 +302,7 @@ require("lazy").setup({
             opts = {
                 stages = "static", -- disable animations
                 timeout = 3000,
-            }
+            },
         },
         -- https://github.com/folke/noice.nvim
         {
@@ -286,11 +314,11 @@ require("lazy").setup({
             },
             opts = {
                 presets = {
-                    bottom_search = false,         -- use a classic bottom cmdline for search
-                    command_palette = true,        -- position the cmdline and popupmenu together
+                    bottom_search = false, -- use a classic bottom cmdline for search
+                    command_palette = true, -- position the cmdline and popupmenu together
                     long_message_to_split = false, -- long messages will be sent to a split
-                    inc_rename = false,            -- enables an input dialog for inc-rename.nvim
-                    lsp_doc_border = true,         -- add a border to hover docs and signature help
+                    inc_rename = false, -- enables an input dialog for inc-rename.nvim
+                    lsp_doc_border = true, -- add a border to hover docs and signature help
                 },
                 cmdline = {
                     view = "cmdline_popup", -- "cmdline" | "cmdline_popup"
@@ -310,13 +338,13 @@ require("lazy").setup({
             cmd = { "Trouble" },
             keys = {
                 { "<leader>xx",   "<CMD>Trouble diagnostics toggle<CR>", mode = { "n", "v" } },
-                { "<leader>todo", "<CMD>Trouble todo toggle<CR>",        mode = { "n", "v" } }
+                { "<leader>todo", "<CMD>Trouble todo toggle<CR>",        mode = { "n", "v" } },
             },
             opts = {
                 modes = {
                     lsp = { win = { position = "right" } },
-                }
-            }
+                },
+            },
         },
         -- https://github.com/nvim-telescope/telescope.nvim
         {
@@ -324,7 +352,7 @@ require("lazy").setup({
             branch = "0.1.x",
             dependencies = {
                 "nvim-lua/plenary.nvim",
-                'nvim-telescope/telescope-fzf-native.nvim',
+                "nvim-telescope/telescope-fzf-native.nvim", -- TODO: fix
             },
             cmd = { "Telescope" },
             keys = {
@@ -343,23 +371,23 @@ require("lazy").setup({
                     defaults = {
                         mappings = {
                             i = {
-                                ["<esc>"] = actions.close
-                            }
-                        }
-                    }
+                                ["<esc>"] = actions.close,
+                            },
+                        },
+                    },
                 })
-            end
+            end,
         },
         {
-            'j-hui/fidget.nvim',
+            "j-hui/fidget.nvim",
             tag = "v1.4.5",
             opts = {
                 integration = {
                     ["nvim-tree"] = {
                         enable = true,
                     },
-                }
-            }
+                },
+            },
         },
         -- https://github.com/VonHeikemen/lsp-zero.nvim/
         {
@@ -420,10 +448,10 @@ require("lazy").setup({
                                 settings = {
                                     Lua = {
                                         hint = {
-                                            enable = true
-                                        }
-                                    }
-                                }
+                                            enable = true,
+                                        },
+                                    },
+                                },
                             })
                         end,
                         ["gopls"] = function()
@@ -443,7 +471,7 @@ require("lazy").setup({
                                     },
                                 },
                             })
-                        end
+                        end,
                     },
                 })
                 require("mason-tool-installer").setup({
@@ -493,14 +521,14 @@ require("lazy").setup({
             opts = {
                 notify_on_error = true,
                 default_format_opts = {
-                    lsp_format = "fallback"
+                    lsp_format = "fallback",
                 },
                 format_on_save = {
                     lsp_format = "fallback",
                     timeout_ms = 500,
                 },
                 format_after_save = {
-                    lsp_format = "fallback"
+                    lsp_format = "fallback",
                 },
                 formatters_by_ft = {
                     lua = { "stylua" },
@@ -583,42 +611,42 @@ require("lazy").setup({
         },
         -- https://github.com/akinsho/toggleterm.nvim
         {
-            'akinsho/toggleterm.nvim',
+            "akinsho/toggleterm.nvim",
             version = "*",
             keys = {
                 { "<D-j>", "<CMD>ToggleTerm<CR>", mode = { "t", "n", "v", "i" } },
             },
             opts = {
                 size = 25,
-                direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float',
+                direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float',
                 float_opts = {
-                    border = "curved"
+                    border = "curved",
                 },
                 auto_scroll = true,
                 start_in_insert = true,
-                autochdir = false
-            }
+                autochdir = false,
+            },
         },
         -- TODO: enable
         {
             "folke/flash.nvim",
-            enabled = false
+            enabled = false,
         },
         {
             "vim-test/vim-test",
-            enabled = false
+            enabled = false,
         },
         {
             "RRethy/vim-illuminate",
-            enabled = false
+            enabled = false,
         },
         {
-            'windwp/nvim-autopairs',
-            enabled = false
+            "windwp/nvim-autopairs",
+            enabled = false,
         },
         {
-            'rafamadriz/friendly-snippets',
-            enabled = false
-        }
+            "rafamadriz/friendly-snippets",
+            enabled = false,
+        },
     },
 })
