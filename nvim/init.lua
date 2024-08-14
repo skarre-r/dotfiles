@@ -279,6 +279,11 @@ require("lazy").setup({
                         function(server_name)
                             require("lspconfig")[server_name].setup({
                                 capabilities = capabilities,
+                                on_attach = function(client, bufnr) -- TODO: I'm not sure if this does anything...
+                                    if client.server_capabilities.inlayHintProvider then
+                                        vim.lsp.inlay_hint.enable(true, { bufnr })
+                                    end
+                                end
                             })
                         end,
                         -- example: lua language server handler
