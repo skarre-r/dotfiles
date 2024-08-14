@@ -31,7 +31,7 @@ history = 10000
 multiplier = 3
 
 [font]
-normal = { family = "MesloLGS Nerd Font", style = "Regular" } # Menlo
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" } # "MesloLGS Nerd Font" / "Menlo""
 bold = { style = "DemiBold" }
 italic = { style = "Italic" }
 bold_italic = { style = "Bold Italic" }
