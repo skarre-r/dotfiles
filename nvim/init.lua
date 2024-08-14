@@ -39,6 +39,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("custom-inlay-hints", { clear = true }),
+    callback = function()
+        if vim.lsp.inlay_hint then
+            vim.lsp.inlay_hint.enable(true, { 0 })
+        end
+    end,
+})
+
 -------------------------------------------------------------------------------
 -- Lazy.nvim
 -------------------------------------------------------------------------------
@@ -270,19 +279,42 @@ require("lazy").setup({
                         function(server_name)
                             require("lspconfig")[server_name].setup({
                                 capabilities = capabilities,
-                                inlay_hints = { enabled = true }
                             })
                         end,
                         -- example: lua language server handler
                         ["lua_ls"] = function()
                             require("lspconfig").lua_ls.setup({
                                 capabilities = capabilities,
-                                inlay_hints = { enabled = true },
                                 on_init = function(client)
                                     lsp_zero.nvim_lua_settings(client, {})
                                 end,
+                                settings = {
+                                    Lua = {
+                                        hint = {
+                                            enable = true
+                                        }
+                                    }
+                                }
                             })
                         end,
+                        ["gopls"] = function()
+                            require("lspconfig").gopls.setup({
+                                capabilities = capabilities,
+                                settings = {
+                                    gopls = {
+                                        ["ui.inlayhint.hints"] = {
+                                            rangeVariableTypes = true,
+                                            parameterNames = true,
+                                            constantValues = true,
+                                            assignVariableTypes = true,
+                                            compositeLiteralFields = true,
+                                            compositeLiteralTypes = true,
+                                            functionTypeParameters = true,
+                                        },
+                                    },
+                                },
+                            })
+                        end
                     },
                 })
                 require("mason-tool-installer").setup({
