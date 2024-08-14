@@ -4,8 +4,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.ignorecase = true
@@ -27,7 +27,29 @@ vim.opt.hlsearch = true
 -------------------------------------------------------------------------------
 -- Keymap
 -------------------------------------------------------------------------------
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")
+vim.keymap.set("n", "<S-D-p>", ":")
+
+-- TODO:
+-- ALT+left (word left)
+-- ALT+right (word right)
+-- ALT+up (move up)
+-- ALT+down (move down)
+-- CMD+left (sart of line)
+-- CMD+right (end of line)
+-- CMD+up (start of file)
+-- CMD+down (end of file)
+-- ALT+backspace (delete word left)
+-- ALT+delete (delete word right)
+-- CMD+backspace (delete line left)
+-- CMD+delete (delete line right)
+-- SHIFT+up (select line up)
+-- SHIFT+down (select line down)
+-- CTRL+CMD+right (split (and move) right)
+-- CTRL+CMD+left (split (and move) left)
+-- CMD+k (toggle line/ selection comment)
+-- CMD+w (close buffer ???)
+-- CMD+s (save)
 
 -------------------------------------------------------------------------------
 -- Autocommands
@@ -80,6 +102,7 @@ require("lazy").setup({
             dependencies = {
                 "nvim-tree/nvim-web-devicons",
             },
+            lazy = false,
             config = function()
                 local monokai = require("monokai-pro")
                 monokai.setup({
@@ -87,21 +110,26 @@ require("lazy").setup({
                     devicons = true,
                     filter = "pro",
                     background_clear = {
+                        "toggleterm",
                         "telescope",
                         "notify",
                         "neo-tree",
+                        "nvim-tree",
                         "bufferline",
                     },
                     plugins = {
+                        bufferline = {
+                            underline_selected = false,
+                            underline_visible = false,
+                        },
                         indent_blankline = {
-                            context_highlight = "default", -- default | pro
+                            context_highlight = "pro", -- default | pro
                             context_start_underline = true,
                         },
                     },
                 })
-                monokai.load() -- or `vim.cmd.colorscheme("monokai-pro")`
+                vim.cmd.colorscheme("monokai-pro") -- or `monokai.load()`
             end,
-            lazy = false,
         },
         -- https://github.com/lewis6991/gitsigns.nvim
         {
@@ -112,8 +140,35 @@ require("lazy").setup({
         {
             "akinsho/bufferline.nvim",
             version = "*",
-            dependencies = "nvim-tree/nvim-web-devicons",
-            opts = {},
+            dependencies = {
+                "nvim-tree/nvim-web-devicons"
+            },
+            opts = {
+                options = {
+                    mode = "buffers", -- "buffers" | "tabs"
+                    diagnostics = "nvim_lsp",
+                    offsets = {
+                        {
+                            filetype = "NvimTree",
+                            text = "nvim-tree",    -- or function,
+                            text_align = "center", -- "left" | "center" | "right"
+                            separator = true
+                        }
+                    },
+                    color_icons = true,
+                    show_buffer_icons = true,
+                    show_buffer_close_icons = true,
+                    show_close_icon = true,
+                    show_tab_indicators = true,
+                    separator_style = "thin", -- "slant" | "slope" | "thick" | "thin"
+                    always_show_bufferline = true,
+                    auto_toggle_bufferline = true,
+                    hover = {
+                        enabled = true
+                    }
+
+                }
+            },
         },
         -- https://github.com/nvim-lualine/lualine.nvim
         {
@@ -126,9 +181,59 @@ require("lazy").setup({
                 },
             },
         },
+        -- https://github.com/nvim-tree/nvim-web-devicons
+        {
+            "nvim-tree/nvim-web-devicons",
+            opts = { color_icons = true }
+        },
+        -- https://github.com/nvim-tree/nvim-tree.lua
+        {
+            "nvim-tree/nvim-tree.lua",
+            version = "*",
+            lazy = false,
+            dependencies = {
+                "nvim-tree/nvim-web-devicons",
+            },
+            keys = {
+                -- TODO: left/ right to open/ close folders
+                { "<S-D-e>", "<CMD>NvimTreeToggle<CR>", mode = { "n", "i", "v" } }
+            },
+            opts = {
+                on_attach = "default",
+                hijack_cursor = true,
+                disable_netrw = true,
+                hijack_netrw = true,
+                hijack_unnamed_buffer_when_opening = false,
+                view = {
+                    cursor = false,
+                    side = "left",
+                    width = 30,
+                    float = {
+                        enable = false
+                    }
+                },
+                renderer = {
+                    indent_width = 2,
+                    icons = {
+                        web_devicons = {
+                            file = {
+                                enable = true,
+                                color = false
+                            },
+                            folder = {
+                                enable = true,
+                                color = false
+                            }
+                        }
+                    }
+                }
+            }
+
+        },
         -- https://github.com/nvim-neo-tree/neo-tree.nvim
         {
-            "nvim-neo-tree/neo-tree.nvim",
+            "nvim-neo-tree/neo-tree.nvim", -- TODO: nvim-tree
+            enabled = false,
             branch = "v3.x",
             dependencies = {
                 "nvim-lua/plenary.nvim",
@@ -162,6 +267,14 @@ require("lazy").setup({
             "folke/lazydev.nvim",
             ft = "lua",
             opts = {},
+        },
+        -- https://github.com/rcarriga/nvim-notify
+        {
+            "rcarriga/nvim-notify",
+            opts = {
+                stages = "static", -- disable animations
+                timeout = 3000,
+            }
         },
         -- https://github.com/folke/noice.nvim
         {
@@ -215,6 +328,8 @@ require("lazy").setup({
             },
             cmd = { "Telescope" },
             keys = {
+                -- TODO: <S-D-f> = search in files (fzf?)
+                { "<D-p>",      "<CMD>Telescope find_files<CR>",  mode = { "n", "v", "i", "t" } },
                 { "<leader>ff", "<CMD>Telescope find_files<CR>",  mode = { "n", "v" } },
                 { "<leader>gs", "<CMD>Telescope git_status<CR>",  mode = { "n", "v" } },
                 { "<leader>gl", "<CMD>Telescope git_commits<CR>", mode = { "n", "v" } },
@@ -223,6 +338,7 @@ require("lazy").setup({
                 local actions = require("telescope.actions")
                 local telescope = require("telescope")
                 telescope.load_extension("noice")
+                telescope.load_extension("notify")
                 telescope.setup({
                     defaults = {
                         mappings = {
@@ -233,6 +349,17 @@ require("lazy").setup({
                     }
                 })
             end
+        },
+        {
+            'j-hui/fidget.nvim',
+            tag = "v1.4.5",
+            opts = {
+                integration = {
+                    ["nvim-tree"] = {
+                        enable = true,
+                    },
+                }
+            }
         },
         -- https://github.com/VonHeikemen/lsp-zero.nvim/
         {
@@ -263,6 +390,9 @@ require("lazy").setup({
                 local lsp_attach = function(client, bufnr)
                     -- TODO: keymaps?
                     lsp_zero.default_keymaps({ buffer = bufnr })
+                    if client.server_capabilities.inlayHintProvider then
+                        vim.lsp.inlay_hint.enable(true, { bufnr })
+                    end
                 end
                 lsp_zero.extend_lspconfig({
                     sign_text = true,
@@ -270,7 +400,6 @@ require("lazy").setup({
                     float_border = "rounded",
                     capabilities = capabilities,
                 })
-
                 require("mason").setup({})
                 require("mason-lspconfig").setup({
                     ensure_installed = { "lua_ls", "gopls" },
@@ -279,11 +408,6 @@ require("lazy").setup({
                         function(server_name)
                             require("lspconfig")[server_name].setup({
                                 capabilities = capabilities,
-                                on_attach = function(client, bufnr) -- TODO: I'm not sure if this does anything...
-                                    if client.server_capabilities.inlayHintProvider then
-                                        vim.lsp.inlay_hint.enable(true, { bufnr })
-                                    end
-                                end
                             })
                         end,
                         -- example: lua language server handler
@@ -457,11 +581,25 @@ require("lazy").setup({
             dependencies = { "nvim-lua/plenary.nvim" },
             opts = {},
         },
-        -- TODO: enable
+        -- https://github.com/akinsho/toggleterm.nvim
         {
             'akinsho/toggleterm.nvim',
-            enabled = false,
+            version = "*",
+            keys = {
+                { "<D-j>", "<CMD>ToggleTerm<CR>", mode = { "t", "n", "v", "i" } },
+            },
+            opts = {
+                size = 25,
+                direction = 'float', -- 'vertical' | 'horizontal' | 'tab' | 'float',
+                float_opts = {
+                    border = "curved"
+                },
+                auto_scroll = true,
+                start_in_insert = true,
+                autochdir = false
+            }
         },
+        -- TODO: enable
         {
             "folke/flash.nvim",
             enabled = false
@@ -476,10 +614,6 @@ require("lazy").setup({
         },
         {
             'windwp/nvim-autopairs',
-            enabled = false
-        },
-        {
-            'j-hui/fidget.nvim',
             enabled = false
         },
         {
