@@ -346,6 +346,7 @@ require("lazy").setup({
                     typescript = { "biome", "prettier", stop_after_first = true },
                     javascriptreact = { "biome", "prettier", stop_after_first = true },
                     typescriptreact = { "biome", "prettier", stop_after_first = true },
+                    go = { "goimports", "gofmt" },
                 },
             },
         },
