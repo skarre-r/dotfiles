@@ -9,37 +9,38 @@ config.native_macos_fullscreen_mode = false
 config.detect_password_input = true
 
 -- font
-config.font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Medium" })
+-- config.font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium" })
+config.font = wezterm.font({ family = "JetBrainsMono Nerd Font" })
 config.font_rules = {
     {
         intensity = "Bold",
         italic = false,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold" })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold" })
     },
     {
         intensity = "Bold",
         italic = true,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "DemiBold", italic = true })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold", italic = true })
     },
     {
         intensity = "Normal",
         italic = false,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Medium" })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium" })
     },
     {
         intensity = "Normal",
         italic = true,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Medium", italic = true })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium", italic = true })
     },
     {
         intensity = "Half",
         italic = false,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Regular" })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Light" })
     },
     {
         intensity = "Half",
         italic = true,
-        font = wezterm.font({ family = "MesloLGS Nerd Font", weight = "Regular", italic = true })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Light", italic = true })
     }
 }
 config.font_size = 14
@@ -47,8 +48,8 @@ config.cell_width = 1.0
 config.line_height = 1.0
 config.bold_brightens_ansi_colors = "BrightAndBold"
 config.freetype_load_flags = "NO_HINTING|NO_AUTOHINT"
-config.freetype_load_target = "Light"
-config.freetype_render_target = "HorizontalLcd"
+-- config.freetype_load_target = "Light"
+-- config.freetype_render_target = "HorizontalLcd"
 config.underline_position = -2
 config.underline_thickness = 1.0 -- does nothing?
 
