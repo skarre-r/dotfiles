@@ -1,4 +1,9 @@
 ------------------------------------------------------------------------------
+-- Custom flags
+-------------------------------------------------------------------------------
+local tree = "nvim-tree" -- "nvim-tree" | "neo-tree"
+
+------------------------------------------------------------------------------
 -- Options
 -------------------------------------------------------------------------------
 vim.g.mapleader = " "
@@ -107,10 +112,12 @@ require("lazy").setup({
         -- https://github.com/loctvl842/monokai-pro.nvim
         {
             "loctvl842/monokai-pro.nvim",
+            enabled = true,
+            lazy = false,
+            priority = 1000,
             dependencies = {
                 "nvim-tree/nvim-web-devicons",
             },
-            lazy = false,
             config = function()
                 local monokai = require("monokai-pro")
                 monokai.setup({
@@ -184,13 +191,14 @@ require("lazy").setup({
             opts = {
                 options = {
                     icons_enabled = true,
-                    theme = "monokai-pro",
+                    theme = "auto", -- or "monokai-pro"
                 },
             },
         },
         -- https://github.com/nvim-tree/nvim-tree.lua
         {
             "nvim-tree/nvim-tree.lua",
+            enabled = tree == "nvim-tree",
             version = "*",
             lazy = false,
             dependencies = {
@@ -260,8 +268,8 @@ require("lazy").setup({
         },
         -- https://github.com/nvim-neo-tree/neo-tree.nvim
         {
-            "nvim-neo-tree/neo-tree.nvim", -- TODO: nvim-tree
-            enabled = false,
+            "nvim-neo-tree/neo-tree.nvim",
+            enabled = tree == "neo-tree",
             branch = "v3.x",
             dependencies = {
                 "nvim-lua/plenary.nvim",
@@ -314,11 +322,11 @@ require("lazy").setup({
             },
             opts = {
                 presets = {
-                    bottom_search = false, -- use a classic bottom cmdline for search
-                    command_palette = true, -- position the cmdline and popupmenu together
+                    bottom_search = false,         -- use a classic bottom cmdline for search
+                    command_palette = true,        -- position the cmdline and popupmenu together
                     long_message_to_split = false, -- long messages will be sent to a split
-                    inc_rename = false, -- enables an input dialog for inc-rename.nvim
-                    lsp_doc_border = true, -- add a border to hover docs and signature help
+                    inc_rename = false,            -- enables an input dialog for inc-rename.nvim
+                    lsp_doc_border = true,         -- add a border to hover docs and signature help
                 },
                 cmdline = {
                     view = "cmdline_popup", -- "cmdline" | "cmdline_popup"
@@ -488,6 +496,7 @@ require("lazy").setup({
                     run_on_start = true,
                 })
 
+                -- TODO: read cmd docs, update config
                 cmp.setup({
                     sources = {
                         { name = "path" },
@@ -506,7 +515,39 @@ require("lazy").setup({
                     },
                     mapping = cmp.mapping.preset.insert({
                         -- TODO: more completion keybinds
-                        ["<Enter>"] = cmp.mapping.confirm({ select = true }),
+                        ["<C-space>"] = cmp.mapping(function(callback)
+                            -- Togglw w/ CTRL+Space
+                            if cmp.visible() then
+                                cmp.abort()
+                            else
+                                cmp.complete()
+                            end
+                        end, { "i" }),
+                        --["<Enter>"] = cmp.mapping.confirm({ select = true }),
+                        ["<CR>"] = cmp.mapping({
+                            i = function(fallback)
+                                if cmp.visible() and cmp.get_active_entry() then
+                                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                                else
+                                    fallback()
+                                end
+                            end,
+                            s = cmp.mapping.confirm({ select = true }),
+                            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+                        }),
+                        -- TODO: this breaks cmdline tab
+                        -- ["<Tab>"] = cmp.mapping(function(fallback)
+                        --     -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
+                        --     if cmp.visible() then
+                        --         local entry = cmp.get_selected_entry()
+                        --         if not entry then
+                        --             cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+                        --         end
+                        --         cmp.confirm()
+                        --     else
+                        --         fallback()
+                        --     end
+                        -- end, { "i", "s", "c", }),
                     }),
                     formatting = lsp_zero.cmp_format({ details = true }),
                     preselect = "item",
