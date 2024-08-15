@@ -60,6 +60,7 @@ vim.keymap.set("n", "<S-D-p>", ":")
 -- CMD+k (split right?)
 -- SHIFT+CMD+k (shift down?)
 -- CMD+d (select matching selection)
+-- CMD+click (go to definition)
 
 -- TODO:
 -- use up/ down arrows in cmdline
