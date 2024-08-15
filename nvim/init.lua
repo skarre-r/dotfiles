@@ -8,6 +8,10 @@
 -- TODO: learn how tabs work
 -- TODO: configure lazy loading: https://lazy.folke.io/spec/lazy_loading
 -- TODO: find more plugins: https://dotfyle.com/neovim/plugins/top
+-- TODO: friendly_snippets > cmp
+-- TODO: telescope extensions? https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions
+-- TODO: telescope find_files: include hidden files
+-- TODO: telescope find_files: no selection vs selection
 
 ------------------------------------------------------------------------------
 -- Options
@@ -40,7 +44,7 @@ vim.opt.undofile = true
 -- Keymap
 -------------------------------------------------------------------------------
 vim.keymap.set({ "n" }, "<Esc>", "<CMD>nohlsearch<CR>", { silent = true, desc = "Exit search" })
-vim.keymap.set({ "n" }, "<S-D-p>", ":", { silent = true, desc = "Open cmdline (Shift+CMD+p)" })
+vim.keymap.set({ "n" }, "<S-D-p>", ":", { desc = "Open cmdline (Shift+CMD+p)" })
 vim.keymap.set({ "n" }, "<A-Left>", "b", { silent = true, desc = "Move cursor left (Option+Left)" })    -- TODO: doesn't work
 vim.keymap.set({ "n" }, "<A-Right>", "e", { silent = true, desc = "Move cursor right (Option+Right)" }) -- TODO: doesn't work
 vim.keymap.set({ "n" }, "<A-Up>", ":m .-2<CR>==", { silent = true, desc = "Move line up (Option+Up)" })
@@ -412,7 +416,13 @@ require("lazy").setup({
                 },
             },
         },
-        -- https://github.com/nvim-telescope/telescope.nvim
+        -- NOTE: https://github.com/nvim-telescope/telescope-fzf-native.nvim
+        {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make",
+            event = "VeryLazy",
+        },
+        -- NOTE: https://github.com/nvim-telescope/telescope.nvim
         {
             "nvim-telescope/telescope.nvim",
             branch = "0.1.x",
@@ -425,8 +435,6 @@ require("lazy").setup({
             config = function()
                 local actions = require("telescope.actions")
                 local telescope = require("telescope")
-                telescope.load_extension("noice")
-                telescope.load_extension("notify")
                 telescope.setup({
                     defaults = {
                         scroll_strategy = "cycle",
@@ -438,7 +446,18 @@ require("lazy").setup({
                         },
                         color_devicons = true,
                     },
+                    extensions = {
+                        fzf = {
+                            fuzzy = true,
+                            override_generic_sorter = true,
+                            override_file_sorter = true,
+                            case_mode = "smart_case",
+                        }
+                    }
                 })
+                telescope.load_extension("noice")
+                telescope.load_extension("notify")
+                telescope.load_extension("fzf")
             end,
         },
         -- https://github.com/VonHeikemen/lsp-zero.nvim/
