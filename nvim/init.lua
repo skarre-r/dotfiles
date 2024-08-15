@@ -690,6 +690,12 @@ require("lazy").setup({
                 autochdir = false,
             },
         },
+        -- NOTE: https://github.com/windwp/nvim-autopairs
+        {
+            "windwp/nvim-autopairs",
+            event = "InsertEnter",
+            opts = { check_ts = true }
+        },
         -- TODO: enable
         {
             "folke/flash.nvim",
@@ -701,10 +707,6 @@ require("lazy").setup({
         },
         {
             "RRethy/vim-illuminate",
-            enabled = false,
-        },
-        {
-            "windwp/nvim-autopairs",
             enabled = false,
         },
         {
