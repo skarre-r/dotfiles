@@ -151,7 +151,6 @@ require("lazy").setup({
         -- https://github.com/loctvl842/monokai-pro.nvim
         {
             "loctvl842/monokai-pro.nvim",
-            enabled = true,
             lazy = false,
             priority = 1000,
             dependencies = {
@@ -188,7 +187,7 @@ require("lazy").setup({
         -- https://github.com/lewis6991/gitsigns.nvim
         {
             "lewis6991/gitsigns.nvim",
-            events = "VeryLazy",
+            event = "VeryLazy",
             opts = {},
         },
         -- https://github.com/akinsho/bufferline.nvim
@@ -406,7 +405,7 @@ require("lazy").setup({
         {
             "folke/trouble.nvim",
             cmd = { "Trouble" },
-            events = "VeryLazy",
+            event = "VeryLazy",
             opts = {
                 modes = {
                     lsp = { win = { position = "right" } },
@@ -422,11 +421,11 @@ require("lazy").setup({
                 "nvim-telescope/telescope-fzf-native.nvim",
             },
             cmd = { "Telescope" },
-            events = "VeryLazy",
+            event = "VeryLazy",
             config = function()
                 local actions = require("telescope.actions")
                 local telescope = require("telescope")
-                -- telescope.load_extension("noice")
+                telescope.load_extension("noice")
                 telescope.load_extension("notify")
                 telescope.setup({
                     defaults = {
@@ -459,7 +458,6 @@ require("lazy").setup({
                 "L3MON4D3/LuaSnip",
                 "saadparwaiz1/cmp_luasnip",
             },
-            events = "VeryLazy",
             config = function()
                 local cmp_lsp = require("cmp_nvim_lsp")
                 local capabilities = vim.tbl_deep_extend(
@@ -579,7 +577,7 @@ require("lazy").setup({
         },
         {
             "stevearc/conform.nvim",
-            events = "VeryLazy",
+            event = "VeryLazy",
             opts = {
                 notify_on_error = true,
                 default_format_opts = {
@@ -612,7 +610,7 @@ require("lazy").setup({
         -- https://github.com/mfussenegger/nvim-lint
         {
             "mfussenegger/nvim-lint",
-            events = "VeryLazy",
+            event = "VeryLazy",
             config = function()
                 local lint = require("lint")
                 lint.linters_by_ft = {
@@ -658,7 +656,7 @@ require("lazy").setup({
         {
             "lukas-reineke/indent-blankline.nvim",
             main = "ibl",
-            events = "VeryLazy",
+            event = "VeryLazy",
             opts = {
                 indent = {
                     char = "│",
@@ -671,14 +669,14 @@ require("lazy").setup({
         {
             "folke/todo-comments.nvim",
             dependencies = { "nvim-lua/plenary.nvim" },
-            events = "VeryLazy",
+            event = "VeryLazy",
             opts = {},
         },
         -- https://github.com/akinsho/toggleterm.nvim
         {
             "akinsho/toggleterm.nvim",
             version = "*",
-            events = "VeryLazy",
+            event = "VeryLazy",
             opts = {
                 size = 25,
                 direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float',
@@ -702,6 +700,16 @@ require("lazy").setup({
             event = "VeryLazy",
             opts = {}
         },
+        -- NOTE: https://github.com/windwp/nvim-ts-autotag
+        {
+            "windwp/nvim-ts-autotag",
+            event = { "BufReadPre", "BufNewFile" },
+            opts = {
+                enable_close = true,
+                enable_rename = true,
+                enable_close_on_slash = true
+            }
+        },
         -- TODO: enable
         {
             "folke/flash.nvim",
@@ -717,10 +725,6 @@ require("lazy").setup({
         },
         {
             "rafamadriz/friendly-snippets",
-            enabled = false,
-        },
-        {
-            "windwp/nvim-ts-autotag",
             enabled = false,
         },
         {
