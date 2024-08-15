@@ -18,6 +18,7 @@
 -- TODO: telescope: git_x: change enter behaviour
 -- TODO: extend todo-comments config
 -- TODO: telescope git commits: show remote (pushed/ not pushed)
+-- TODO: cmdline/ cmd: space > show options window
 
 ------------------------------------------------------------------------------
 -- Options
@@ -75,8 +76,6 @@ vim.keymap.set({ "n", "v", "i" }, "<S-D-e>", "<CMD>NvimTreeToggle<CR>",
 
 -- telescope
 -- TODO: make CMD+p close telescope if it's open
-vim.keymap.set({ "n", "v", "i" }, "<D-p>", "<CMD>Telescope find_files<CR>",
-    { silent = true, desc = "Find files (CMD+p)" })
 vim.keymap.set({ "n", "i" }, "<S-D-f>", "<CMD>Telescope grep_string<CR>",
     { silent = true, desc = "Search in files (Shift+CMD+f)" })
 vim.keymap.set({ "v" }, "<S-D-f>", "<CMD>Telescope grep_string<CR>",
@@ -85,6 +84,8 @@ vim.keymap.set({ "n" }, "<leader>gs", "<CMD>Telescope git_status<CR>",
     { silent = true, desc = "Show git status (Space+gs)" })
 vim.keymap.set({ "n" }, "<leader>gl", "<CMD>Telescope git_commits<CR>",
     { silent = true, desc = "Show git commit log (Space+gl)" })
+vim.keymap.set({ "n", "v", "i" }, "<D-p>", "<CMD>Telescope find_files<CR>",
+    { silent = true, desc = "Find files (CMD+p)" }) -- FIX: replace with function
 
 -- trouble
 vim.keymap.set({ "n" }, "<leader>xx", "<CMD>Trouble diagnostics toggle<CR>",
