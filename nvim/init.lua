@@ -1,17 +1,21 @@
 -- TODO: lsp code actions (quick fixes)
--- TODO: telescope-fzf
 -- TODO: nvim-tree: use left/ right to open/ close directories
 -- TODO: copilot
 -- TODO: nvim-cmp: more mappings: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
 -- TODO: replace lsp-zero
 -- TODO: split up lsp / cmp config
--- TODO: learn how tabs work
+-- TODO: learn how "tabs" work
 -- TODO: configure lazy loading: https://lazy.folke.io/spec/lazy_loading
 -- TODO: find more plugins: https://dotfyle.com/neovim/plugins/top
 -- TODO: friendly_snippets > cmp
 -- TODO: telescope extensions? https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions
 -- TODO: telescope find_files: include hidden files
 -- TODO: telescope find_files: no selection vs selection
+-- TODO: steal lazyvim keymaps? http://www.lazyvim.org/keymaps
+-- TODO: what does "noremap" do ???
+-- TODO: telescope recipes: https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes
+-- TODO: nvim-tree: ignore help pages, etc ???
+-- TODO: telescope: git_x: change enter behaviour
 
 ------------------------------------------------------------------------------
 -- Options
@@ -44,6 +48,7 @@ vim.opt.undofile = true
 -- Keymap
 -------------------------------------------------------------------------------
 vim.keymap.set({ "n" }, "<Esc>", "<CMD>nohlsearch<CR>", { silent = true, desc = "Exit search" })
+vim.keymap.set({ "n", "v" }, "<D-f>", "/", { desc = "Search (CMD+f)" })
 vim.keymap.set({ "n" }, "<S-D-p>", ":", { desc = "Open cmdline (Shift+CMD+p)" })
 vim.keymap.set({ "n" }, "<A-Left>", "b", { silent = true, desc = "Move cursor left (Option+Left)" })    -- TODO: doesn't work
 vim.keymap.set({ "n" }, "<A-Right>", "e", { silent = true, desc = "Move cursor right (Option+Right)" }) -- TODO: doesn't work
@@ -67,6 +72,7 @@ vim.keymap.set({ "n", "v", "i" }, "<S-D-e>", "<CMD>NvimTreeToggle<CR>",
     { silent = true, desc = "Toggle file explorer (Shift+CMD+e)" })
 
 -- telescope
+-- TODO: make CMD+p close telescope if it's open
 vim.keymap.set({ "n", "v", "i" }, "<D-p>", "<CMD>Telescope find_files<CR>",
     { silent = true, desc = "Find files (CMD+p)" })
 vim.keymap.set({ "n", "i" }, "<S-D-f>", "<CMD>Telescope grep_string<CR>",
@@ -441,12 +447,31 @@ require("lazy").setup({
                     defaults = {
                         scroll_strategy = "cycle",
                         initial_mode = "insert",
+                        -- FIX: CMD+left, CMD+Right, Option+Left, Option+Right, Option+Backspace, CMD+Backspace
+                        -- NOTE: actions.edit_command_line, actions.set_command_line, actions.edit_search_line, actions.set_search_line
                         mappings = {
                             i = {
                                 ["<esc>"] = actions.close,
+                                ["<D-Up>"] = actions.move_to_top,
+                                ["<D-Down>"] = actions.move_to_bottom,
                             },
                         },
                         color_devicons = true,
+                    },
+                    pickers = {
+                        find_files = {
+                            hidden = true
+                        },
+                        git_status = {
+                            mappings = {
+                                -- ["<CR>"] = actions.git_staging_toggle
+                            }
+                        },
+                        git_commits = {
+                            mappings = {
+                                -- ["<CR>"] = function(bufnr) end
+                            }
+                        }
                     },
                     extensions = {
                         fzf = {
@@ -723,7 +748,7 @@ require("lazy").setup({
         },
         -- NOTE: https://github.com/windwp/nvim-ts-autotag
         {
-            "windwp/nvim-ts-autotag",
+            "windwp/nvim-ts-autotag", -- FIX: warning - legacy options???
             event = { "BufReadPre", "BufNewFile" },
             opts = {
                 enable_close = true,
