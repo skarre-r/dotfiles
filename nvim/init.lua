@@ -7,6 +7,7 @@
 -- TODO: split up lsp / cmp config
 -- TODO: learn how tabs work
 -- TODO: configure lazy loading: https://lazy.folke.io/spec/lazy_loading
+-- TODO: find more plugins: https://dotfyle.com/neovim/plugins/top
 
 ------------------------------------------------------------------------------
 -- Options
@@ -708,6 +709,38 @@ require("lazy").setup({
         },
         {
             "rafamadriz/friendly-snippets",
+            enabled = false,
+        },
+        {
+            "windwp/nvim-ts-autotag",
+            enabled = false,
+        },
+        {
+            'stevearc/oil.nvim',
+            enabled = false
+        },
+        {
+            "iamcco/markdown-preview.nvim",
+            enabled = false,
+        },
+        {
+            "folke/zen-mode.nvim",
+            enabled = false
+        },
+        {
+            "folke/which-key.nvim",
+            enabled = false
+        },
+        {
+            "folke/edgy.nvim",
+            enabled = false,
+        },
+        {
+            "folke/persistence.nvim",
+            enabled = false
+        },
+        {
+            "folke/ts-comments.nvim",
             enabled = false,
         },
         {
