@@ -16,6 +16,8 @@
 -- TODO: telescope recipes: https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes
 -- TODO: nvim-tree: ignore help pages, etc ???
 -- TODO: telescope: git_x: change enter behaviour
+-- TODO: extend todo-comments config
+-- TODO: telescope git commits: show remote (pushed/ not pushed)
 
 ------------------------------------------------------------------------------
 -- Options
