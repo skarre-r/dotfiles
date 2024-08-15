@@ -696,6 +696,12 @@ require("lazy").setup({
             event = "InsertEnter",
             opts = { check_ts = true }
         },
+        -- NOTE: https://github.com/folke/ts-comments.nvim
+        {
+            "folke/ts-comments.nvim",
+            event = "VeryLazy",
+            opts = {}
+        },
         -- TODO: enable
         {
             "folke/flash.nvim",
@@ -740,10 +746,6 @@ require("lazy").setup({
         {
             "folke/persistence.nvim",
             enabled = false
-        },
-        {
-            "folke/ts-comments.nvim",
-            enabled = false,
         },
         {
             "kylechui/nvim-surround",
