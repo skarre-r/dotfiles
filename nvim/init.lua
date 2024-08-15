@@ -62,9 +62,11 @@ vim.keymap.set({ "n", "v", "i" }, "<S-D-z>", "<CMD>redo<CR>", { silent = true, d
 vim.keymap.set({ "n", "v", "i", "t" }, "<D-j>", "<CMD>ToggleTerm<CR>",
     { silent = true, desc = "Toggle terminal (CMD+j)" })
 
--- telescope
+-- nvim-tree
 vim.keymap.set({ "n", "v", "i" }, "<S-D-e>", "<CMD>NvimTreeToggle<CR>",
     { silent = true, desc = "Toggle file explorer (Shift+CMD+e)" })
+
+-- telescope
 vim.keymap.set({ "n", "v", "i" }, "<D-p>", "<CMD>Telescope find_files<CR>",
     { silent = true, desc = "Find files (CMD+p)" })
 vim.keymap.set({ "n", "i" }, "<S-D-f>", "<CMD>Telescope grep_string<CR>",
