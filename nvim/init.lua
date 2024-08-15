@@ -35,6 +35,8 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")
 vim.keymap.set("n", "<S-D-p>", ":")
 
+-- TODO: curly brackets doesn't work (alacritty)
+
 -- TODO:
 -- ALT+left (word left)
 -- ALT+right (word right)
@@ -48,8 +50,8 @@ vim.keymap.set("n", "<S-D-p>", ":")
 -- ALT+delete (delete word right)
 -- CMD+backspace (delete line left)
 -- CMD+delete (delete line right)
--- SHIFT+up (select line up) TODO: set to jump x lines up
--- SHIFT+down (select line down) TODO: set to jump x lines down
+-- SHIFT+up (select line up) TODO: set to jump x lines up (TODO: visual mode)
+-- SHIFT+down (select line down) TODO: set to jump x lines down (TODO. visual mode)
 -- CTRL+CMD+right (split (and move) right)
 -- CTRL+CMD+left (split (and move) left)
 -- CMD+k (toggle line/ selection comment)
@@ -57,9 +59,11 @@ vim.keymap.set("n", "<S-D-p>", ":")
 -- CMD+s (save)
 -- CMD+k (split right?)
 -- SHIFT+CMD+k (shift down?)
+-- CMD+d (select matching selection)
 
 -- TODO:
 -- use up/ down arrows in cmdline
+-- <leader>jk > exit insert mode
 
 -------------------------------------------------------------------------------
 -- Autocommands
@@ -99,7 +103,7 @@ vim.opt.rtp:prepend(lazypath)
 -------------------------------------------------------------------------------
 -- Plugins
 -------------------------------------------------------------------------------
-require("lazy").setup({
+require("lazy").setup({ -- TODO: :so doesnt't work
 	install = { missing = true },
 	checker = { enabled = true, notify = true, frequency = 3600 },
 	change_detection = { enabled = true, notify = false },
@@ -162,7 +166,8 @@ require("lazy").setup({
 			},
 			opts = {
 				options = {
-					mode = "tabs", -- "buffers" | "tabs"
+					-- TODO: learn how tabs work
+					mode = "buffers", -- "buffers" | "tabs"
 					diagnostics = "nvim_lsp",
 					offsets = {
 						{
@@ -401,6 +406,7 @@ require("lazy").setup({
 		},
 		-- https://github.com/VonHeikemen/lsp-zero.nvim/
 		{
+			-- TODO: code actions (quick fix)
 			"VonHeikemen/lsp-zero.nvim", -- TODO: replace?
 			branch = "v4.x",
 			dependencies = {
@@ -440,7 +446,7 @@ require("lazy").setup({
 				})
 				require("mason").setup({})
 				require("mason-lspconfig").setup({
-					ensure_installed = { "lua_ls", "gopls" },
+					ensure_installed = { "lua_ls", "gopls", "basedpyright", "pyright" },
 					handlers = {
 						-- "default handler": used by language servers without their own handler
 						function(server_name)
@@ -691,5 +697,18 @@ require("lazy").setup({
 			"rafamadriz/friendly-snippets",
 			enabled = false,
 		},
+		{
+			"kylechui/nvim-surround",
+			enabled = false,
+			version = "*", -- Use for stability; omit to use `main` branch for the latest features
+			event = "VeryLazy",
+			config = function()
+				require("nvim-surround").setup({
+					-- Configuration here, or leave empty to use defaults
+				})
+			end,
+		},
 	},
 })
+
+-- TODO: copilot
