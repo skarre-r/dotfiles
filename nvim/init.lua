@@ -35,8 +35,6 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")
 vim.keymap.set("n", "<S-D-p>", ":")
 
--- TODO: curly brackets doesn't work (alacritty)
-
 -- TODO:
 -- ALT+left (word left)
 -- ALT+right (word right)
@@ -703,11 +701,7 @@ require("lazy").setup({ -- TODO: :so doesnt't work
 			enabled = false,
 			version = "*", -- Use for stability; omit to use `main` branch for the latest features
 			event = "VeryLazy",
-			config = function()
-				require("nvim-surround").setup({
-					-- Configuration here, or leave empty to use defaults
-				})
-			end,
+			opts = {},
 		},
 	},
 })
