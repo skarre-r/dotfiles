@@ -20,6 +20,7 @@
 -- TODO: telescope git commits: show remote (pushed/ not pushed)
 -- TODO: cmdline/ cmd: space > show options window
 -- TODO: startup screen plugin
+-- TODO: nvim-treesitter-textobjects, nvim-treesitter-context
 
 ------------------------------------------------------------------------------
 -- Options
@@ -55,7 +56,7 @@ vim.keymap.set({ "n" }, "<Esc>", "<CMD>nohlsearch<CR>", { silent = true, desc = 
 vim.keymap.set({ "n", "v" }, "<D-f>", "/", { desc = "Search (CMD+f)" })
 vim.keymap.set({ "n" }, "<S-D-p>", ":", { desc = "Open cmdline (Shift+CMD+p)" })
 vim.keymap.set({ "n" }, "<A-Left>", "b", { silent = true, desc = "Move cursor left (Option+Left)" }) -- TODO: doesn't work
-vim.keymap.set({ "n" }, "<A-Right>", "e", { silent = true, desc = "Move cursor right (Option+Right)" }) -- TODO: doesn't work
+vim.keymap.set({ "n" }, "<A-Right>", "w", { silent = true, noremap = true, desc = "Move cursor right (Option+Right)" }) -- TODO: doesn't work
 vim.keymap.set({ "n" }, "<A-Up>", ":m .-2<CR>==", { silent = true, desc = "Move line up (Option+Up)" })
 vim.keymap.set({ "n" }, "<A-Down>", ":m .+1<CR>==", { silent = true, desc = "Move line down (Option+Down)" })
 vim.keymap.set({ "v" }, "<A-Up>", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move line up (Option+Up)" })
@@ -788,13 +789,9 @@ require("lazy").setup({
 		},
 		-- NOTE: https://github.com/windwp/nvim-ts-autotag
 		{
-			"windwp/nvim-ts-autotag", -- FIX: warning - legacy options???
+			"windwp/nvim-ts-autotag",
 			event = { "BufReadPre", "BufNewFile" },
-			opts = {
-				enable_close = true,
-				enable_rename = true,
-				enable_close_on_slash = true,
-			},
+			opts = {},
 		},
 		-- TODO: enable
 		{
