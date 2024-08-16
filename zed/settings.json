@@ -11,10 +11,10 @@
     //"auto_update_extensions": {},
     "autosave": "on_focus_change",
     "base_keymap": "VSCode",
-    "buffer_font_family": "Zed Plex Mono",
+    "buffer_font_family": "JetBrainsMono Nerd Font", // Zed Plex Mono
     //"buffer_font_features": {},
     "buffer_font_size": 14,
-    "buffer_font_weight": 500,
+    "buffer_font_weight": 600,
     "buffer_line_height": "comfortable",
     //"calls": {},
     //"centered_layout": {},
