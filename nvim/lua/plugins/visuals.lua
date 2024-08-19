@@ -4,13 +4,13 @@
 return {
     {
         "lewis6991/gitsigns.nvim",
-        event = "BufEnter",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {},
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        event = "BufEnter",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {
             indent = {
                 char = "│",

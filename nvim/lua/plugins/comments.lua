@@ -5,7 +5,7 @@ return {
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        event = "BufEnter",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {
             signs = true,
             keywords = {
