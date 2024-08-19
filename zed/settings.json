@@ -93,7 +93,21 @@
     },
     "line_indicator_format": "long",
     "linked_edits": true,
-    "lsp": {},
+    "lsp": {
+        "gopls": {
+            "initialization_options": {
+                "hints": {
+                    "assignVariableTypes": true,
+                    "compositeLiteralFields": true,
+                    "compositeLiteralTypes": true,
+                    "constantValues": true,
+                    "functionTypeParameters": true,
+                    "parameterNames": true,
+                    "rangeVariableTypes": true
+                }
+            }
+        }
+    },
     "message_editor": {
         "auto_replace_emoji_shortcode": true
     },
