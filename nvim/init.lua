@@ -58,8 +58,8 @@ vim.opt.undofile = true
 vim.keymap.set({ "n" }, "<Esc>", "<CMD>nohlsearch<CR>", { silent = true, desc = "Exit search" })
 vim.keymap.set({ "n", "v" }, "<D-f>", "/", { desc = "Search (CMD+f)" })
 vim.keymap.set({ "n" }, "<S-D-p>", ":", { desc = "Open cmdline (Shift+CMD+p)" })
-vim.keymap.set({ "n" }, "<A-Left>", "b", { silent = true, desc = "Move cursor left (Option+Left)" })                    -- TODO: doesn't work
-vim.keymap.set({ "n" }, "<A-Right>", "w", { silent = true, noremap = true, desc = "Move cursor right (Option+Right)" }) -- TODO: doesn't work
+--vim.keymap.set({ "n" }, "<A-Left>", "b", { silent = true, desc = "Move cursor left (Option+Left)" })                    -- TODO: doesn't work
+--vim.keymap.set({ "n" }, "<A-Right>", "w", { silent = true, noremap = true, desc = "Move cursor right (Option+Right)" }) -- TODO: doesn't work
 vim.keymap.set({ "n" }, "<A-Up>", ":m .-2<CR>==", { silent = true, desc = "Move line up (Option+Up)" })
 vim.keymap.set({ "n" }, "<A-Down>", ":m .+1<CR>==", { silent = true, desc = "Move line down (Option+Down)" })
 vim.keymap.set({ "v" }, "<A-Up>", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move line up (Option+Up)" })
@@ -70,6 +70,10 @@ vim.keymap.set({ "i" }, "<A-BS>", "<C-W>", { silent = true, noremap = true, desc
 vim.keymap.set({ "n", "v", "i" }, "<D-s>", "<CMD>w<CR><Esc>", { silent = true, desc = "Save buffer (CMD+s)" }) -- NOTE: exists to normal mode
 vim.keymap.set({ "n", "v", "i" }, "<D-z>", "<CMD>undo<CR>", { silent = true, desc = "Undo (CMD+Z)" })
 vim.keymap.set({ "n", "v", "i" }, "<S-D-z>", "<CMD>redo<CR>", { silent = true, desc = "Redo (Shift+CMD+z)" })
+
+--vim.keymap.set({ "i" }, "<A-Left>", '<C-O>b', { desc = "TODO", noremap = true })
+--vim.keymap.set({ "i" }, "<A-Right>", "<C-O>w", { desc = "TODO", noremap = true })
+
 
 -- TODO:
 -- ALT+left (word left)
@@ -94,19 +98,19 @@ vim.keymap.set({ "n", "v", "i" }, "<S-D-z>", "<CMD>redo<CR>", { silent = true, d
 -- Autocommands
 -------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("custom-highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+	group = vim.api.nvim_create_augroup("custom-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("custom-inlay-hints", { clear = true }),
-    callback = function()
-        if vim.lsp.inlay_hint then
-            vim.lsp.inlay_hint.enable(true, { 0 })
-        end
-    end,
+	group = vim.api.nvim_create_augroup("custom-inlay-hints", { clear = true }),
+	callback = function()
+		if vim.lsp.inlay_hint then
+			vim.lsp.inlay_hint.enable(true, { 0 })
+		end
+	end,
 })
 
 -------------------------------------------------------------------------------
@@ -114,31 +118,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "--branch=stable", -- latest stable release
-        "https://github.com/folke/lazy.nvim.git",
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"--branch=stable", -- latest stable release
+		"https://github.com/folke/lazy.nvim.git",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = { import = "plugins" },
-    defaults = { lazy = true },
-    install = { missing = true },
-    checker = { enabled = true, notify = true, frequency = 3600 },
-    change_detection = { enabled = true, notify = false },
-    performance = {
-        cache = { enabled = true },
-        reset_packpath = true,
-        rtp = {
-            reset = true,
-            disabled_plugins = {
-                "netrwPlugin"
-            }
-        }
-    },
+	spec = { import = "plugins" },
+	defaults = { lazy = true },
+	install = { missing = true },
+	checker = { enabled = true, notify = true, frequency = 3600 },
+	change_detection = { enabled = true, notify = false },
+	performance = {
+		cache = { enabled = true },
+		reset_packpath = true,
+		rtp = {
+			reset = true,
+			disabled_plugins = {
+				"netrwPlugin"
+			}
+		}
+	},
 })
