@@ -9,7 +9,7 @@ return {
         version = false,
         build = ":TSUpdate",
         event = { "BufReadPre", "BufNewFile" },
-        lazy = vim.fn.argc(-1) == 0, -- NOTE: don't lazy load when opening a file from command line
+        -- lazy = vim.fn.argc(-1) == 0, -- NOTE: don't lazy load when opening a file from command line
         cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
