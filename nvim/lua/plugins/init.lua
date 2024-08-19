@@ -14,10 +14,6 @@ return {
         enabled = false,
     },
     {
-        "rafamadriz/friendly-snippets",
-        enabled = false,
-    },
-    {
         "stevearc/oil.nvim",
         enabled = false,
     },
