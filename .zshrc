@@ -11,6 +11,9 @@ CLICOLOR=1
 #bindkey "" end-of-buffer-or-history
 #bindkey "" end-of-line
 
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 if [ -f $HOME/.aliases ]; then
     source "$HOME/.aliases"
 fi
