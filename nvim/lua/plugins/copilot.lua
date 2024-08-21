@@ -7,12 +7,12 @@ return {
 		cmd   = "Copilot",
 		event = "InsertEnter",
 		opts  = {
-			panel = { enabled = true },
+			panel = { enabled = false },
 			suggestion = {
 				enabled = true,
 				auto_trigger = true,
 				keymap = {
-					accept = "<Tab>"
+					--accept = "<Tab>"
 				}
 			}
 		},
