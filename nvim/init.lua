@@ -1,6 +1,8 @@
 -- TODO:
 -- improve lazy loading: https://lazy.folke.io/spec/lazy_loading
 -- customize "cmp" window(s)?
+-- yaml json schemas: https://www.arthurkoziel.com/json-schemas-in-neovim/
+-- dadbod
 
 -- TODO:
 -- lsp code actions (quick fixes)
@@ -51,6 +53,8 @@ vim.opt.tabstop = 4
 vim.opt.updatetime = 250
 vim.opt.hlsearch = true
 vim.opt.undofile = true
+--vim.opt.splitbelow = false
+--vim.opt.splitright = true
 
 -------------------------------------------------------------------------------
 -- Keymap
@@ -64,7 +68,7 @@ vim.keymap.set({ "i" }, "<leader>jk", "<Esc>", { desc = "Exit insert mode (Space
 vim.keymap.set({ "n", "v", "i" }, "<D-z>", "<CMD>undo<CR>", { silent = true, desc = "Undo (CMD+Z)" })
 vim.keymap.set({ "n", "v", "i" }, "<S-D-z>", "<CMD>redo<CR>", { silent = true, desc = "Redo (Shift+CMD+z)" })
 vim.keymap.set({ "n", "v", "i" }, "<D-s>", "<CMD>w<CR><Esc>", { silent = true, desc = "Save buffer (CMD+s)" }) -- NOTE: exists to normal mode
-vim.keymap.set({ "n" }, "<D-w>", "<CMD>q<CR>", { silent = true, desc = "Close buffer (CMD+w)" })
+vim.keymap.set({ "n" }, "<D-w>", "<CMD>q<CR>", { silent = true, desc = "Close buffer (CMD+w)" })               -- TODO: unbind in insert mode
 vim.keymap.set({ "n" }, "<S-D-w>", "<CMD>q!<CR>", { silent = true, desc = "Force close buffer (Shift+CMD+w)" })
 
 -- Move cursor left/ right one word
@@ -87,9 +91,14 @@ vim.keymap.set({ "n" }, "<D-Down>", "G", { desc = "Jump to end of file (CMD+Down
 
 -- Select lines
 vim.keymap.set({ "n" }, "<S-Up>", "v<Up>", { desc = "Select up (Shift+Up)" })
-vim.keymap.set({ "n" }, "<S-Down>", "v<Down>", { desc = "Select down (Shift+Up)" })
+vim.keymap.set({ "n" }, "<S-Down>", "v<Down>", { desc = "Select down (Shift+Down)" })
 vim.keymap.set({ "v" }, "<S-Up>", "<Up>", { desc = "Select up (Shift+Up)" })
-vim.keymap.set({ "v" }, "<S-Down>", "<Down>", { desc = "Select down (Shift+Up)" })
+vim.keymap.set({ "v" }, "<S-Down>", "<Down>", { desc = "Select down (Shift+Down)" })
+
+--vim.keymap.set({ "n" }, "<S-Left>", "v<Left>", { desc = "Select left (Shift+Left)" })
+--vim.keymap.set({ "n" }, "<S-Right>", "v<Right>", { desc = "Select right (Shift+Right)" })
+--vim.keymap.set({ "v" }, "<S-Left>", "<Left>", { desc = "Select left (Shift+Left)" })
+--vim.keymap.set({ "v" }, "<S-Right>", "<right>", { desc = "Select right (Shift+Right)" })
 
 -- Move lines up/ down
 vim.keymap.set({ "n" }, "<A-Up>", ":m .-2<CR>==", { silent = true, desc = "Move line up (Option+Up)" })
@@ -97,14 +106,20 @@ vim.keymap.set({ "n" }, "<A-Down>", ":m .+1<CR>==", { silent = true, desc = "Mov
 vim.keymap.set({ "v" }, "<A-Up>", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move line up (Option+Up)" })
 vim.keymap.set({ "v" }, "<A-Down>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move line down (Option+Down)" })
 
+-- Duplicate line
+vim.keymap.set({ "n" }, "<S-A-Down>", "<CMD>t.<CR>", { silent = true, desc = "Duplicate line (Shift+Option+Down)" })
+vim.keymap.set({ "i" }, "<S-A-Down>", "<C-O><CMD>t.<CR>", { silent = true, desc = "Duplicate line (Shift+Option+Down)" })
+
 -- Delete words/ lines
 vim.keymap.set({ "i" }, "<A-BS>", "<C-W>", { desc = "Delete word (Option+Backspace)" })
 vim.keymap.set({ "i" }, "<C-U>", "<C-O>d0", { desc = "Delete line (CMD+Backspace)" }) -- NOTE: CMD+Backspace is bound to CTRL+U in alacritty
 
+-- Split window
+vim.keymap.set({ "n" }, "<C-D-Right>", "<CMD>vsplit<CR>", { silent = true, desc = "Split window right (CTRL+CMD+Right)" })
+vim.keymap.set({ "n" }, "<C-D-Down>", "<CMD>split<CR>", { silent = true, desc = "Split window down (CTRL+CMD+Down)" })
+
 -- TODO:
 -- CMD+delete (delete line right)
--- CTRL+CMD+right (split (and move) right)
--- CTRL+CMD+left (split (and move) left)
 -- CMD-k > CMD+c (toggle line/ selection comment)
 -- CMD+d (select matching selection; )
 -- CMD+click (go to definition) :thinking:
@@ -112,7 +127,6 @@ vim.keymap.set({ "i" }, "<C-U>", "<C-O>d0", { desc = "Delete line (CMD+Backspace
 -- CMD+. (code action/ quick fix/ completion?)
 -- CMD+k > CMD+w (close all buffers)
 -- SHIFT + click (select lines between cursor and click)
--- SHIFT+OPTION+Down  (duplicate line)
 
 -------------------------------------------------------------------------------
 -- Autocommands
