@@ -106,27 +106,32 @@ vim.keymap.set({ "i" }, "<C-U>", "<C-O>d0", { desc = "Delete line (CMD+Backspace
 -- CTRL+CMD+right (split (and move) right)
 -- CTRL+CMD+left (split (and move) left)
 -- CMD-k > CMD+c (toggle line/ selection comment)
--- CMD+d (select matching selection)
+-- CMD+d (select matching selection; )
 -- CMD+click (go to definition) :thinking:
 -- <leader>jk > exit insert mode?
+-- CMD+. (code action/ quick fix/ completion?)
+-- CMD+k > CMD+w (close all buffers)
+-- SHIFT + click (select lines between cursor and click)
+-- SHIFT+OPTION+Down  (duplicate line)
 
 -------------------------------------------------------------------------------
 -- Autocommands
 -------------------------------------------------------------------------------
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = vim.api.nvim_create_augroup("custom-highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+	group = vim.api.nvim_create_augroup("custom-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
+-- TODO: is this necessary?
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("custom-inlay-hints", { clear = true }),
-    callback = function()
-        if vim.lsp.inlay_hint then
-            vim.lsp.inlay_hint.enable(true, { 0 })
-        end
-    end,
+	group = vim.api.nvim_create_augroup("custom-inlay-hints", { clear = true }),
+	callback = function()
+		if vim.lsp.inlay_hint then
+			vim.lsp.inlay_hint.enable(true, { 0 })
+		end
+	end,
 })
 
 -------------------------------------------------------------------------------
@@ -134,31 +139,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "--branch=stable", -- latest stable release
-        "https://github.com/folke/lazy.nvim.git",
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"--branch=stable", -- latest stable release
+		"https://github.com/folke/lazy.nvim.git",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = { import = "plugins" },
-    defaults = { lazy = true },
-    install = { missing = true },
-    checker = { enabled = true, notify = true, frequency = 3600 },
-    change_detection = { enabled = true, notify = false },
-    performance = {
-        cache = { enabled = true },
-        reset_packpath = true,
-        rtp = {
-            reset = true,
-            disabled_plugins = {
-                "netrwPlugin"
-            }
-        }
-    },
+	spec = { import = "plugins" },
+	defaults = { lazy = true },
+	install = { missing = true },
+	checker = { enabled = true, notify = true, frequency = 3600 },
+	change_detection = { enabled = true, notify = false },
+	performance = {
+		cache = { enabled = true },
+		reset_packpath = true,
+		rtp = {
+			reset = true,
+			disabled_plugins = {
+				"netrwPlugin"
+			}
+		}
+	},
 })
