@@ -29,6 +29,7 @@ alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gss='git stash save'
+alias lg='lazygit'
 
 # docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"'
