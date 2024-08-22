@@ -1,16 +1,12 @@
 #!/usr/bin/env sh
 
+b64() { echo -n "${1}" | base64; }
+
 # todo: check if zsh
 so() {
     if [ -f $HOME/.zshrc ]; then
         source $HOME/.zshrc
     fi
-}
-
-gbn() {
-	if [[ -d .git ]]; then
-		git checkout -b "$1" && git push -u origin "$1"
-	fi
 }
 
 symlink() {
@@ -31,4 +27,16 @@ gs() {
     if [[ $? != 0 ]];then
         echo; ls $@
     fi
+}
+
+gbn() {
+	if [[ -d .git ]]; then
+		git checkout -b "$1" && git push -u origin "$1"
+	fi
+}
+
+cmtm() {
+	if [[ -d .git ]]; then
+		git commit -m "$1" -m "$2"
+	fi
 }
