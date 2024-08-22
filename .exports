@@ -34,6 +34,9 @@ export HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS=30
 export HOMEBREW_COLOR=1
 export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 
+# 1password ssh
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
 # zsh
 export FPATH="$HOME/.zsh_site_functions:$FPATH"
 
