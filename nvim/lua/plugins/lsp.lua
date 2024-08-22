@@ -10,17 +10,17 @@ return {
 		"someone-stole-my-name/yaml-companion.nvim",
 	},
 	config = function()
-		local lspconfig = require('lspconfig')
+		local lspconfig = require("lspconfig")
 		lspconfig.util.default_config.capabilities = vim.tbl_deep_extend(
-			'force',
+			"force",
 			lspconfig.util.default_config.capabilities,
-			require('cmp_nvim_lsp').default_capabilities()
+			require("cmp_nvim_lsp").default_capabilities()
 		)
 
 		-- TODO: "taplo" - toml language server
 		-- TODO: sqls vs sqlls
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "gopls", "basedpyright", "pyright", "jsonls", "yamlls" },
+			ensure_installed = { "lua_ls", "gopls", "basedpyright", "pyright", "jsonls", "yamlls", "ruff" },
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
@@ -58,22 +58,21 @@ return {
 						settings = {
 							json = {
 								validate = { enable = true },
-								schemas = require("schemastore").json.schemas()
-							}
-						}
+								schemas = require("schemastore").json.schemas(),
+							},
+						},
 					})
 				end,
 				["yamlls"] = function()
 					local cfg = require("yaml-companion").setup({
 						builtin_matchers = {
-							kubernetes = { enabled = true }
+							kubernetes = { enabled = true },
 						},
 						schemas = {
 							{
 								name = "openapi",
-								uri =
-								"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"
-							}
+								uri = "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json",
+							},
 						},
 						lspconfig = {
 							settings = {
@@ -81,16 +80,16 @@ return {
 									validate = true,
 									schemaStore = {
 										enable = false,
-										url = ""
+										url = "",
 									},
-									schemas = require("schemastore").yaml.schemas()
-								}
-							}
-						}
+									schemas = require("schemastore").yaml.schemas(),
+								},
+							},
+						},
 					})
 					require("lspconfig").yamlls.setup(cfg)
 				end,
-			}
+			},
 		})
-	end
+	end,
 }
