@@ -1,7 +1,10 @@
 #!/usr/bin/env zsh
 
+# TODO: brew update
+# TODO: ~/.Brewfile OR HOMEBREW_BUNDLE_FILE_GLOBAL environment variables (use with `brew bundle isntall --global`)
+
 if [[ $1 == "help" ]]; then
-    echo "Usage:"; echo "\tzsh install [home|work]"
+    echo "Usage:"; echo "\tzsh install [symlink|home|work]"
     exit 0
 fi
 
@@ -19,20 +22,22 @@ if ! command -v brew > /dev/null; then
 fi
 
 # install brew dependencies
-if command -v brew > /dev/null; then
-	if ! brew bundle --file Brewfile.rb check > /dev/null; then
-		brew bundle install --no-lock --file Brewfile.rb
-	fi
-	if [[ "$1" == "home" ]]; then
-	   if ! brew bundle --file Brewfile.home.rb check > /dev/null; then
-			brew bundle install --no-lock --file Brewfile.home.rb
-		fi
-	fi
-	if [[ "$1" == "work" ]]; then
-	   if ! brew bundle --file Brewfile.work.rb check > /dev/null; then
-			brew bundle install --no-lock --file Brewfile.work.rb
-		fi
-	fi
+if [[ "$1" != "symlink" ]]; then
+    if command -v brew > /dev/null; then
+    	if ! brew bundle --file Brewfile.rb check > /dev/null; then
+    		brew bundle install --no-lock --file Brewfile.rb
+    	fi
+    	if [[ "$1" == "home" ]]; then
+    	   if ! brew bundle --file Brewfile.home.rb check > /dev/null; then
+    			brew bundle install --no-lock --file Brewfile.home.rb
+    		fi
+    	fi
+    	if [[ "$1" == "work" ]]; then
+    	   if ! brew bundle --file Brewfile.work.rb check > /dev/null; then
+    			brew bundle install --no-lock --file Brewfile.work.rb
+    		fi
+    	fi
+    fi
 fi
 
 # make sure directories exist
