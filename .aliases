@@ -37,9 +37,7 @@ alias dpsp='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}
 
 # podman
 alias pps='podman ps -a'
-alias ppw='podman ps -a -w 1'
 alias ppsw='podman ps -a -w 1'
-alias ppk='podman kube play'
 alias pkp='podman kube play'
 alias pkr='podman kube play --replace'
 alias pkd='podman kube down'
@@ -56,6 +54,12 @@ alias nvi.='nvim .'
 alias neovim='nvim'
 alias neovim.='nvim .'
 
+# macos
+alias plistbuddy="/usr/libexec/PlistBuddy"
 
 # misc
+alias pn='pnpm'
 alias ff='fastfetch'
+alias ip="ipconfig getifaddr en0"
+alias week='date +%V'
+alias gitlab='glab'
