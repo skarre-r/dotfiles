@@ -11,11 +11,11 @@ return {
 	cmd = { "Telescope" },
 	keys = {
 		-- FIX: toggle w/ CMD+p
-		{ "<D-p>",      "<CMD>Telescope find_files<CR>",  mode = { "n", "v", "i" } },
+		{ "<D-p>", "<CMD>Telescope find_files<CR>", mode = { "n", "v", "i" } },
 		-- FIX: only use selection in visual mode
-		{ "<S-D-f>",    "<CMD>Telescope grep_string<CR>", mode = { "n", "i" } },
-		{ "<S-D-f>",    "<CMD>Telescope grep_string<CR>", mode = { "v", } },
-		{ "<leader>gs", "<CMD>Telescope git_status<CR>",  mode = { "n" } },
+		{ "<S-D-f>", "<CMD>Telescope grep_string<CR>", mode = { "n", "i" } },
+		{ "<S-D-f>", "<CMD>Telescope grep_string<CR>", mode = { "v" } },
+		{ "<leader>gs", "<CMD>Telescope git_status<CR>", mode = { "n" } },
 		{ "<leader>gl", "<CMD>Telescope git_commits<CR>", mode = { "n" } },
 	},
 	config = function()
@@ -38,7 +38,7 @@ return {
 			},
 			pickers = {
 				find_files = {
-					hidden = true,
+					hidden = false,
 				},
 				git_status = {
 					mappings = {
