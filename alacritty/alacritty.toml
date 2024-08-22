@@ -3,7 +3,7 @@ import = ["~/.config/alacritty/colors.toml"]
 
 working_directory = "None"
 live_config_reload = true
-ipc_socket = true
+ipc_socket = true          # unix only?
 
 [env]
 ALACRITTY = "1"
@@ -11,7 +11,7 @@ ALACRITTY = "1"
 [window]
 dimensions = { columns = 0, lines = 0 }
 position = "None"
-padding = { x = 16, y = 16 }
+padding = { x = 12, y = 12 }
 dynamic_padding = true
 decorations = "buttonless"
 opacity = 1.0
@@ -61,8 +61,7 @@ osc52 = "OnlyCopy"
 hide_when_typing = false
 bindings = []
 
-[hints]
-enabled = []
+# [hints]
 
 [keyboard]
 bindings = [
