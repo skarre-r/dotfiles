@@ -7,7 +7,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		-- NOTE: toggle file explorer w/ Shift+CMD+e
-		{ "<S-D-e>", "<CMD>NvimTreeToggle<CR>", mode = { "n", "v", "i" } }
+		{ "<S-D-e>", "<CMD>NvimTreeToggle<CR>", mode = { "n", "v", "i" } },
 	},
 	config = function()
 		require("nvim-tree").setup({
@@ -67,6 +67,13 @@ return {
 					},
 				},
 			},
+			actions = {
+				open_file = {
+					window_picker = {
+						enable = false,
+					},
+				},
+			},
 		})
-	end
+	end,
 }
