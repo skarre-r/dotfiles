@@ -26,6 +26,7 @@
 -- telescope find_files: toggle shide/hide hidden files?
 -- "mini" plugins?
 -- telescope: scroll in preview window
+-- oil: quit with escape???
 
 ------------------------------------------------------------------------------
 -- Options
@@ -91,25 +92,26 @@ vim.keymap.set({ "i" }, "<D-Right>", "<C-O>$", { desc = "Jump to end of line (CM
 -- Jump to beginning/ end of file
 vim.keymap.set({ "n" }, "<D-Up>", "gg", { desc = "Jump to beginning of file (CMD+Up)" })
 vim.keymap.set({ "n" }, "<D-Down>", "G", { desc = "Jump to end of file (CMD+Down)" })
-
 vim.keymap.set({ "i" }, "<D-Up>", "<C-O>gg", { desc = "Jump to beginning of file (CMD+Up)" })
 vim.keymap.set({ "i" }, "<D-Down>", "<C-O>G", { desc = "Jump to end of file (CMD+Down)" })
 
--- Select lines
+-- Select lines (normal mode)
 vim.keymap.set({ "n" }, "<S-Up>", "v<Up>", { desc = "Select up (Shift+Up)" })
 vim.keymap.set({ "n" }, "<S-Down>", "v<Down>", { desc = "Select down (Shift+Down)" })
-vim.keymap.set({ "v" }, "<S-Down>", "<Down>", { desc = "Select down (Shift+Down)" })
-vim.keymap.set({ "v" }, "<S-Up>", "<Up>", { desc = "Select up (Shift+Up)" })
-
-vim.keymap.set({ "i" }, "<S-Up>", "<C-O>v<Up>", { desc = "Select up (Shift+Up)" })
-vim.keymap.set({ "i" }, "<S-Down>", "<C-O>v<Down>", { desc = "Select down (Shift+Down)" })
-
 vim.keymap.set({ "n" }, "<S-Left>", "v<Left>", { desc = "Select left (Shift+Left)" })
 vim.keymap.set({ "n" }, "<S-Right>", "v<Right>", { desc = "Select right (Shift+Right)" })
-vim.keymap.set({ "v" }, "<S-Left>", "<Left>", { desc = "Select left (Shift+Left)" })
-vim.keymap.set({ "v" }, "<S-Right>", "<Right>", { desc = "Select right (Shift+Right)" })
-vim.keymap.set({ "v" }, "<S-A-Left>", "b", { desc = "Select left (Shift+Left)" })
-vim.keymap.set({ "v" }, "<S-A-Right>", "w", { desc = "Select right (Shift+Right)" })
+-- Select lines (visual mode)
+vim.keymap.set({ "v" }, "<S-Up>", "<Up>")
+vim.keymap.set({ "v" }, "<S-Down>", "<Down>")
+vim.keymap.set({ "v" }, "<S-Left>", "<Left>")
+vim.keymap.set({ "v" }, "<S-Right>", "<Right>")
+vim.keymap.set({ "v" }, "<S-A-Left>", "b")
+vim.keymap.set({ "v" }, "<S-A-Right>", "w")
+-- Select lines (insert mode)
+vim.keymap.set({ "i" }, "<S-Up>", "<C-O>v<Up>")
+vim.keymap.set({ "i" }, "<S-Down>", "<C-O>v<Down>")
+vim.keymap.set({ "i" }, "<S-Left>", "<C-O>v<Left>")
+vim.keymap.set({ "i" }, "<S-Right>", "<C-O>v<Right>")
 
 -- Move lines up/ down
 vim.keymap.set({ "n" }, "<A-Up>", ":m .-2<CR>==", { silent = true, desc = "Move line up (Option+Up)" })
@@ -147,11 +149,16 @@ vim.keymap.set({ "n" }, "<C-D-Down>", "<CMD>split<CR>", { silent = true, desc = 
 -- TODO:
 -- CMD+delete (delete line right)
 -- CMD-k > CMD+c (toggle line/ selection comment)
--- CMD+d (select matching selection; )
 -- CMD+click (go to definition) :thinking:
 -- CMD+. (code action/ quick fix/ completion?)
 -- CMD+k > CMD+w (close all buffers)
 -- SHIFT + click (select lines between cursor and click)
+-- CMD+c (if selection > copy; if not > select and copy line)
+-- Visual mode: () {} [] <> '' "" `` (wrap selection)
+-- @hover documentation
+-- CMD+d (normal/ insert mode): select word under cursor
+-- CMD+d (visual mode): select next occurrence
+-- Terminal mode keymaps
 
 -------------------------------------------------------------------------------
 -- Autocommands
