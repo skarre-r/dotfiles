@@ -10,12 +10,17 @@ return {
 	},
 	opts = {
 		size = 25,
+		hide_numbers = true,
+		autochdir = false,
+		start_in_insert = true,
+		-- TODO: insert vs terminal mappings :thinking:
+		insert_mappings = true,
+		terminal_mapping = true,
+		persist_mode = false,
 		direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float',
+		auto_scroll = true,
 		float_opts = {
 			border = "curved",
 		},
-		auto_scroll = true,
-		start_in_insert = true,
-		autochdir = false,
 	},
 }
