@@ -1,6 +1,7 @@
 # taps
 tap "homebrew/bundle"
 tap "oven-sh/bun"
+tap "hashicorp/tap"
 
 # brews
 brew "go"
@@ -58,6 +59,7 @@ brew "zsh-autocomplete"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-history-substring-search"
+brew "hashicorp/tap/vault"
 brew "neovim", args: ['HEAD']
 
 # casks
