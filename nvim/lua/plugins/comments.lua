@@ -10,17 +10,17 @@ return {
 			signs = true,
 			keywords = {
 				NOTE = { color = "custom" },
-				DOCS = { color = "custom" }
+				DOCS = { color = "custom" },
 			},
 			merge_keywords = true,
 			highlight = {
 				multiline = true,
-				comments_only = true
+				comments_only = true,
 			},
 			colors = {
-				custom = { "DiagnosticOk" }
-			}
-		}
+				custom = { "DiagnosticOk" },
+			},
+		},
 	},
 	{
 		"folke/ts-comments.nvim",

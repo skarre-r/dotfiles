@@ -4,6 +4,8 @@
 fish/fish_variables
 iterm2/*
 !iterm2/com.googlecode.iterm2.plist
+pypoetry/*
+!pypoetry/config.toml
 zed/*
 !zed/*.json
 Brewfile.lock.json
