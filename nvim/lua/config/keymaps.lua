@@ -32,12 +32,17 @@ vim.keymap.set(
 vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true })
 vim.keymap.set("n", "dd", '"_dd', { noremap = true })
 
--- Undo, Redo, Save, Close
+-- Save
+vim.keymap.set({ "n" }, "<D-s>", "<CMD>silent! update | redraw<CR>", { desc = "Save buffer (CMD+s)" })
+vim.keymap.set({ "i", "x" }, "<D-s>", "<ESC><CMD>silent! update | redraw<CR>", { desc = "Save buffer (CMD+s)" })
+
+-- Close
+vim.keymap.set({ "n" }, "<D-w>", "<CMD>q<CR>", { silent = true, noremap = true, desc = "Close buffer (CMD+w)" })
+vim.keymap.set({ "n" }, "<S-D-w>", "<CMD>q!<CR>", { silent = true, desc = "Force close buffer (Shift+CMD+w)" })
+
+-- Undo, Redo,
 vim.keymap.set({ "n", "v", "i" }, "<D-z>", "<CMD>undo<CR>", { silent = true, desc = "Undo (CMD+Z)" })
 vim.keymap.set({ "n", "v", "i" }, "<S-D-z>", "<CMD>redo<CR>", { silent = true, desc = "Redo (Shift+CMD+z)" })
-vim.keymap.set({ "n", "v", "i" }, "<D-s>", "<CMD>w<CR><Esc>", { silent = true, desc = "Save buffer (CMD+s)" }) -- NOTE: exists to normal mode
-vim.keymap.set({ "n" }, "<D-w>", "<CMD>q<CR>", { silent = true, desc = "Close buffer (CMD+w)" })               -- TODO: unbind in insert mode
-vim.keymap.set({ "n" }, "<S-D-w>", "<CMD>q!<CR>", { silent = true, desc = "Force close buffer (Shift+CMD+w)" })
 
 -- Move cursor left/ right one word
 vim.keymap.set({ "n", "v" }, "<A-Left>", "b", { desc = "Move cursor left (Option+Left)" })
