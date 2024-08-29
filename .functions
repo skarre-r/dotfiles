@@ -40,3 +40,7 @@ cmtm() {
 		git commit -m "$1" -m "$2"
 	fi
 }
+
+dotfiles() {
+    cd $HOME/code/dotfiles
+}
