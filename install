@@ -11,7 +11,7 @@ fi
 home_files=(".aliases" ".bash_profile" ".bashrc" ".editorconfig" ".exports" ".functions" ".gitconfig" ".inputrc" ".profile" ".tmux.conf" ".zprofile" ".zshenv" ".zshrc")
 home_directories=(".ssh")
 config_files=("starship.toml")
-config_directories=("alacritty" "fish" "iterm2" "nvim" "pypoetry" "wezterm" "zed" "zellij")
+config_directories=("alacritty" "fish" "iterm2" "lazygit" "nvim" "pypoetry" "wezterm" "zed" "zellij")
 
 # install brew
 if ! command -v brew > /dev/null; then

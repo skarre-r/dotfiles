@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+gui:
+  mouseEvents: true
+  language: "en"
+  showRandomTip: false
+  nerdFontsVersion: "3"
+  showFileIcons: false
+update:
+  method: "never"
+confirmOnQuit: false
+quitOnTopLevelReturn: true
+disableStartupPopups: true
+notARepository: quit
