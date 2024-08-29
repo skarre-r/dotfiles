@@ -10,14 +10,6 @@ return {
 		enabled = false,
 	},
 	{
-		"RRethy/vim-illuminate",
-		enabled = false,
-	},
-	-- {
-	--     "stevearc/oil.nvim",
-	--     enabled = false,
-	-- },
-	{
 		"iamcco/markdown-preview.nvim",
 		enabled = false,
 	},
