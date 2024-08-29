@@ -3,20 +3,29 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.opt.clipboard = "unnamedplus"
+vim.opt.number = true
+vim.opt.showmode = false
+vim.opt.breakindent = true
+vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.breakindent = true
+vim.opt.signcolumn = "yes"
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.opt.list = true -- show invisible characters
 vim.opt.listchars = { tab = ">  ", trail = "-", nbsp = "+" }
-vim.opt.showmode = true
-vim.opt.termguicolors = true
-vim.opt.number = true
+vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = "yes"
+vim.opt.termguicolors = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
-vim.opt.updatetime = 250
 vim.opt.hlsearch = true
-vim.opt.undofile = true
+vim.opt.virtualedit = "onemore"
+vim.wo.wrap = false
+
+vim.schedule(function()
+    vim.opt.clipboard = "unnamedplus"
+end)
