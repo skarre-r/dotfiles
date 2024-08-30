@@ -37,6 +37,8 @@ vim.opt.shiftwidth       = 4
 vim.opt.tabstop          = 4
 vim.opt.hlsearch         = true
 vim.wo.wrap              = false
+vim.o.laststatus         = 3
+vim.o.cmdheight          = 0
 
 vim.schedule(function()
     vim.opt.clipboard = "unnamedplus"

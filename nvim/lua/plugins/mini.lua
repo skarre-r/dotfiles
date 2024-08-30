@@ -34,7 +34,8 @@ return {
         version = '*',
         event = "VeryLazy",
         config = function()
-            require("mini.statusline").setup({})
+            require("mini.statusline").setup({ set_vim_settings = false })
+
             vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { bg = "#ffd866", fg = "#221f22" })
             vim.api.nvim_set_hl(0, "MiniStatuslineModeInsert", { bg = "#a9dc76", fg = "#221f22" })
             vim.api.nvim_set_hl(0, "MiniStatuslineModeVisual", { bg = "#ab9df2", fg = "#221f22" })
