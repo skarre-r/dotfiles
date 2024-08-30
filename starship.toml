@@ -173,12 +173,13 @@ disabled = true
 
 [kubernetes]
 symbol = "k8s "
-style = "cyan bold"
+format = '[$symbol\[$context()\]]($style) in '
+style = "red bold"
 detect_extensions = []
 detect_files = []
 detect_folders = []
 detect_env_vars = []
-disabled = false       # todo
+disabled = false
 
 [line_break]
 disabled = false
