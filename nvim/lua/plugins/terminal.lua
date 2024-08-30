@@ -4,7 +4,7 @@ return {
     version = "*",
     keys = {
         { "<D-j>",   "<CMD>ToggleTerm<CR>", mode = { "n", "v", "i", "t" } },
-        { "<S-D-j>", "<CMD>ToggleTerm<CR>", mode = { "n", "v", "i", "t" } },
+        -- { "<S-D-j>", "<CMD>ToggleTerm<CR>", mode = { "n", "v", "i", "t" } },
     },
     event = "VeryLazy",
     opts = {
