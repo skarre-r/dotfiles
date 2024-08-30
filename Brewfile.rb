@@ -5,6 +5,7 @@ tap "hashicorp/tap"
 
 # brews
 brew "go"
+brew "ko"
 brew "uv"
 brew "fd"
 brew "fzf"
