@@ -3,8 +3,9 @@ return {
     {
         'echasnovski/mini.notify',
         version = '*',
-        event = "VeryLazy",
-        opts = {}
+        lazy = false,
+        -- event = "VeryLazy",
+        config = true
     },
     {
         "echasnovski/mini.icons",

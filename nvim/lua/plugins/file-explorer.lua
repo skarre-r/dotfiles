@@ -6,7 +6,7 @@ return {
         version = "*",
         lazy = false,
         dependencies = {
-            "nvim-tree/nvim-web-devicons",
+            -- "nvim-tree/nvim-web-devicons",
             { "b0o/nvim-tree-preview.lua", enabled = false, lazy = true, opts = { max_width = 192, max_height = 108 } }
         },
         keys = {
