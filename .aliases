@@ -54,6 +54,10 @@ alias nvi.='nvim .'
 alias neovim='nvim'
 alias neovim.='nvim .'
 
+# tmux
+alias tmux-split-down='tmux split-window'
+alias tmux-split-right='tmux split-window -hf'
+
 # macos
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
