@@ -6,6 +6,7 @@ live_config_reload = true
 ipc_socket = true          # unix only?
 
 [env]
+TERMINAL_EMULATOR = "alacritty"
 ALACRITTY = "1"
 
 [window]

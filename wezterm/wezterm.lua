@@ -7,6 +7,11 @@ config.check_for_updates_interval_seconds = 86400
 config.automatically_reload_config = true
 config.native_macos_fullscreen_mode = false
 config.detect_password_input = true
+config.default_cwd = wezterm.home_dir
+config.set_environment_variables = {
+    TERMINAL_EMULATOR = "wezterm",
+    WEZTERM = "1"
+}
 
 -- font
 config.font = wezterm.font({ family = "JetBrainsMono Nerd Font" })
@@ -116,6 +121,7 @@ config.window_padding = {
 config.quit_when_all_windows_are_closed = false
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE|MACOS_FORCE_ENABLE_SHADOW"
+config.adjust_window_size_when_changing_font_size = false
 
 -- scroll
 config.enable_scroll_bar = false
@@ -135,8 +141,8 @@ config.keys = {
 }
 
 -- multiplexing
-config.unix_domains = { { name = "unix", no_serve_automatically = false } }
-config.default_gui_startup_args = { 'connect', 'unix' }
+config.unix_domains = { { name = "unix", no_serve_automatically = true } }
+config.default_gui_startup_args = { 'connect', 'local' }
 
 -- nightly
 config.show_close_tab_button_in_tabs = false
