@@ -124,13 +124,19 @@ config.scrollback_lines = 3500
 -- keybinds
 config.enable_kitty_keyboard = true
 config.keys = {
-    { mods = "CMD", key = "+",         action = wezterm.action.IncreaseFontSize },
-    { mods = "CMD", key = "-",         action = wezterm.action.DecreaseFontSize },
-    { mods = "CMD", key = "w",         action = wezterm.action.DisableDefaultAssignment },
-    { mods = "CMD", key = "m",         action = wezterm.action.DisableDefaultAssignment },
-    { mods = "CMD", key = "f",         action = wezterm.action.DisableDefaultAssignment },
-    { mods = "CMD", key = "Backspace", action = wezterm.action.SendKey({ mods = "CTRL", key = "u" }) },
+    { mods = "CMD",       key = "+",         action = wezterm.action.IncreaseFontSize },
+    { mods = "CMD",       key = "-",         action = wezterm.action.DecreaseFontSize },
+    { mods = "CMD",       key = "w",         action = wezterm.action.DisableDefaultAssignment },
+    { mods = "CMD",       key = "m",         action = wezterm.action.DisableDefaultAssignment },
+    { mods = "CMD",       key = "f",         action = wezterm.action.DisableDefaultAssignment },
+    { mods = "CMD",       key = "Backspace", action = wezterm.action.SendKey({ mods = "CTRL", key = "u" }) },
+    { mods = "CMD",       key = "d",         action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { mods = "SHIFT|CMD", key = "d",         action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 }
+
+-- multiplexing
+config.unix_domains = { { name = "unix", no_serve_automatically = false } }
+config.default_gui_startup_args = { 'connect', 'unix' }
 
 -- nightly
 config.show_close_tab_button_in_tabs = false
