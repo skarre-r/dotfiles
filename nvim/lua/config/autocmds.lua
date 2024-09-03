@@ -5,7 +5,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
--- TODO: is this necessary?
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("custom-inlay-hints", { clear = true }),
     callback = function()

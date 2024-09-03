@@ -29,7 +29,7 @@ vim.opt.virtualedit      = "onemore"
 vim.opt.termguicolors    = true
 vim.opt.updatetime       = 250
 vim.opt.timeoutlen       = 300
-vim.opt.list             = true --  show invisible characters
+vim.opt.list             = false --  show invisible characters
 vim.opt.listchars        = { tab = ">  ", trail = "-", nbsp = "+" }
 vim.opt.inccommand       = "split"
 vim.opt.scrolloff        = 10

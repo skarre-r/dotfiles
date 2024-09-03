@@ -16,18 +16,15 @@
 -- CMD+l (select line)
 -- Go to definition???
 
+-- stylua: ignore start
+
 vim.keymap.set({ "n" }, "<Esc>", "<CMD>nohlsearch<CR>", { silent = true, desc = "Exit search" })
 vim.keymap.set({ "n", "v" }, "<D-f>", "/", { desc = "Search (CMD+f)" })
 vim.keymap.set({ "n" }, "<S-D-p>", ":", { desc = "Open cmdline (Shift+CMD+p)" })
 vim.keymap.set({ "i" }, "<leader>jk", "<Esc>", { desc = "Exit insert mode (Space+jk)" })
 vim.keymap.set({ "n" }, "<leader>so", "<CMD>source $MYVIMRC<CR>", { silent = true, desc = "Source config (Space+so)" })
 vim.keymap.set({ "n" }, "<leader><space>", "i", { desc = "Enter insert mode (Space+Space)" })
-vim.keymap.set(
-    { "n" },
-    "<leader>kw",
-    "<CMD>bufdo bwipeout<CR>",
-    { silent = true, desc = "Close all buffers (Space+kw)" }
-)
+vim.keymap.set({ "n" }, "<leader>kw", "<CMD>bufdo bwipeout<CR>", { silent = true, desc = "Close all buffers (Space+kw)" })
 
 vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true })
 vim.keymap.set("n", "dd", '"_dd', { noremap = true })
@@ -64,25 +61,27 @@ vim.keymap.set({ "n" }, "<D-Down>", "G", { desc = "Jump to end of file (CMD+Down
 vim.keymap.set({ "i" }, "<D-Up>", "<C-O>gg", { desc = "Jump to beginning of file (CMD+Up)" })
 vim.keymap.set({ "i" }, "<D-Down>", "<C-O>G", { desc = "Jump to end of file (CMD+Down)" })
 
--- Select words/ lines
--- (normal mode)
+-- Select words/ lines (normal mode)
 vim.keymap.set({ "n" }, "<S-Up>", "v<Up>", { desc = "Select up (Shift+Up)" })
 vim.keymap.set({ "n" }, "<S-Down>", "v<Down>", { desc = "Select down (Shift+Down)" })
 vim.keymap.set({ "n" }, "<S-Left>", "v<Left>", { desc = "Select left (Shift+Left)" })
 vim.keymap.set({ "n" }, "<S-Right>", "v<Right>", { desc = "Select right (Shift+Right)" })
--- (visual mode)
+
+-- Select words/ lines (visual mode)
 vim.keymap.set({ "v" }, "<S-Up>", "<Up>")
 vim.keymap.set({ "v" }, "<S-Down>", "<Down>")
 vim.keymap.set({ "v" }, "<S-Left>", "<Left>")
 vim.keymap.set({ "v" }, "<S-Right>", "<Right>")
 vim.keymap.set({ "v" }, "<S-A-Left>", "b")
 vim.keymap.set({ "v" }, "<S-A-Right>", "w")
--- (insert mode)
+
+-- Select words/ lines (insert mode)
 vim.keymap.set({ "i" }, "<S-Up>", "<C-O>v<Up>")
 vim.keymap.set({ "i" }, "<S-Down>", "<C-O>v<Down>")
 vim.keymap.set({ "i" }, "<S-Left>", "<C-O>v<Left>")
 vim.keymap.set({ "i" }, "<S-Right>", "<C-O>v<Right>")
 
+-- Select line
 vim.keymap.set({ "n" }, "<D-l>", "V", { desc = "Select line (CMD+l)" })
 
 -- Move lines up/ down
@@ -92,28 +91,15 @@ vim.keymap.set({ "v" }, "<A-Up>", ":m '<-2<CR>gv=gv", { silent = true, desc = "M
 vim.keymap.set({ "v" }, "<A-Down>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move line down (Option+Down)" })
 
 -- Duplicate line
-vim.keymap.set(
-    { "n", "v" },
-    "<S-A-Down>",
-    "<CMD>t.<CR>",
-    { silent = true, desc = "Duplicate line (Shift+Option+Down)" }
-)
-vim.keymap.set(
-    { "i" },
-    "<S-A-Down>",
-    "<C-O><CMD>t.<CR>",
-    { silent = true, desc = "Duplicate line (Shift+Option+Down)" }
-)
+vim.keymap.set({ "n", "v" }, "<S-A-Down>", "<CMD>t.<CR>", { silent = true, desc = "Duplicate line (Shift+Option+Down)" })
+vim.keymap.set({ "i" }, "<S-A-Down>", "<C-O><CMD>t.<CR>", { silent = true, desc = "Duplicate line (Shift+Option+Down)" })
 
 -- Delete words/ lines
 vim.keymap.set({ "i" }, "<A-BS>", "<C-W>", { desc = "Delete word (Option+Backspace)" })
-vim.keymap.set({ "i" }, "<C-U>", "<C-O>d0", { desc = "Delete line (CMD+Backspace)" }) -- NOTE: CMD+Backspace is bound to CTRL+U in alacritty
+vim.keymap.set({ "i" }, "<C-U>", "<C-O>d0", { desc = "Delete line (CMD+Backspace)" }) -- NOTE: CMD+Backspace is bound to CTRL+U in alacritty/ wezterm
 
 -- Split window
-vim.keymap.set(
-    { "n" },
-    "<C-D-Right>",
-    "<CMD>vsplit<CR>",
-    { silent = true, desc = "Split window right (CTRL+CMD+Right)" }
-)
+vim.keymap.set({ "n" }, "<C-D-Right>", "<CMD>vsplit<CR>", { silent = true, desc = "Split window right (CTRL+CMD+Right)" })
 vim.keymap.set({ "n" }, "<C-D-Down>", "<CMD>split<CR>", { silent = true, desc = "Split window down (CTRL+CMD+Down)" })
+
+-- stylua: ignore end
