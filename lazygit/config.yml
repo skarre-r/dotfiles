@@ -5,6 +5,8 @@ gui:
   showRandomTip: false
   nerdFontsVersion: "3"
   showFileIcons: false
+git:
+  autoFetch: false
 update:
   method: "never"
 confirmOnQuit: false
