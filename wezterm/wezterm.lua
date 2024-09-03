@@ -9,7 +9,6 @@ config.native_macos_fullscreen_mode = false
 config.detect_password_input = true
 
 -- font
--- config.font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium" })
 config.font = wezterm.font({ family = "JetBrainsMono Nerd Font" })
 config.font_rules = {
     {
@@ -35,16 +34,16 @@ config.font_rules = {
     {
         intensity = "Half",
         italic = false,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Light" })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Regular" })
     },
     {
         intensity = "Half",
         italic = true,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Light", italic = true })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Regular", italic = true })
     }
 }
-config.font_size = 14
-config.cell_width = 1.0
+config.font_size = 13
+config.cell_width = 1
 config.line_height = 1.0
 config.bold_brightens_ansi_colors = "BrightAndBold"
 config.freetype_load_flags = "NO_HINTING|NO_AUTOHINT"
@@ -93,9 +92,9 @@ config.cursor_thickness = 1
 
 -- tabs
 config.enable_tab_bar = true
-config.use_fancy_tab_bar = true -- todo
+config.use_fancy_tab_bar = true
 config.show_tabs_in_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
 config.window_frame = {
     font = wezterm.font({ family = "Menlo", weight = "Medium" }),
@@ -111,7 +110,7 @@ config.initial_rows = 24
 config.window_padding = {
     left = 16,
     right = 16,
-    top = 1, -- bc tab bar
+    top = 16, -- TODO: reduce if tab bar is visible
     bottom = 16
 }
 config.quit_when_all_windows_are_closed = false
@@ -122,8 +121,19 @@ config.window_decorations = "RESIZE|MACOS_FORCE_ENABLE_SHADOW"
 config.enable_scroll_bar = false
 config.scrollback_lines = 3500
 
+-- keybinds
+config.enable_kitty_keyboard = true
+config.keys = {
+    { mods = "CMD", key = "+",         action = wezterm.action.IncreaseFontSize },
+    { mods = "CMD", key = "-",         action = wezterm.action.DecreaseFontSize },
+    { mods = "CMD", key = "w",         action = wezterm.action.DisableDefaultAssignment },
+    { mods = "CMD", key = "m",         action = wezterm.action.DisableDefaultAssignment },
+    { mods = "CMD", key = "f",         action = wezterm.action.DisableDefaultAssignment },
+    { mods = "CMD", key = "Backspace", action = wezterm.action.SendKey({ mods = "CTRL", key = "u" }) },
+}
+
 -- nightly
--- config.show_close_tab_button_in_tabs = false
+config.show_close_tab_button_in_tabs = false
 
 
 return config
