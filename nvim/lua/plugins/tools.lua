@@ -27,6 +27,7 @@ return {
                 "goimports",
                 "stylua",
                 "prettier",
+                "prettierd",
             },
             auto_update = true,
             run_on_start = true
@@ -61,10 +62,23 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "ruff" },
-                yaml = { "prettier" },
-                json = { "prettier" },
                 go = { "gofmt", "goimports" },
+                yaml = { "prettierd", "prettier", stop_after_first = true },
+                json = { "prettierd", "prettier", stop_after_first = true },
             },
+            default_format_opts = {
+                timeout_ts = 3000,
+                async = false,
+                quiet = false,
+                lsp_format = "fallback"
+            },
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_format = "fallback"
+            },
+            format_after_save = {
+                lsp_format = "fallback"
+            }
         }
     },
 }
