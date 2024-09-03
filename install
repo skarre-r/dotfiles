@@ -4,7 +4,7 @@
 # TODO: ~/.Brewfile OR HOMEBREW_BUNDLE_FILE_GLOBAL environment variables (use with `brew bundle isntall --global`)
 
 if [[ $1 == "help" ]]; then
-    echo "Usage:"; echo "\tzsh install [symlink|home|work]"
+    echo "Usage:"; echo "\tzsh install [symlink|home|work] [dock]"
     exit 0
 fi
 
@@ -24,6 +24,7 @@ fi
 # install brew dependencies
 if [[ "$1" != "symlink" ]]; then
     if command -v brew > /dev/null; then
+        brew update
     	if ! brew bundle --file Brewfile.rb check > /dev/null; then
     		brew bundle install --no-lock --file Brewfile.rb
     	fi
@@ -74,13 +75,13 @@ fi
 repo="$( cd "$( dirname "$0" )" && pwd )"
 
 symlink_fn() {
-	file_or_folder=$1
-	target_dir=$2
+	local file_or_folder=$1
+	local target_dir=$2
 
-	source="$repo/$file_or_folder"
-	target="$target_dir/$file_or_folder"
+	local source="$repo/$file_or_folder"
+	local target="$target_dir/$file_or_folder"
 
-	source_does_not_exist=0
+	local source_does_not_exist=0
 
 	if [ ! -f $source ]; then
 		if [ ! -d $source ]; then
@@ -132,6 +133,37 @@ done
 if [[ -d "/Applications/iTerm.app" ]]; then
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+fi
+
+# configure dock
+dock_fn() {
+    local app=$1
+    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+}
+
+apps=(
+    "/Applications/Safari.app"
+    "/Applications/Chromium.app"
+    "/Applications/Raindrop.io.app"
+    "/Applications/Proton Mail.app"
+    "/Applications/Obsidian.app"
+    "/Applications/Spotify.app"
+    "/Applications/Reminders.app"
+    "/Applications/Freetube.app"
+    "/Applications/Zed.app"
+    "/Applications/Alacritty.app"
+)
+
+if [[ $2 == "dock" ]]; then
+    if [[ $1 == "home" ]]; then
+        defaults delete com.apple.dock persistent-apps
+        for application ("$apps[@]"); do
+            if [ -d $application ]; then
+                dock_fn $application
+            fi
+        done
+        killall Dock
+    fi
 fi
 
 exit 0
