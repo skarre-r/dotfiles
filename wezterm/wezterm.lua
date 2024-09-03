@@ -14,33 +14,33 @@ config.font_rules = {
     {
         intensity = "Bold",
         italic = false,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold" })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold" }),
     },
     {
         intensity = "Bold",
         italic = true,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold", italic = true })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Bold", italic = true }),
     },
     {
         intensity = "Normal",
         italic = false,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium" })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium" }),
     },
     {
         intensity = "Normal",
         italic = true,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium", italic = true })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium", italic = true }),
     },
     {
         intensity = "Half",
         italic = false,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Regular" })
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Regular" }),
     },
     {
         intensity = "Half",
         italic = true,
-        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Regular", italic = true })
-    }
+        font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Regular", italic = true }),
+    },
 }
 config.font_size = 13
 config.cell_width = 1
@@ -59,35 +59,35 @@ config.front_end = "WebGpu" -- "OpenGL" | "Software" | "WebGpu"
 config.webgpu_force_fallback_adapter = true
 
 -- colors
-config.color_scheme = 'Monokai Pro (Gogh)'
+config.color_scheme = "Monokai Pro (Gogh)"
 config.colors = {
-    foreground = '#f9f9f9',
-    background = '#2c2a2d',
-    selection_bg = '#5a595b',
+    foreground = "#f9f9f9",
+    background = "#2c2a2d",
+    selection_bg = "#5a595b",
     tab_bar = {
-        background = '#2c2a2d',
+        background = "#2c2a2d",
         inactive_tab_edge = "#2c2a2d",
         active_tab = {
             bg_color = "#2c2a2d",
-            fg_color = '#f9f9f9',
+            fg_color = "#f9f9f9",
             intensity = "Bold",
         },
         inactive_tab = {
             bg_color = "#2c2a2d",
-            fg_color = '#717071',
+            fg_color = "#717071",
             intensity = "Half",
         },
         inactive_tab_hover = {
             bg_color = "#2c2a2d",
-            fg_color = '#c0c0c0',
+            fg_color = "#c0c0c0",
             intensity = "Half",
             italic = true,
         },
-    }
+    },
 }
 
 -- cursor
-config.default_cursor_style = 'SteadyBlock'
+config.default_cursor_style = "SteadyBlock"
 config.cursor_thickness = 1
 
 -- tabs
@@ -111,10 +111,10 @@ config.window_padding = {
     left = 16,
     right = 16,
     top = 16, -- TODO: reduce if tab bar is visible
-    bottom = 16
+    bottom = 16,
 }
 config.quit_when_all_windows_are_closed = false
-config.window_close_confirmation = 'NeverPrompt'
+config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE|MACOS_FORCE_ENABLE_SHADOW"
 
 -- scroll
@@ -134,6 +134,5 @@ config.keys = {
 
 -- nightly
 config.show_close_tab_button_in_tabs = false
-
 
 return config

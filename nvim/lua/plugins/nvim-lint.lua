@@ -6,7 +6,7 @@ return {
     config = function()
         local nvim_lint = require("lint")
         nvim_lint.linters_by_ft = {
-            go = { "golangci-lint" },
+            go = { "golangcilint" },
             python = { "ruff" },
             yaml = { "yamllint" },
             json = { "jsonlint" }
