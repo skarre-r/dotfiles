@@ -10,7 +10,9 @@ bindkey "^[[1;3C" forward-word              # Option+Right
 bindkey "^[[1;9D" beginning-of-line         # Command+Left
 bindkey "^[[1;9C" end-of-line               # Command+Right
 bindkey "^[[H" beginning-of-line            # Home
+bindkey "^[[D" beginning-of-line            # ???
 bindkey "^[[F" end-of-line                  # End
+bindkey "^[[C" end-of-line                  # ???
 bindkey "^[[A" history-search-backward      # Up
 bindkey "^[[B" history-search-forward       # Down
 bindkey '^[^?' backward-kill-word           # Option+Backspace
