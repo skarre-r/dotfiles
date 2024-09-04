@@ -52,8 +52,6 @@ config.cell_width = 1
 config.line_height = 1.0
 config.bold_brightens_ansi_colors = "BrightAndBold"
 config.freetype_load_flags = "NO_HINTING|NO_AUTOHINT"
--- config.freetype_load_target = "Light"
--- config.freetype_render_target = "HorizontalLcd"
 config.underline_position = -2
 config.underline_thickness = 1.0 -- does nothing?
 
@@ -102,7 +100,7 @@ config.show_tabs_in_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
 config.window_frame = {
-    font = wezterm.font({ family = "Menlo", weight = "Medium" }),
+    font = wezterm.font({ family = "JetBrainsMono Nerd Font", weight = "Medium" }),
     font_size = 12.0,
     active_titlebar_bg = "#2c2a2d",
     inactive_titlebar_bg = "#2c2a2d",
