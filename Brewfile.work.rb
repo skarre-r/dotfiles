@@ -11,7 +11,9 @@ brew "microsoft/mssql-release/mssql-tools18"
 
 # casks
 cask "slack"
+cask "goland"
 cask "raycast"
 cask "pycharm"
 cask "microsoft-teams"
 cask "firefox-developer-edition"
+
