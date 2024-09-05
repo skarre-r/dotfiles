@@ -181,6 +181,14 @@ config.keys = {
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{ mods = "SHIFT|CMD", key = "d", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	-- {
+	-- 	mods = "CMD",
+	-- 	key = "t",
+	-- 	action = wezterm.action.Multiple({
+	-- 		wezterm.action.SpawnTab("CurrentPaneDomain"),
+	-- 		wezterm.action.EmitEvent("tabs-changed"),
+	-- 	}),
+	-- },
 }
 
 -- multiplexing
@@ -189,5 +197,28 @@ config.default_gui_startup_args = { "connect", "local" }
 
 -- nightly
 config.show_close_tab_button_in_tabs = false
+
+-- wezterm.on("tabs-changed", function(window, pane)
+-- 	local overrides = window:get_config_overrides() or {}
+-- 	local current_window_id = window:window_id()
+-- 	local current_window = wezterm.mux.get_window(current_window_id)
+-- 	local tabs = current_window:tabs()
+-- 	if #tabs > 1 then
+-- 		overrides.window_padding = {
+-- 			left = 16,
+-- 			right = 16,
+-- 			top = 1,
+-- 			bottom = 16,
+-- 		}
+-- 	else
+-- 		overrides.window_padding = {
+-- 			left = 16,
+-- 			right = 16,
+-- 			top = 16,
+-- 			bottom = 16,
+-- 		}
+-- 	end
+-- 	window:set_config_overrides(overrides)
+-- end)
 
 return config
