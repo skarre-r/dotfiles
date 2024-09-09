@@ -6,7 +6,6 @@ brew "glab"
 brew "unixodbc"
 brew "azure-cli"
 brew "openshift-cli"
-brew "openapi-generator"
 brew "microsoft/mssql-release/msodbcsql18"
 brew "microsoft/mssql-release/mssql-tools18"
 
