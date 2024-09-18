@@ -3,6 +3,7 @@ tap "microsoft/mssql-release"
 
 # brews
 brew "glab"
+brew "odo-dev"
 brew "unixodbc"
 brew "azure-cli"
 brew "openshift-cli"
