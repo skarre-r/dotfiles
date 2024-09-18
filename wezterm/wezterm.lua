@@ -189,6 +189,16 @@ config.keys = {
 	-- 		wezterm.action.EmitEvent("tabs-changed"),
 	-- 	}),
 	-- },
+	{
+		key = "LeftArrow",
+		mods = "CMD",
+		action = wezterm.action({ SendString = "\x1bOH" }),
+	},
+	{
+		key = "RightArrow",
+		mods = "CMD",
+		action = wezterm.action({ SendString = "\x1bOF" }),
+	},
 }
 
 -- multiplexing
