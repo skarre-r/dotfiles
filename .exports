@@ -20,6 +20,10 @@ export POETRY_DATA_DIR="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_CACHE_DIR="$XDG_CONFIG_HOME/pypoetry"
 export POETRY_CONFIG_DIR="$XDG_CONFIG_HOME/pypoetry"
 
+# docker/ colima
+export COLIMA_HOME="$XDG_CONFIG_HOME/colima"
+export DOCKER_HOST="unix://$COLIMA_HOME/default/docker.sock"
+
 # kind
 export KIND_EXPERIMENTAL_PROVIDER=podman
 
