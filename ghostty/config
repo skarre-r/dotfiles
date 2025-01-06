@@ -1,40 +1,30 @@
 font-family = "JetBrains Mono"
 font-size = 13
 font-thicken = true
-
 theme = "Monokai Pro"
-
 window-padding-x = 12
 window-padding-y = 10
 window-padding-balance = true
 window-vsync = true
 window-theme = "dark"
-
 clipboard-read = "allow"
 clipboard-write = "allow"
 clipboard-paste-protection = true
-
-shell-integration = "detect"
-shell-integration-features = true
-
-macos-titlebar-style = "tabs"
-macos-auto-secure-input = true
-macos-secure-input-indication = true
-
-macos-window-shadow = true
-macos-icon = "custom-style"
-macos-icon-frame = "plastic"
-macos-icon-ghost-color = "ffffff"
-macos-icon-screen-color = "000000"
-
-bold-is-bright = true
-
-auto-update = "download"
-auto-update-channel = "stable"
-
-keybind = global:shift+super+grave_accent=toggle_quick_terminal
-
 quick-terminal-position = "top"
 quick-terminal-screen = "mouse"
 quick-terminal-animation-duration = 0
 quick-terminal-autohide = false
+shell-integration = "detect"
+shell-integration-features = true
+macos-titlebar-style = "tabs"
+macos-window-shadow = true
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+macos-icon = "official"
+bold-is-bright = true
+auto-update = "download"
+auto-update-channel = "stable"
+
+keybind = global:super+grave_accent=toggle_quick_terminal
+keybind = super+backspace=text:\x15
+keybind = super+w=unbind
