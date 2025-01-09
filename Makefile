@@ -25,6 +25,6 @@ install: install-nix install-nix-darwin
 nix:
 ifdef NIX_INSTALLED
 ifdef NIX_DARWIN_INSTALLED
-	darwin-rebuild switch --flake ${CURDIR}/nix#simple
+	darwin-rebuild switch --flake ${CURDIR}/nix#home
 endif
 endif
