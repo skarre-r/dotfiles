@@ -1,26 +1,21 @@
+.PHONY: install-nix uninstall-nix install-nix-darwin
 
-.PHONY: brew
-brew:
-	brew update
-	brew bundle install --no-lock --file Brewfile.rb
+NIX_INSTALLED := $(shell command -v nix 2> /dev/null)
+NIX_DARWIN_INSTALLED := $(shell command -v darwin-rebuild 2> /dev/null)
 
-.PHONY: home
-home: brew
-	brew bundle install --no-lock --file Brewfile.home.rb
+install-nix:
+ifndef NIX_INSTALLED
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+endif
 
-.PHONY: work
-work: brew
-	brew bundle install --no-lock --file Brewfile.work.rb
+uninstall-nix:
+ifdef NIX_INSTALLED
+	/nix/nix-installer uninstall
+endif
 
-.PHONY: update
-update:
-	brew update
-	brew upgrade
-
-.PHONY: symlinks
-symlinks:
-	@echo "not implemented"
-
-.PHONY: install
-install:
-	@echo "not implemented"
+install-nix-darwin:
+ifdef NIX_INSTALLED
+ifndef NIX_DARWIN_INSTALLED
+	nix run nix-darwin -- switch --flake ${CURDIR}/nix#simple
+endif
+endif
