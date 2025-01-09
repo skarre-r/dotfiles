@@ -108,35 +108,5 @@ for folder ("$config_directories[@]"); do
 	symlink_fn $folder $HOME/.config
 done
 
-# configure dock
-dock_fn() {
-    local app=$1
-    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-}
-
-apps=(
-    "/Applications/Safari.app"
-    "/Applications/Chromium.app"
-    "/Applications/Raindrop.io.app"
-    "/Applications/Proton Mail.app"
-    "/Applications/Obsidian.app"
-    "/Applications/Spotify.app"
-    "/Applications/Reminders.app"
-    "/Applications/Freetube.app"
-    "/Applications/Zed.app"
-    "/Applications/Alacritty.app"
-)
-
-if [[ $2 == "dock" ]]; then
-    if [[ $1 == "home" ]]; then
-        defaults delete com.apple.dock persistent-apps
-        for application ("$apps[@]"); do
-            if [ -d $application ]; then
-                dock_fn $application
-            fi
-        done
-        killall Dock
-    fi
-fi
 
 exit 0
