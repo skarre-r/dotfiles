@@ -16,11 +16,6 @@
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, ... }:
   let
     configuration = { pkgs, ... }: {
-      services.nix-daemon.enable = true;
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =[ pkgs.vim ];
-
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -33,6 +28,16 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      # Enable nix deamon
+      services.nix-daemon.enable = true;
+
+      # Packages
+      environment.systemPackages =[
+        pkgs.vim
+        pkgs.nixd
+        pkgs.nil
+      ];
     };
   in
   {
