@@ -3,8 +3,6 @@
 .ssh/known_hosts*
 .ssh/1Password/config
 fish/fish_variables
-iterm2/*
-!iterm2/com.googlecode.iterm2.plist
 pypoetry/*
 !pypoetry/config.toml
 zed/*

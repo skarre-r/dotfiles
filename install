@@ -50,27 +50,6 @@ if [ ! -d "$HOME/.zsh_site_functions" ]; then
     mkdir "$HOME/.zsh_site_functions"
 fi
 
-# install iterm2 shell integrations
-if [ -d $HOME/.config/iterm2 ]; then
-    if [ -L $HOME/.config/iterm2 ]; then
-        if [ ! -f $HOME/.config/iterm2/.iterm2_shell_integration.bash ]; then
-            echo "installing iterm2 bash integration..."
-            curl -L https://iterm2.com/shell_integration/bash -o $HOME/.config/iterm2/.iterm2_shell_integration.bash
-        fi
-
-        if [ ! -f $HOME/.config/iterm2/.iterm2_shell_integration.fish ]; then
-            echo "installing iterm2 fish integration..."
-            curl -L https://iterm2.com/shell_integration/fish -o $HOME/.config/iterm2/.iterm2_shell_integration.fish
-        fi
-
-        if [ ! -f $HOME/.config/iterm2/.iterm2_shell_integration.zsh ]; then
-            echo "installing iterm2 zsh integration..."
-            curl -L https://iterm2.com/shell_integration/zsh -o $HOME/.config/iterm2/.iterm2_shell_integration.zsh
-        fi
-    fi
-
-fi
-
 # create symlinks
 repo="$( cd "$( dirname "$0" )" && pwd )"
 
@@ -128,12 +107,6 @@ done
 for folder ("$config_directories[@]"); do
 	symlink_fn $folder $HOME/.config
 done
-
-# configure iterm2
-if [[ -d "/Applications/iTerm.app" ]]; then
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
-    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-fi
 
 # configure dock
 dock_fn() {

@@ -29,10 +29,6 @@ if [ -f $HOME/.functions ]; then
     source "$HOME/.functions"
 fi
 
-if [ -f $HOME/.config/iterm2/.iterm2_shell_integration.zsh ]; then
-	source "$HOME/.config/iterm2/.iterm2_shell_integration.zsh"
-fi
-
 if [ -d /opt/homebrew ]; then
 	source "/opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 	source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
