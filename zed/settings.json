@@ -3,6 +3,7 @@
   "auto_update": true,
   "auto_signature_help": true,
   "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 14,
   "confirm_quit": false,
   "tab_bar": {
     "show_nav_history_buttons": false
@@ -36,7 +37,7 @@
     "button": false
   },
   // ---
-  "assistant": { "enabled": false, "version": "1" },
+  "assistant": { "enabled": false, "version": "2" },
   "collaboration_panel": { "button": false },
   "chat_panel": { "button": "never" },
   "features": {
