@@ -16,7 +16,7 @@ endif
 install-nix-darwin:
 ifdef NIX_INSTALLED
 ifndef NIX_DARWIN_INSTALLED
-	nix run nix-darwin -- switch --flake ${CURDIR}/nix#default
+	nix run nix-darwin -- switch --flake ${CURDIR}#default
 endif
 endif
 
@@ -25,20 +25,20 @@ install: install-nix install-nix-darwin
 nix:
 ifdef NIX_INSTALLED
 ifdef NIX_DARWIN_INSTALLED
-	darwin-rebuild switch --flake ${CURDIR}/nix#default
+	darwin-rebuild switch --flake ${CURDIR}#default
 endif
 endif
 
 home:
 ifdef NIX_INSTALLED
 ifdef NIX_DARWIN_INSTALLED
-	darwin-rebuild switch --flake ${CURDIR}/nix#home
+	darwin-rebuild switch --flake ${CURDIR}#home
 endif
 endif
 
 work:
 ifdef NIX_INSTALLED
 ifdef NIX_DARWIN_INSTALLED
-	darwin-rebuild switch --flake ${CURDIR}/nix#work
+	darwin-rebuild switch --flake ${CURDIR}#work
 endif
 endif

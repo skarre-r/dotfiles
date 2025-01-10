@@ -47,5 +47,5 @@ dotfiles() {
 
 drs() {
     if [[ $1 == "" ]]; then hashtag="default"; else hashtag=$1; fi
-    darwin-rebuild switch --flake $HOME/code/dotfiles/nix#$hashtag
+    darwin-rebuild switch --flake $HOME/code/dotfiles#$hashtag
 }

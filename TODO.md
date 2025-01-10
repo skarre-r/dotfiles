@@ -1,5 +1,5 @@
 - [ ] home/ work nix config
 - [ ] replace brewfiles
 - [ ] stow
-- [ ] move flake.nix to repo root
+- [x] move flake.nix to repo root
 - [ ] "git checkout" vs "git switch" and "git restore"

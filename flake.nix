@@ -5,7 +5,9 @@
   description = "nix-darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +21,7 @@
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, ... }:
   let
     darwinConfiguration = { pkgs, ... }: {
+      environment.shells = with pkgs; [ bashInteractive zsh fish nushell ];
       environment.systemPackages = [
         pkgs.vim
         pkgs.nixd
@@ -63,11 +66,9 @@
           enableCompletion = true;
           enableFastSyntaxHighlighting = true;
           enableFzfCompletion = true;
-          # promptInit = "eval $(starship init zsh)";
         };
         fish = {
           enable = true;
-          # promptInit = "starship init fish | source";
         };
       };
 
@@ -87,9 +88,9 @@
         stateVersion = 5;
       };
 
-      users.users.skar = {
-        name = "skar";
+      users.users."skar" = {
         home = "/Users/skar";
+        shell = pkgs.fish; # TODO?
       };
     };
 
@@ -101,7 +102,7 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake /path/to/nix#home
+    # $ darwin-rebuild build --flake /path/to/dotfiles/repo#default
     darwinConfigurations = {
       "default" = nix-darwin.lib.darwinSystem {
         modules = [
