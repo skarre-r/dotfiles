@@ -82,7 +82,7 @@
     };
 
     homeManagerConfiguration = { pkgs, ... }: {
-      home.stateVersion = "24.11";
+      home.stateVersion = "25.05";
       programs.home-manager.enable = true;
       home.packages = with pkgs; [];
     };
@@ -91,7 +91,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake /path/to/nix#home
     darwinConfigurations = {
-      "home" = nix-darwin.lib.darwinSystem {
+      "default" = nix-darwin.lib.darwinSystem {
         modules = [
           darwinConfiguration
           home-manager.darwinModules.home-manager {
@@ -102,6 +102,12 @@
           }
         ];
       };
+    };
+    "home" = nix-darwin.lib.darwinSystem {
+      modules = [];
+    };
+    "work" = nix-darwin.lib.darwinSystem {
+      modules = [];
     };
   };
 }
