@@ -72,22 +72,11 @@ brew "tilt-dev/tap/ctlptl"
 brew "neovim", args: ['HEAD']
 
 # casks
-cask "zed"
 cask "bruno"
-cask "lasso"
-cask "spotify"
 cask "alt-tab"
-cask "obsidian"
 cask "wireshark"
-cask "1password"
 cask "raindropio"
 cask "displaylink"
-cask "proton-mail"
-cask "sublime-text"
-cask "proton-drive"
-cask "betterdisplay"
-cask "wezterm@nightly"
-cask "eloston-chromium"
 
 # fonts
 cask "font-sf-pro"

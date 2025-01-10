@@ -29,7 +29,19 @@
         enable = true;
         taps = [];
         brews = [];
-        casks = [];
+        casks = [
+          "zed"
+          "lasso"  # TODO
+          "spotify"
+          "obsidian"
+          "1password"
+          "proton-mail"
+          "sublime-text"
+          "proton-drive"
+          "betterdisplay"
+          "wezterm@nightly"
+          "eloston-chromium"
+        ];
         masApps = {};
         onActivation = {
           autoUpdate = false;
