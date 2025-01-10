@@ -1,4 +1,4 @@
-.PHONY: install-nix uninstall-nix install-nix-darwin install nix
+.PHONY: install-nix uninstall-nix install-nix-darwin install nix home work
 
 NIX_INSTALLED := $(shell command -v nix 2> /dev/null)
 NIX_DARWIN_INSTALLED := $(shell command -v darwin-rebuild 2> /dev/null)
@@ -16,7 +16,7 @@ endif
 install-nix-darwin:
 ifdef NIX_INSTALLED
 ifndef NIX_DARWIN_INSTALLED
-	nix run nix-darwin -- switch --flake ${CURDIR}/nix#simple
+	nix run nix-darwin -- switch --flake ${CURDIR}/nix#default
 endif
 endif
 
@@ -25,6 +25,20 @@ install: install-nix install-nix-darwin
 nix:
 ifdef NIX_INSTALLED
 ifdef NIX_DARWIN_INSTALLED
+	darwin-rebuild switch --flake ${CURDIR}/nix#default
+endif
+endif
+
+home:
+ifdef NIX_INSTALLED
+ifdef NIX_DARWIN_INSTALLED
 	darwin-rebuild switch --flake ${CURDIR}/nix#home
+endif
+endif
+
+work:
+ifdef NIX_INSTALLED
+ifdef NIX_DARWIN_INSTALLED
+	darwin-rebuild switch --flake ${CURDIR}/nix#work
 endif
 endif
