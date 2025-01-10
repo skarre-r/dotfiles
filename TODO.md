@@ -2,4 +2,4 @@
 - [ ] replace brewfiles
 - [ ] stow
 - [x] move flake.nix to repo root
-- [ ] "git checkout" vs "git switch" and "git restore"
+- [x] "git checkout" vs "git switch" and "git restore"

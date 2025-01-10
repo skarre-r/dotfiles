@@ -1,14 +1,18 @@
 #!/usr/bin/env sh
 
-b64() { echo -n "${1}" | base64; }
+# base64 encode input
+b64() {
+    echo -n "${1}" | base64;
+}
 
-# todo: check if zsh
+# source .zshrc (todo: check if zsh)
 so() {
     if [ -f $HOME/.zshrc ]; then
         source $HOME/.zshrc
     fi
 }
 
+# create symlink
 symlink() {
 	if type gln &>/dev/null; then
 		gln -svT "$1" "$2"
@@ -17,11 +21,7 @@ symlink() {
 	fi
 }
 
-# todo: check for python/ js/ go > run dev command
-dev() {
-    echo "not implemented"
-}
-
+# compact git status (or ls on non-git repo)
 gs() {
     git status -sb
     if [[ $? != 0 ]];then
@@ -29,23 +29,36 @@ gs() {
     fi
 }
 
+# create and push new git branch
 gbn() {
-	if [[ -d .git ]]; then
-		git checkout -b "$1" && git push -u origin "$1"
-	fi
+    if [[ -d .git ]]; then
+        if [[ "$1" != "" ]]; then
+            if [[ "$2" != "" ]]; then remote="$2"; else remote="origin"; fi
+            git switch --create "$1"
+            git push -u "$remote" "$1"
+        fi
+    fi
 }
 
+# git commit with "message"
 cmtm() {
 	if [[ -d .git ]]; then
 		git commit -m "$1" -m "$2"
 	fi
 }
 
+# open dotfiles repo
 dotfiles() {
     cd $HOME/code/dotfiles
 }
 
+# "darwin-rebuild switch" shortcut
 drs() {
     if [[ $1 == "" ]]; then hashtag="default"; else hashtag=$1; fi
     darwin-rebuild switch --flake $HOME/code/dotfiles#$hashtag
+}
+
+# todo: check for python/ js/ go > run dev command
+dev() {
+    echo "not implemented"
 }
