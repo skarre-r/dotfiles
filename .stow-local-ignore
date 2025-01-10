@@ -1,8 +1,15 @@
+.ignore
+.git
 .gitignore
 .luarc.json
+.stow-local-ignore
 Brewfile.rb
 Brewfile.home.rb
 Brewfile.work.rb
+flake.lock
+flake.nix
 install
 Makefile
+README.md
 stylua.toml
+TODO.md
