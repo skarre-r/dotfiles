@@ -1,0 +1,3 @@
+- [ ] home/ work nix config
+- [ ] replace brewfiles
+- [ ] stow

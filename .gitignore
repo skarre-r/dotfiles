@@ -8,4 +8,3 @@ pypoetry/*
 zed/*
 !zed/*.json
 Brewfile.lock.json
-TODO.md
