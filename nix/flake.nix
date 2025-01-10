@@ -63,11 +63,11 @@
           enableCompletion = true;
           enableFastSyntaxHighlighting = true;
           enableFzfCompletion = true;
-          promptInit = "eval $(starship init zsh)";  # TODO
+          # promptInit = "eval $(starship init zsh)";
         };
         fish = {
           enable = true;
-          promptInit = "starship init fish | source";  # TODO
+          # promptInit = "starship init fish | source";
         };
       };
 
