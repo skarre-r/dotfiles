@@ -209,7 +209,8 @@ disabled = true
 disabled = true
 
 [nix_shell]
-disabled = true
+symbol = "nix "
+disabled = false
 
 [nodejs]
 symbol = "node "
@@ -278,11 +279,12 @@ disabled = true
 
 [shell]
 bash_indicator = "bash"
-zsh_indicator = "zsh"
 fish_indicator = "fish"
+zsh_indicator = "zsh"
+nu_indicator = "nu"
 unknown_indicator = ""
-style = "white bold"
-disabled = true
+style = "dimmed bold"
+disabled = false
 
 [shlvl]
 disabled = true
