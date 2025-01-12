@@ -22,10 +22,20 @@
   let
     darwinConfiguration = { pkgs, ... }: {
       environment.shells = with pkgs; [ bashInteractive zsh fish nushell ];
-      environment.systemPackages = [
-        pkgs.vim
-        pkgs.nixd
-        pkgs.nil
+      environment.systemPackages = with pkgs; [
+        git
+        vim
+        zsh
+        nil
+        nixd
+        fish
+        stow
+        neovim
+        lazygit
+        starship
+        fastfetch
+        sketchybar
+        jankyborders
       ];
 
       homebrew = {
@@ -34,13 +44,14 @@
         brews = [];
         casks = [
           "zed"
-          "lasso"  # TODO
+          "ghostty"
           "spotify"
           "obsidian"
           "1password"
           "proton-mail"
           "sublime-text"
           "proton-drive"
+          "rectangle-pro"
           "betterdisplay"
           "wezterm@nightly"
           "eloston-chromium"
@@ -74,6 +85,14 @@
 
       services = {
         nix-daemon.enable = true;
+        jankyborders = {
+          enable = false;
+          hidpi = true;
+          width = 2.0;
+        };
+        sketchybar = {
+          enable = false;
+        };
       };
 
       # Enable touch id sudo
@@ -97,7 +116,7 @@
     homeManagerConfiguration = { pkgs, ... }: {
       home.stateVersion = "25.05";
       programs.home-manager.enable = true;
-      home.packages = with pkgs; [];
+      home.packages = [];
     };
   in
   {
