@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   environment.packages = with pkgs; [
     odo
@@ -9,23 +9,20 @@
     azure-cli
   ];
 
-  homebrew = {
-    taps = [
-      "microsoft/mssql-release"
-    ];
-    brews = [
-      "microsoft/mssql-release/msodbcsql18"
-      "microsoft/mssql-release/mssql-tools18"
-    ];
-    casks = [
-      "slack"
-      "bruno"
-      "goland"
-      "raycast"
-      "pycharm"
-      "displaylink"
-      "microsoft-teams"
-      "firefox-developer-edition"
-    ];
-  };
+  homebrew.taps = [ "microsoft/mssql-release" ];
+  homebrew.brews = [
+    "microsoft/mssql-release/msodbcsql18"
+    "microsoft/mssql-release/mssql-tools18"
+  ];
+  homebrew.casks = [
+    "slack"
+    "bruno"
+    "goland"
+    "raycast"
+    "pycharm"
+    "displaylink"
+    "microsoft-teams"
+    "firefox-developer-edition"
+  ];
+  homebrew.onActivation.cleanup = "none";
 }

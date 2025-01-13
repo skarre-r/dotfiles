@@ -18,41 +18,49 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, ... }:
-  let
-    nixpkgsModule = {
-      nixpkgs.hostPlatform = "aarch64-darwin";
-      nixpkgs.config.allowUnfree = true;
-    };
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+      ...
+    }:
+    let
+      nixpkgsModule = {
+        nixpkgs.hostPlatform = "aarch64-darwin";
+        nixpkgs.config.allowUnfree = true;
+      };
 
-    sharedModules = [
-      nixpkgsModule
-      home-manager.darwinModules.home-manager {
-        home-manager = {
+      sharedModules = [
+        nixpkgsModule
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             verbose = true;
             users.skar = {
-                home.stateVersion = "25.05";
-                programs.home-manager.enable = true;
-                home.packages = [];
+              home.stateVersion = "25.05";
+              programs.home-manager.enable = true;
+              home.packages = [ ];
             };
+          };
+        }
+        ./nix/base.nix
+      ];
+      specialArgs = { inherit inputs; };
+    in
+    {
+      darwinConfigurations = {
+        "home" = nix-darwin.lib.darwinSystem {
+          modules = sharedModules ++ [ ./nix/home.nix ];
+          specialArgs = specialArgs;
         };
-      }
-      ./nix/base.nix
-    ];
-    specialArgs = { inherit inputs; };
-  in
-  {
-    darwinConfigurations = {
-      "home" = nix-darwin.lib.darwinSystem {
-        modules = sharedModules ++ [ ./nix/home.nix ];
-        specialArgs = specialArgs;
-      };
-      "work" = nix-darwin.lib.darwinSystem {
-        modules = sharedModules ++ [ ./nix/work.nix ];
-        specialArgs = specialArgs;
+        "work" = nix-darwin.lib.darwinSystem {
+          modules = sharedModules ++ [ ./nix/work.nix ];
+          specialArgs = specialArgs;
+        };
       };
     };
-  };
 }
