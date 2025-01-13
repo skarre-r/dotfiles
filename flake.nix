@@ -27,13 +27,13 @@
       ...
     }:
     let
-      nixpkgsModule = {
-        nixpkgs.hostPlatform = "aarch64-darwin";
-        nixpkgs.config.allowUnfree = true;
-      };
-
       sharedModules = [
-        nixpkgsModule
+        # nixpkgs
+        {
+          nixpkgs.hostPlatform = "aarch64-darwin";
+          nixpkgs.config.allowUnfree = true;
+        }
+        # home-manager
         home-manager.darwinModules.home-manager
         {
           home-manager = {
@@ -47,8 +47,10 @@
             };
           };
         }
+        # base module
         ./nix/base.nix
       ];
+
       specialArgs = { inherit inputs; };
     in
     {
