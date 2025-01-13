@@ -21,8 +21,22 @@
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, ... }:
   let
     darwinConfiguration = { pkgs, ... }: {
+      nixpkgs.config.allowUnfree = true;
+
       environment.shells = with pkgs; [ bashInteractive zsh fish nushell ];
       environment.systemPackages = with pkgs; [
+        go
+        ko
+        uv
+        fd
+        fzf
+        bat
+        rye
+        gcc
+        lua
+        mas
+        k9s
+        bun
         git
         vim
         zsh
@@ -30,18 +44,60 @@
         nixd
         fish
         stow
+        argo
+        llvm
+        sops
+        bash
+        curl
+        wget
+        tmux
+        tilt
+        kind
+        #helm
+        pnpm
+        deno
+        gopls
+        cmake
+        unzip
+        pyenv
+        #vault
+        poetry
+        docker
+        ctlptl
+        podman
+        colima
+        zellij
+        nodejs
+        argocd
         neovim
+        sshpass
+        ripgrep
+        chezmoi
+        ansible
+        gnumake
         lazygit
+        kubectl
+        luarocks
+        opentofu
+        helmfile
         starship
+        coreutils
         fastfetch
+        pre-commit
+        python312
         sketchybar
+        kube-linter
         jankyborders
+        docker-buildx
+        golangci-lint
       ];
 
       homebrew = {
         enable = true;
         taps = [];
-        brews = [];
+        brews = [
+          "helm" # nixpkgs version doesn't work on mac
+        ];
         casks = [
           "zed"
           "ghostty"
@@ -56,7 +112,15 @@
           "wezterm@nightly"
           "eloston-chromium"
         ];
-        masApps = {};
+        masApps = {
+          "Noir" = 1592917505;
+          "Wipr 2" = 1662217862;
+          "The Unarchiver" = 425424353;
+          "1Password for Safari" = 1569813296;
+          # TODO: numbers, xcode, etc.
+          # "rcmd" = 1596283165;
+          # "QuickShade" = 931571202;
+        };
         onActivation = {
           autoUpdate = false;
           cleanup = "none";  # TODO: "uninstall" or "zap"
