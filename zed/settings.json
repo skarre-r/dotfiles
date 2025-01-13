@@ -15,7 +15,15 @@
   },
   "enable_language_server": true,
   "ensure_final_newline_on_save": true,
-  "lsp": {},
+  "lsp": {
+    "nil": {
+      "initialization_options": {
+        "formatting": {
+          "command": ["nixfmt"]
+        }
+      }
+    }
+  },
   "format_on_save": "on",
   "formatter": "auto",
   "use_autoclose": true,
@@ -41,14 +49,16 @@
     "button": false
   },
   // ---
-  "assistant": { "enabled": false, "version": "2" },
+  "assistant": {
+    "enabled": true,
+    "version": "2",
+    "button": true,
+    "default_model": { "provider": "copilot_chat", "model": "gpt-4o" }
+  },
   "collaboration_panel": { "button": false },
   "chat_panel": { "button": "never" },
   "features": {
     "copilot": true,
     "inline_completion_provider": "copilot"
-  },
-  "prettier": {
-    "allowed": true
   }
 }
