@@ -31,7 +31,7 @@ fi
 
 
 if [ -d /opt/homebrew ]; then
-    if ! command -v brew 2> /dev/null
+    if ! command -v brew > /dev/null
     then
         eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
