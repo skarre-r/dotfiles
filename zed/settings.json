@@ -24,7 +24,11 @@
   "inlay_hints": {
     "enabled": true
   },
-  "languages": {},
+  "languages": {
+    "Ruby": {
+      "enable_language_server": false
+    }
+  },
   "remove_trailing_whitespace_on_save": true,
   "show_call_status_icon": false,
   "show_user_picture": false,
