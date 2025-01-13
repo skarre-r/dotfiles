@@ -111,16 +111,24 @@
         stateVersion = 5;
       };
 
+      users.knownUsers = [ "skar" ];
       users.users."skar" = {
+        uid = 501;  # default uid
         home = "/Users/skar";
-        shell = pkgs.fish; # TODO?
+        shell = pkgs.zsh;
       };
     };
 
     homeManagerConfiguration = { pkgs, ... }: {
       home.stateVersion = "25.05";
-      programs.home-manager.enable = true;
-      home.packages = [];
+      programs = {
+        home-manager.enable = true;
+        # TODO conflicts with dotfiles
+        fish.enable = false;
+        zsh.enable = false;
+        nushell.enable = false;
+      };
+      home.packages = with pkgs; [];
     };
   in
   {
