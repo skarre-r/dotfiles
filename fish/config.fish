@@ -15,7 +15,9 @@ starship init fish | source
 enable_transience
 
 # init fzf
-fzf --fish | source
+if command -v fzf > /dev/null
+    fzf --fish | source
+end
 
 # source shell aliases
 if test -e $HOME/.aliases
