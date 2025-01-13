@@ -29,7 +29,12 @@ if [ -f $HOME/.functions ]; then
     source "$HOME/.functions"
 fi
 
+
 if [ -d /opt/homebrew ]; then
+    if ! command -v brew 2> /dev/null
+    then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
 	source "/opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 	source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 	source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
