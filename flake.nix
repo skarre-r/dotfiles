@@ -86,9 +86,12 @@
       services = {
         nix-daemon.enable = true;
         jankyborders = {
-          enable = false;
+          enable = true;
           hidpi = true;
-          width = 2.0;
+          width = 5.0;
+          blur_radius = 0.5;
+          active_color = "0xE5FFFFFF";
+          inactive_color = "0x3FFFFFFF";
         };
         sketchybar = {
           enable = false;
