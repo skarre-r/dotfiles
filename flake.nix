@@ -92,6 +92,7 @@
           blur_radius = 0.0;
           active_color = "0xE5FFFFFF";
           inactive_color = "0x3FFFFFFF";
+          blacklist = [ "pycharm" ];
         };
         sketchybar = {
           enable = false;
