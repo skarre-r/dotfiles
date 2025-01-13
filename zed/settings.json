@@ -47,5 +47,8 @@
   "features": {
     "copilot": true,
     "inline_completion_provider": "copilot"
+  },
+  "prettier": {
+    "allowed": true
   }
 }
