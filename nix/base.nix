@@ -23,6 +23,7 @@
     deno
     docker
     docker-buildx
+    docker-compose
     fd
     fish
     fastfetch
@@ -41,6 +42,7 @@
     ko
     kubectl
     kube-linter
+    kustomize
     lazygit
     lua
     lua-language-server
@@ -62,6 +64,7 @@
     ripgrep
     rye
     sketchybar
+    shellcheck
     sops
     sshpass
     starship
@@ -72,6 +75,7 @@
     uv
     vim
     wget
+    yaml-language-server
     zellij
     zsh
   ];
@@ -84,7 +88,9 @@
   ];
 
   homebrew.enable = true;
-  homebrew.brews = [ "helm" ];
+  homebrew.brews = [
+    "helm" # the nixpkgs version doesn't support macOS
+  ];
   homebrew.casks = [
     "zed"
     "ghostty"
