@@ -1,74 +1,13 @@
 #!/usr/bin/env zsh
 
-# TODO: brew update
-# TODO: ~/.Brewfile OR HOMEBREW_BUNDLE_FILE_GLOBAL environment variables (use with `brew bundle isntall --global`)
-
-if [[ $1 == "help" ]]; then
-    echo "Usage:"; echo "\tzsh install [symlink|home|work] [dock]"
-    exit 0
-fi
-
 home_files=(".aliases" ".bash_profile" ".bashrc" ".editorconfig" ".exports" ".functions" ".gitconfig" ".inputrc" ".profile" ".tmux.conf" ".zprofile" ".zshenv" ".zshrc")
 home_directories=(".ssh")
 config_files=("starship.toml")
 config_directories=("fish" "ghostty" "lazygit" "nvim" "pypoetry" "wezterm" "zed" "zellij")
 
-# install brew
-if ! command -v brew > /dev/null; then
-	echo "installing brew...";
-	bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	echo "brew installed; run install again to continue";
-	exit 0
-fi
-
-# install brew dependencies
-if [[ "$1" != "symlink" ]]; then
-    if command -v brew > /dev/null; then
-        brew update
-    	if ! brew bundle --file Brewfile.rb check > /dev/null; then
-    		brew bundle install --no-lock --file Brewfile.rb
-    	fi
-    	if [[ "$1" == "home" ]]; then
-    	   if ! brew bundle --file Brewfile.home.rb check > /dev/null; then
-    			brew bundle install --no-lock --file Brewfile.home.rb
-    		fi
-    	fi
-    	if [[ "$1" == "work" ]]; then
-    	   if ! brew bundle --file Brewfile.work.rb check > /dev/null; then
-    			brew bundle install --no-lock --file Brewfile.work.rb
-    		fi
-    	fi
-    fi
-fi
-
 # make sure directories exist
 if [ ! -d "$HOME/.config" ]; then
     mkdir "$HOME/.config"
-fi
-
-if [ ! -d "$HOME/.zsh_site_functions" ]; then
-    mkdir "$HOME/.zsh_site_functions"
-fi
-
-# install iterm2 shell integrations
-if [ -d $HOME/.config/iterm2 ]; then
-    if [ -L $HOME/.config/iterm2 ]; then
-        if [ ! -f $HOME/.config/iterm2/.iterm2_shell_integration.bash ]; then
-            echo "installing iterm2 bash integration..."
-            curl -L https://iterm2.com/shell_integration/bash -o $HOME/.config/iterm2/.iterm2_shell_integration.bash
-        fi
-
-        if [ ! -f $HOME/.config/iterm2/.iterm2_shell_integration.fish ]; then
-            echo "installing iterm2 fish integration..."
-            curl -L https://iterm2.com/shell_integration/fish -o $HOME/.config/iterm2/.iterm2_shell_integration.fish
-        fi
-
-        if [ ! -f $HOME/.config/iterm2/.iterm2_shell_integration.zsh ]; then
-            echo "installing iterm2 zsh integration..."
-            curl -L https://iterm2.com/shell_integration/zsh -o $HOME/.config/iterm2/.iterm2_shell_integration.zsh
-        fi
-    fi
-
 fi
 
 # create symlinks
@@ -129,41 +68,5 @@ for folder ("$config_directories[@]"); do
 	symlink_fn $folder $HOME/.config
 done
 
-# configure iterm2
-if [[ -d "/Applications/iTerm.app" ]]; then
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.config/iterm2"
-    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-fi
-
-# configure dock
-dock_fn() {
-    local app=$1
-    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-}
-
-apps=(
-    "/Applications/Safari.app"
-    "/Applications/Chromium.app"
-    "/Applications/Raindrop.io.app"
-    "/Applications/Proton Mail.app"
-    "/Applications/Obsidian.app"
-    "/Applications/Spotify.app"
-    "/Applications/Reminders.app"
-    "/Applications/Freetube.app"
-    "/Applications/Zed.app"
-    "/Applications/Alacritty.app"
-)
-
-if [[ $2 == "dock" ]]; then
-    if [[ $1 == "home" ]]; then
-        defaults delete com.apple.dock persistent-apps
-        for application ("$apps[@]"); do
-            if [ -d $application ]; then
-                dock_fn $application
-            fi
-        done
-        killall Dock
-    fi
-fi
 
 exit 0

@@ -33,6 +33,6 @@ bold-is-bright = true
 auto-update = "download"
 auto-update-channel = "stable"
 
-keybind = global:super+grave_accent=toggle_quick_terminal
+keybind = global:shift+super+period=toggle_quick_terminal
 keybind = super+backspace=text:\x15
 keybind = super+w=unbind
