@@ -9,3 +9,7 @@ make home
 # or
 make work
 ```
+
+```shell
+make stow
+```

@@ -1,4 +1,4 @@
-.PHONY: install-nix uninstall-nix install-nix-darwin install home work
+.PHONY: install-nix uninstall-nix install-nix-darwin install uninstall home work stow delete restow
 
 NIX_INSTALLED := $(shell command -v nix 2> /dev/null)
 NIX_DARWIN_INSTALLED := $(shell command -v darwin-rebuild 2> /dev/null)
@@ -21,6 +21,7 @@ endif
 endif
 
 install: install-nix install-nix-darwin
+uninstall: uninstall-nix
 
 home:
 ifdef NIX_INSTALLED
@@ -35,3 +36,12 @@ ifdef NIX_DARWIN_INSTALLED
 	darwin-rebuild switch --flake ${CURDIR}#work
 endif
 endif
+
+stow:
+	stow --target=${HOME} --stow .
+
+delete:
+	stow --target=${HOME} --delete .
+
+restow:
+	stow --target=${HOME} --restow .
