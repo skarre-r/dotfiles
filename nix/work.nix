@@ -26,6 +26,8 @@
   ];
   homebrew.onActivation.cleanup = "none";
 
+  services.jankyborders.hidpi = lib.mkForce false;
+
   system.defaults.dock.appswitcher-all-displays = lib.mkForce true;
   system.defaults.dock.persistent-apps = null;
   system.defaults.dock.persistent-others = null;

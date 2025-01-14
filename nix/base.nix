@@ -138,9 +138,14 @@
   };
 
   services.nix-daemon.enable = true;
-  services.sketchybar.enable = false;
+  services.aerospace = {
+    enable = false;
+    package = pkgs.aerospace;
+  };
+  services.cachix-agent.enable = false; # TODO
   services.jankyborders = {
     enable = true;
+    package = pkgs.jankyborders;
     hidpi = true;
     width = 5.0;
     blur_radius = 0.0;
@@ -150,6 +155,10 @@
       "pycharm"
       "goland"
     ];
+  };
+  services.sketchybar = {
+    enable = true;
+    package = pkgs.sketchybar;
   };
 
   # Enable touch id sudo
