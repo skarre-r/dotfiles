@@ -23,3 +23,8 @@ end
 if test -e $HOME/.aliases
     source $HOME/.aliases
 end
+
+# source environment variables
+if test -e $HOME/.exports
+    source $HOME/.exports
+end
