@@ -3,7 +3,7 @@
 - [x] home/ work nix config
 - [x] replace brewfiles
 - [x] nix (darwin) system defaults (macOS settings)
-  - [ ] show menu bar/ dock on all displays
+  - [x] show menu bar/ dock on all displays
 - [x] stow
 - [ ] fish functions
 - [ ] change login shell to fish

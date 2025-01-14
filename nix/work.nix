@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   environment.systemPackages = with pkgs; [
     odo
@@ -25,4 +25,9 @@
     "firefox@developer-edition"
   ];
   homebrew.onActivation.cleanup = "none";
+
+  system.defaults.dock.appswitcher-all-displays = lib.mkForce true;
+  system.defaults.dock.persistent-apps = null;
+  system.defaults.dock.persistent-others = null;
+  system.defaults.paces.spans-displays = lib.mkForce true;
 }
