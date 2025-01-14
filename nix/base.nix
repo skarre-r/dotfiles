@@ -112,7 +112,6 @@
     "proton-drive"
     "betterdisplay"
     "rectangle-pro"
-    "betterdisplay"
     "eloston-chromium"
   ];
   homebrew.masApps = {
