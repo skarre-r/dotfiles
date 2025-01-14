@@ -40,6 +40,7 @@
     helmfile
     helix
     jankyborders
+    just
     jq
     k9s
     kind
