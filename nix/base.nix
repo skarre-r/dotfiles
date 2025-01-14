@@ -98,6 +98,7 @@
   ];
   homebrew.casks = [
     "zed"
+    "maccy"
     "ghostty"
     "wezterm"
     "spotify"
@@ -105,6 +106,7 @@
     "alt-tab"
     "obsidian"
     "1password"
+    "hammerspoon"
     "proton-mail"
     "sublime-text"
     "proton-drive"
