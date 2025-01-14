@@ -177,8 +177,6 @@
       mineffect = "scale";
       minimize-to-application = true;
       mouse-over-hilite-stack = true;
-      persistent-apps = null; # TODO
-      persistent-others = null;
       show-process-indicators = true;
       show-recents = false;
       showhidden = true;
@@ -260,7 +258,6 @@
       TrackpadThreeFingerDrag = false;
       TrackpadThreeFingerTapGesture = 0;
     };
-    universalaccess.reduceMotion = false;
   };
 
   users.knownUsers = [ "skar" ];
