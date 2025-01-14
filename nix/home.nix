@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    yt-dlp
+  ];
+
   homebrew.casks = [
     "iina"
     "calibre"
