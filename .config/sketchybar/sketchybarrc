@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+sketchybar --bar height=32        \
+                 blur_radius=30   \
+                 position=top     \
+                 sticky=on        \
+                 padding_left=10  \
+                 padding_right=10 \
+                 color=0x15ffffff \
+                 topmost=on       \
+                 hidden=off
