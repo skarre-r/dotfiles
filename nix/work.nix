@@ -22,7 +22,7 @@
     "pycharm"
     "displaylink"
     "microsoft-teams"
-    "firefox-developer-edition"
+    "firefox@developer-edition"
   ];
   homebrew.onActivation.cleanup = "none";
 }
