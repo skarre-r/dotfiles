@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     odo
     glab
     vault
-    unixodbc
+    unixODBC
     openshift
     azure-cli
   ];
@@ -18,6 +18,7 @@
     "slack"
     "bruno"
     "goland"
+    "alt-tab"
     "raycast"
     "pycharm"
     "displaylink"
