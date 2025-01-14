@@ -31,6 +31,7 @@
     fastfetch
     fzf
     gcc
+    gh
     git
     golangci-lint
     go
