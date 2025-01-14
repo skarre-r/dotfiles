@@ -51,7 +51,6 @@
     luarocks
     llvm
     mas
-    neovide
     neovim
     nil
     nixd
@@ -100,6 +99,7 @@
     "ghostty"
     "wezterm"
     "spotify"
+    "neovide"
     "obsidian"
     "1password"
     "proton-mail"
