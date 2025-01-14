@@ -1,6 +1,7 @@
 **/.DS_Store
 .config/fish/*
 !.config/fish/config.fish
+!.config/fish/functions
 .config/pypoetry/*
 !.config/pypoetry/config.toml
 .config/zed/*

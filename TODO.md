@@ -5,7 +5,7 @@
 - [x] nix (darwin) system defaults (macOS settings)
   - [x] show menu bar/ dock on all displays
 - [x] stow
-- [ ] fish functions
+- [x] fish functions
 - [ ] change login shell to fish
 - [ ] remove unnecessary shell dotfiles?
 - [ ] remove brew "shellenv" init in shell dotfiles
