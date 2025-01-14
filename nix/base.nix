@@ -59,6 +59,7 @@
     nixd
     nixfmt-rfc-style
     nodejs
+    nushell
     opentofu
     pnpm
     poetry
