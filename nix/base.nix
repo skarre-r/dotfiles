@@ -264,6 +264,6 @@
   users.users."skar" = {
     uid = 501; # default uid
     home = "/Users/skar";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 }

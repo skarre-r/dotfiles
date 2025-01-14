@@ -6,9 +6,9 @@
   - [x] show menu bar/ dock on all displays
 - [x] stow
 - [x] fish functions
-- [ ] change login shell to fish
+- [x] change login shell to fish
 - [ ] remove unnecessary shell dotfiles?
-- [ ] remove brew "shellenv" init in shell dotfiles
+- [ ] remove brew "shellenv" init in shell dotfiles?
 - [ ] nix (home-manager) program settings
 - [ ] nix caching? (cachix, etc.)
 - [ ] enable/ configure sketchybar
