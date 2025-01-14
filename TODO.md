@@ -4,7 +4,9 @@
 - [x] replace brewfiles
 - [ ] stow
 - [ ] fish functions
+- [ ] change login shell to fish
 - [ ] remove unnecessary shell dotfiles
 - [ ] remove brew "shellenv" init in shell dotfiles
 - [ ] nix system defaults (macOS settings)
+- [ ] nix program settings
 - [ ] update neovim config
