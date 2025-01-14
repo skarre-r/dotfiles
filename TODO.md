@@ -13,3 +13,5 @@
 - [ ] nix caching? (cachix, etc.)
 - [ ] enable/ configure sketchybar
 - [ ] update neovim config
+- [ ] nix: export home/ work environment variable (use in makefile)
+  - [ ] makefile command (update vs upgrade): update > rebuild
