@@ -1,0 +1,6 @@
+frame = "buttonless"
+maximized = false
+fork = true
+idle = true
+title-hidden = true
+srgb = true
