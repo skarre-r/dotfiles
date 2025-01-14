@@ -21,6 +21,7 @@
     ctlptl
     curl
     deno
+    direnv
     docker
     docker-buildx
     docker-compose
@@ -37,6 +38,7 @@
     helmfile
     helix
     jankyborders
+    jq
     k9s
     kind
     ko
@@ -49,6 +51,7 @@
     luarocks
     llvm
     mas
+    neovide
     neovim
     nil
     nixd
@@ -62,6 +65,7 @@
     pyenv
     python312
     ripgrep
+    ruff
     rye
     sketchybar
     shellcheck
