@@ -1,5 +1,10 @@
-- [ ] home/ work nix config
-- [ ] replace brewfiles
-- [ ] stow
-- [x] move flake.nix to repo root
 - [x] "git checkout" vs "git switch" and "git restore"
+- [x] move flake.nix to repo root
+- [x] home/ work nix config
+- [x] replace brewfiles
+- [ ] stow
+- [ ] fish functions
+- [ ] remove unnecessary shell dotfiles
+- [ ] remove brew "shellenv" init in shell dotfiles
+- [ ] nix system defaults (macOS settings)
+- [ ] update neovim config
