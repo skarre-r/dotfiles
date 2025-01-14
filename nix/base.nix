@@ -7,6 +7,7 @@
     nushell
   ];
   environment.systemPackages = with pkgs; [
+    aerospace
     alejandra
     ansible
     argo
@@ -100,6 +101,7 @@
     "wezterm"
     "spotify"
     "neovide"
+    "alt-tab"
     "obsidian"
     "1password"
     "proton-mail"
@@ -111,6 +113,7 @@
     "eloston-chromium"
   ];
   homebrew.masApps = {
+    "rcmd" = 1596283165;
     "Noir" = 1592917505;
     "Xcode" = 497799835;
     "Wipr 2" = 1662217862;

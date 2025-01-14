@@ -18,7 +18,6 @@
     "slack"
     "bruno"
     "goland"
-    "alt-tab"
     "raycast"
     "pycharm"
     "displaylink"

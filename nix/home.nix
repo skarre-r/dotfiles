@@ -20,7 +20,6 @@
     }
   ];
   homebrew.masApps = {
-    "rcmd" = 1596283165;
     "QuickShade" = 931571202;
   };
   homebrew.onActivation.cleanup = "uninstall"; # or "zap"
