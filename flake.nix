@@ -28,7 +28,7 @@
     }:
     let
       sharedModules = [
-        # nixpkgs
+        # nix(pkgs) settings
         {
           nixpkgs.hostPlatform = "aarch64-darwin";
           # Allow "unfree" packages.

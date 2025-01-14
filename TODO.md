@@ -2,12 +2,12 @@
 - [x] move flake.nix to repo root
 - [x] home/ work nix config
 - [x] replace brewfiles
+- [x] nix (darwin) system defaults (macOS settings)
 - [ ] stow
 - [ ] fish functions
 - [ ] change login shell to fish
 - [ ] remove unnecessary shell dotfiles
 - [ ] remove brew "shellenv" init in shell dotfiles
-- [ ] nix (darwin) system defaults (macOS settings)
 - [ ] nix (home-manager) program settings
 - [ ] enable/ configure sketchybar
 - [ ] update neovim config
