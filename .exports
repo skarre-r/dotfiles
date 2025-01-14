@@ -40,11 +40,3 @@ export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 
 # 1password ssh
 export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-
-# zsh
-export FPATH="$HOME/.zsh_site_functions:$FPATH"
-
-if [ -d /opt/homebrew ]; then
-    export FPATH="/opt/homebrew/share/zsh/site-functions:$FPATH"
-    export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="/opt/homebrew/share/zsh-syntax-highlighting/highlighters"
-fi
