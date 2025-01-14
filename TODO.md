@@ -9,5 +9,6 @@
 - [ ] remove unnecessary shell dotfiles
 - [ ] remove brew "shellenv" init in shell dotfiles
 - [ ] nix (home-manager) program settings
+- [ ] nix caching? (cachix, etc.)
 - [ ] enable/ configure sketchybar
 - [ ] update neovim config
