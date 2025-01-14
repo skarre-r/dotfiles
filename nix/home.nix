@@ -27,4 +27,6 @@
   system.defaults.dock.persistent-apps = null;
   system.defaults.dock.persistent-others = null;
   system.defaults.menuExtraClock.ShowSeconds = lib.mkForce false;
+
+  users.users."skar".shell = lib.mkForce pkgs.fish;
 }
