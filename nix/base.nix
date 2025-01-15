@@ -268,6 +268,8 @@
       TrackpadThreeFingerDrag = false;
       TrackpadThreeFingerTapGesture = 0;
     };
+    CustomSystemPreferences = { };
+    CustomUserPreferences = { };
   };
 
   users.knownUsers = [ "skar" ];
