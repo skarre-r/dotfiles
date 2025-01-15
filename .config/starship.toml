@@ -106,7 +106,8 @@ disabled = true
 disabled = true
 
 [git_branch]
-always_show_remote = false
+always_show_remote = true
+format = 'on [$symbol($remote_name )$branch]($style) '
 symbol = "git "
 style = "bold purple"
 
