@@ -1,6 +1,6 @@
 
 function gs
-    if test -d .git
+    if git rev-parse --is-inside-work-tree &> /dev/null
         git status -sb
     else
         ls
