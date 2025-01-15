@@ -125,7 +125,7 @@
     "The Unarchiver" = 425424353;
     "1Password for Safari" = 1569813296;
   };
-  homebrew.onActivation.autoUpdate = true;
+  homebrew.onActivation.autoUpdate = false;
   homebrew.onActivation.upgrade = false;
 
   programs.fish.enable = true;
