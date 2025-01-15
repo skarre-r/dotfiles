@@ -158,7 +158,7 @@
     ];
   };
   services.sketchybar = {
-    enable = false;
+    enable = true;
     package = pkgs.sketchybar;
   };
 
@@ -234,7 +234,7 @@
       "com.apple.springing.enabled" = true;
       "com.apple.swipescrolldirection" = true;
       "com.apple.trackpad.enableSecondaryClick" = true;
-      _HIHideMenuBar = false; # autohide menu bar
+      _HIHideMenuBar = true;
       AppleFontSmoothing = null;
       AppleICUForce24HourTime = true;
       AppleInterfaceStyle = "Dark";
