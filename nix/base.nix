@@ -15,6 +15,7 @@
     bash
     bat
     bun
+    btop
     chezmoi
     cmake
     colima
@@ -262,7 +263,7 @@
     trackpad = {
       ActuationStrength = 1;
       Clicking = true;
-      Dragging = true;
+      Dragging = false;
       TrackpadRightClick = true;
       TrackpadThreeFingerDrag = false;
       TrackpadThreeFingerTapGesture = 0;
