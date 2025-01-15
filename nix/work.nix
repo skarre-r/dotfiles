@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 {
+  environment.variables = {
+    NIX_MODULE = "work";
+  };
   environment.systemPackages = with pkgs; [
     odo
     glab
@@ -31,5 +34,5 @@
   system.defaults.dock.appswitcher-all-displays = lib.mkForce true;
   system.defaults.dock.persistent-apps = null;
   system.defaults.dock.persistent-others = null;
-  system.defaults.paces.spans-displays = lib.mkForce true;
+  system.defaults.spaces.spans-displays = lib.mkForce true;
 }

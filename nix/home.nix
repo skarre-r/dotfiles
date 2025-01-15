@@ -1,5 +1,8 @@
 { pkgs, lib, ... }:
 {
+  environment.variables = {
+    NIX_MODULE = "home";
+  };
   environment.systemPackages = with pkgs; [
     yt-dlp
   ];
