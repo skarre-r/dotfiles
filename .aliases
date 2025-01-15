@@ -2,9 +2,9 @@
 
 alias ..='cd ..'
 alias cd..='cd ..'
-alias ls='ls -lG'
-alias lsa='ls -lGa'
-alias lsd='gls -la --color --group-directories-first'
+alias ls='/bin/ls -lG'
+alias lsa='/bin/ls -lGa'
+#alias lsd='gls -la --color --group-directories-first'
 alias dush='du -sh *'
 
 # git
