@@ -269,7 +269,23 @@
       TrackpadThreeFingerTapGesture = 0;
     };
     CustomSystemPreferences = { };
-    CustomUserPreferences = { };
+    CustomUserPreferences = {
+      "com.apple.Safari" = { };
+      "com.knollsoft.Hookshot" = {
+        doubleClickTitleBar = 0;
+        gapSize = 8;
+        hideMenubarIcon = 0;
+        iCloudSync = 1;
+        launchOnLogin = 1;
+        moveCursorAcrossDisplays = 1;
+      };
+      "com.lowtechguys.rcmd" = { };
+      "com.lwouis.alt-tab-macos" = { };
+      "com.mitchellh.ghostty" = { };
+      "org.hammerspoon.Hammerspoon" = { };
+      "org.p0deje.Maccy" = { };
+      "pro.betterdisplay.BetterDisplay" = { };
+    };
   };
 
   users.knownUsers = [ "skar" ];
