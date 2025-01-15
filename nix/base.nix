@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  environment.variables = { };
   environment.shells = with pkgs; [
     bashInteractive
     zsh
@@ -9,7 +10,6 @@
   environment.systemPackages = with pkgs; [
     aerospace
     alejandra
-    ansible
     argo
     argocd
     bash
@@ -157,7 +157,7 @@
     ];
   };
   services.sketchybar = {
-    enable = true;
+    enable = false;
     package = pkgs.sketchybar;
   };
 
