@@ -3,7 +3,13 @@
 --multi
 --cycle
 --highlight-line
---border=rounded
+--border=none
+--margin=0
+--padding=0
+--no-info
+--no-scrollbar
+--no-separator
+--with-nth=2..
 --layout=default
 
 # exit with down arrow (fish version):
