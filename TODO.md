@@ -10,9 +10,9 @@
 - [x] nix: export home/ work environment variable (use in makefile)
   - [x] makefile command (update vs upgrade): update > rebuild
 - [x] enable/ configure sketchybar
-  - [] sketchybar: separate bar config for screen with notch
-  - [] sketchybar: separate home/ work settings
-  - [] sketchybar: one script file (case $NAME)
+  - [x] sketchybar: one script file (case $NAME)
+  - [ ] sketchybar: separate bar config for screen with notch
+  - [ ] sketchybar: separate home/ work settings
 - [ ] fish abbreviations
 - [ ] nix (home-manager) program settings
 - [ ] remove unnecessary shell dotfiles?

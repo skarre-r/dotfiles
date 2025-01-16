@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
-SCRIPTS="$HOME/.config/sketchybar/scripts"
+SCRIPT="$HOME/.config/sketchybar/script.sh"
 
+# customize bar
 sketchybar --bar \
     height=24 \
     position=top \
@@ -14,6 +15,7 @@ sketchybar --bar \
     y_offset=0 \
     corner_radius=0
 
+# set item defaults
 sketchybar --default \
     label.font="SF Pro:Semibold:13.0" \
     label.color=0xfff5e0dc \
@@ -26,12 +28,14 @@ sketchybar --default \
     icon.padding_left=4 \
     icon.padding_right=4
 
+# add items
 sketchybar \
-    --add item clock right --set clock icon=􀐬 update_freq=10 script="$SCRIPTS/clock.sh" \
-    --add item battery right --set battery update_freq=15 script="$SCRIPTS/battery.sh" \
-    --add item volume right --set volume icon=􀊧 script="$SCRIPTS/volume.sh" --subscribe volume volume_change \
-    --add item wifi right --set wifi script="$SCRIPTS/wifi.sh" --subscribe wifi wifi_change \
-    --add item ip_address right --set ip_address update_freq=60 script="$SCRIPTS/ip_address.sh" \
-    --add item app left --set app icon=􀣺 icon.padding_right=12 script="$SCRIPTS/event.sh" --subscribe app front_app_switched
+    --add item clock right --set clock icon=􀐬 update_freq=10 script="$SCRIPT" \
+    --add item battery right --set battery update_freq=15 script="$SCRIPT" \
+    --add item volume right --set volume icon=􀊧 script="$SCRIPT" --subscribe volume volume_change \
+    --add item wifi right --set wifi script="$SCRIPT" --subscribe wifi wifi_change \
+    --add item ip_address right --set ip_address update_freq=60 script="$SCRIPT" \
+    --add item app left --set app icon=􀣺 icon.padding_right=12 script="$SCRIPT" --subscribe app front_app_switched
 
+# force update
 sketchybar --update
