@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-if [ "$INFO" == "" ]; then LABEL="??"; else LABEL="$INFO %"; fi
+if [ "$INFO" == "" ]; then LABEL="$(osascript -e 'output volume of (get volume settings)')%"; else LABEL="$INFO%"; fi
 
-sketchybar --set $NAME label=$LABEL
+sketchybar --set $NAME label="$LABEL"
