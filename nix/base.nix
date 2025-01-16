@@ -131,7 +131,14 @@
   homebrew.onActivation.autoUpdate = false;
   homebrew.onActivation.upgrade = false;
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    vendor = {
+      completions.enable = true;
+      config.enable = true;
+      functions.enable = true;
+    };
+  };
   programs.zsh = {
     enable = true;
     enableBashCompletion = true;
@@ -297,5 +304,33 @@
     uid = 501; # default uid
     home = "/Users/skar";
     shell = pkgs.fish;
+  };
+
+  # home-manager
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.skar.programs = {
+    bash = {
+      enable = false;
+      package = pkgs.bashInteractive;
+      enableCompletion = true;
+    };
+    fish = {
+      enable = false;
+      package = pkgs.fish;
+      generateCompletions = true;
+      preferAbbrs = true;
+      shellInit = ""; # TODO
+    };
+    zsh = {
+      enable = false;
+      package = pkgs.zsh;
+      autocd = true;
+      dotDir = ".config/zsh";
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      historySubstringSearch.enable = true;
+      syntaxHighlighting.enable = true;
+      initExtra = ""; # TODO
+    };
   };
 }

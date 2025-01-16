@@ -20,4 +20,5 @@
 - [ ] nix-index?
 - [ ] remove unnecessary shell dotfiles?
 - [ ] remove brew "shellenv" init in shell dotfiles?
+- [ ] fastfetch config: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
 - [ ] update neovim config
