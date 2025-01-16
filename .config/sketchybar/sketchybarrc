@@ -3,21 +3,11 @@
 SCRIPT="$HOME/.config/sketchybar/script.sh"
 
 # customize bar
-sketchybar --bar \
-    height=24 \
-    position=top \
-    color=0xff000000 \
-    border_width=0 \
-    border_color=0x40dcdcdc \
-    sticky=on \
-    topmost=off \
-    margin=0 \
-    y_offset=0 \
-    corner_radius=0
+sketchybar --bar height=24 notch_display_height=43 color=0xff000000 position=top sticky=on topmost=off font_smoothing=on
 
 # set item defaults
 sketchybar --default \
-    label.font="SF Pro:Semibold:13.0" \
+    label.font="SF Pro:Regular:13.0" \
     label.color=0xfff5e0dc \
     icon.font="SF Pro:Semibold:14.0" \
     icon.color=0xfff5e0dc \
@@ -30,12 +20,14 @@ sketchybar --default \
 
 # add items
 sketchybar \
-    --add item clock right --set clock icon=􀐬 update_freq=10 script="$SCRIPT" \
+    --add item time right --set time icon=􀐬 update_freq=10 script="$SCRIPT" \
+    --add item date right --set date icon=􀉉 update_freq=3600 script="$SCRIPT" \
     --add item battery right --set battery update_freq=15 script="$SCRIPT" \
     --add item volume right --set volume icon=􀊧 script="$SCRIPT" --subscribe volume volume_change \
+    --add item brightness right --set brightness icon=􀆮 script="$SCRIPT" --subscribe brightness brightness_change \
     --add item wifi right --set wifi script="$SCRIPT" --subscribe wifi wifi_change \
     --add item ip_address right --set ip_address update_freq=60 script="$SCRIPT" \
-    --add item app left --set app icon=􀣺 icon.padding_right=12 script="$SCRIPT" --subscribe app front_app_switched
+    --add item app left --set app icon=􀣺 icon.padding_right=12 label.font="SF Pro:Semibold:14.0" script="$SCRIPT" --subscribe app front_app_switched
 
 # force update
 sketchybar --update

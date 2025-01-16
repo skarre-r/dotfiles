@@ -12,8 +12,13 @@ case "$NAME" in
         sketchybar --set "$NAME" label="$LABEL" icon="$ICON"
         exit 0
         ;;
-    "clock")
-        LABEL="$(date '+%H:%M')"
+    "brightness")
+        if [ "$INFO" == "" ]; then LABEL="00%"; else LABEL="$INFO%"; fi
+        sketchybar --set "$NAME" label="$LABEL"
+        exit 0
+        ;;
+    "date")
+        LABEL="$(date '+%a %d %b')"
         sketchybar --set "$NAME" label="$LABEL"
         exit 0
         ;;
@@ -21,6 +26,11 @@ case "$NAME" in
         LABEL=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
         if [ "$LABEL" == "" ]; then ICON=""; else ICON="􀤆"; fi
         sketchybar --set "$NAME" label="$LABEL" icon="$ICON"
+        exit 0
+        ;;
+    "time")
+        LABEL="$(date '+%H:%M')"
+        sketchybar --set "$NAME" label="$LABEL"
         exit 0
         ;;
     "volume")
@@ -32,7 +42,7 @@ case "$NAME" in
         if [ "$INFO" == "" ]; then SSID=$(ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'); else SSID="$INFO"; fi
         if [ "$SSID" == "" ]; then LABEL="N/A"; else LABEL="$SSID"; fi
         if [ "$LABEL" == "" ]; then ICON="􀙈"; else ICON="􀙇"; fi
-        sketchybar --set "$NAME" label="$LABEL" icon="$ICON"
+        sketchybar --set "$NAME" label="$(echo $LABEL | sed 's/\(.\{18\}\).*/\1.../')" icon="$ICON"
         exit 0
         ;;
     *)
