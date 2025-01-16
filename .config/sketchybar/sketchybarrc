@@ -19,16 +19,16 @@ sketchybar --default \
     label.color=0xfff5e0dc \
     icon.font="SF Pro:Bold:14.0" \
     icon.color=0xfff5e0dc \
-    padding_left=0 \
+    padding_left=4 \
     padding_right=4 \
-    label.padding_left=0 \
+    label.padding_left=4 \
     label.padding_right=4 \
-    icon.padding_left=0 \
+    icon.padding_left=4 \
     icon.padding_right=4
 
 sketchybar \
     --add item clock right --set clock update_freq=10 script="$SCRIPTS/clock.sh" \
-    --add item battery right --set battery icon=􀺶 update_freq=10 script="$SCRIPTS/battery.sh" \
+    --add item battery right --set battery update_freq=10 script="$SCRIPTS/battery.sh" \
     --add item app left --set app script="$SCRIPTS/event.sh" --subscribe app front_app_switched
 
 sketchybar --update
