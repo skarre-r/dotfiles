@@ -280,6 +280,8 @@
         iCloudSync = 1;
         launchOnLogin = 1;
         moveCursorAcrossDisplays = 1;
+        screenEdgeGapTopNotch = 5;
+        screenEdgeGapTop = 25; # TODO
       };
       "com.lowtechguys.rcmd" = { };
       "com.lwouis.alt-tab-macos" = { };
