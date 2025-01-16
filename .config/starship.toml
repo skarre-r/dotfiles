@@ -289,7 +289,9 @@ style = "dimmed bold"
 disabled = false
 
 [shlvl]
-disabled = true
+format = '[$symbol$shlvl]($style) - '
+symbol = "lvl "
+disabled = false
 
 [singularity]
 disabled = true
