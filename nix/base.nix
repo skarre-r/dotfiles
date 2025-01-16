@@ -36,6 +36,7 @@
     git
     golangci-lint
     go
+    gnugrep
     gnumake
     gopls
     helmfile
@@ -47,6 +48,7 @@
     kind
     ko
     kubectl
+    kubernetes-helm
     kube-linter
     kustomize
     lazygit
@@ -96,9 +98,8 @@
   ];
 
   homebrew.enable = true;
-  homebrew.brews = [
-    "helm" # the nixpkgs version doesn't support macOS
-  ];
+  homebrew.taps = [ "fish-shell/fish-beta-4" ];
+  homebrew.brews = [ "fish-shell/fish-beta-4/fish" ];
   homebrew.casks = [
     "zed"
     "maccy"
