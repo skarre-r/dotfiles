@@ -27,7 +27,7 @@ sketchybar --default \
     icon.padding_right=4
 
 sketchybar \
-    --add item clock right --set clock icon=􀐬 update_freq=60 script="$SCRIPTS/clock.sh" \
+    --add item clock right --set clock icon=􀐬 update_freq=10 script="$SCRIPTS/clock.sh" \
     --add item battery right --set battery update_freq=15 script="$SCRIPTS/battery.sh" \
     --add item volume right --set volume icon=􀊧 script="$SCRIPTS/volume.sh" --subscribe volume volume_change \
     --add item wifi right --set wifi script="$SCRIPTS/wifi.sh" --subscribe wifi wifi_change \
