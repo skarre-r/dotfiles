@@ -1,0 +1,10 @@
+# https://junegunn.github.io/fzf/reference/
+
+--multi
+--cycle
+--highlight-line
+--border=rounded
+--layout=default
+
+# exit with down arrow (fish version):
+#--bind 'down:transform:if test $FZF_POS -le 1; echo "abort"; else; echo "down"; end'
