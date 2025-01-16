@@ -28,3 +28,7 @@ end
 if test -e $HOME/.exports
     source $HOME/.exports
 end
+
+# binds
+bind -k up fzf-history-widget
+bind \e\[A fzf-history-widget
