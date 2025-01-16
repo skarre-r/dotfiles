@@ -15,6 +15,9 @@
   - [ ] sketchybar: separate home/ work settings
 - [ ] fish abbreviations
 - [ ] nix (home-manager) program settings
+- [ ] nix: update CustomUserPreferences (defaults read)
+  - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
+- [ ] nix-index?
 - [ ] remove unnecessary shell dotfiles?
 - [ ] remove brew "shellenv" init in shell dotfiles?
 - [ ] update neovim config
