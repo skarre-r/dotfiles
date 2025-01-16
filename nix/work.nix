@@ -35,4 +35,5 @@
   system.defaults.dock.persistent-apps = null;
   system.defaults.dock.persistent-others = null;
   system.defaults.spaces.spans-displays = lib.mkForce false;
+  system.defaults.CustomUserPreferences."com.knollsoft.Hookshot".screenEdgeGapTop = 40;
 }

@@ -109,6 +109,7 @@
     "alt-tab"
     "obsidian"
     "1password"
+    "sf-symbols"
     "hammerspoon"
     "proton-mail"
     "sublime-text"
@@ -278,7 +279,6 @@
         iCloudSync = 1;
         launchOnLogin = 1;
         moveCursorAcrossDisplays = 1;
-        screenEdgeGapTop = 10; # TODO
       };
       "com.lowtechguys.rcmd" = { };
       "com.lwouis.alt-tab-macos" = { };
