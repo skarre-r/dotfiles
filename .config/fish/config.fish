@@ -12,7 +12,7 @@ function starship_transient_rprompt_func
 end
 
 starship init fish | source
-enable_transience
+#enable_transience
 
 # init fzf
 if command -v fzf > /dev/null
