@@ -12,6 +12,7 @@
 - [x] enable/ configure sketchybar
   - [] sketchybar: separate bar config for screen with notch
   - [] sketchybar: separate home/ work settings
+  - [] sketchybar: one script file (case $NAME)
 - [ ] fish abbreviations
 - [ ] nix (home-manager) program settings
 - [ ] remove unnecessary shell dotfiles?
