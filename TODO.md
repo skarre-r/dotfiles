@@ -15,3 +15,4 @@
 - [ ] update neovim config
 - [x] nix: export home/ work environment variable (use in makefile)
   - [x] makefile command (update vs upgrade): update > rebuild
+- [ ] fish abbreviations
