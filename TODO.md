@@ -14,6 +14,7 @@
   - [x] sketchybar: separate bar config for screen with notch
 - [x] fastfetch config: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
 - [x] sublime text config
+- [x] sketchybar: week number
 - [ ] fish abbreviations
 - [ ] fish: update gbn function (stash changes)
 - [ ] nix (home-manager) program settings
@@ -21,5 +22,5 @@
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
 - [ ] nix-index?
 - [ ] remove unnecessary shell dotfiles?
-- [ ] remove brew "shellenv" init in shell dotfiles?
 - [ ] update neovim config
+- [ ] zsh: fix slow startup
