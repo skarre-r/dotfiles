@@ -186,7 +186,7 @@
       Sound = true;
     };
     dock = {
-      appswitcher-all-displays = false;
+      appswitcher-all-displays = true;
       autohide = true;
       autohide-delay = null;
       expose-animation-duration = 0.1;
@@ -288,7 +288,7 @@
         launchOnLogin = 1;
         moveCursorAcrossDisplays = 1;
         screenEdgeGapTopNotch = 5;
-        screenEdgeGapTop = 25; # TODO
+        screenEdgeGapTop = 25;
       };
       "com.lowtechguys.rcmd" = { };
       "com.lwouis.alt-tab-macos" = { };
