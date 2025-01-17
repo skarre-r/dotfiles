@@ -27,6 +27,9 @@
     "microsoft-teams"
     "firefox@developer-edition"
   ];
+  homebrew.masApps = {
+    "Windows App" = 1295203466;
+  };
   homebrew.onActivation.cleanup = "none";
 
   services.jankyborders.hidpi = lib.mkForce false;
