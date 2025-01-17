@@ -22,6 +22,7 @@ sketchybar --default \
 sketchybar \
     --add item time right --set time icon=􀐬 update_freq=10 script="$SCRIPT" \
     --add item date right --set date icon=􀉉 update_freq=3600 script="$SCRIPT" \
+    --add item week right --set week icon=􀆃 update_freq=3600 script="$SCRIPT" \
     --add item battery right --set battery update_freq=15 script="$SCRIPT" \
     --add item volume right --set volume icon=􀊧 script="$SCRIPT" --subscribe volume volume_change \
     --add item brightness right --set brightness icon=􀆮 script="$SCRIPT" --subscribe brightness brightness_change \

@@ -38,6 +38,12 @@ case "$NAME" in
         sketchybar --set "$NAME" label="$LABEL"
         exit 0
         ;;
+    "week")
+        WEEK="$(date '+%V')"
+        if [ $(echo $WEEK | cut -c1-1 ) == "0" ]; then WEEK=$(echo $WEEK | cut -c2-2); fi
+        sketchybar --set "$NAME" label="Week $WEEK"
+        exit 0
+        ;;
     "wifi")
         if [ "$INFO" == "" ]; then SSID=$(ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'); else SSID="$INFO"; fi
         if [ "$SSID" == "" ]; then LABEL="N/A"; else LABEL="$SSID"; fi
