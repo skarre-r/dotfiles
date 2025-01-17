@@ -11,8 +11,8 @@
   - [x] makefile command (update vs upgrade): update > rebuild
 - [x] enable/ configure sketchybar
   - [x] sketchybar: one script file (case $NAME)
-  - [ ] sketchybar: separate bar config for screen with notch
-  - [ ] sketchybar: separate home/ work settings
+  - [x] sketchybar: separate bar config for screen with notch
+- [x] fastfetch config: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
 - [ ] fish abbreviations
 - [ ] nix (home-manager) program settings
 - [ ] nix: update CustomUserPreferences (defaults read)
@@ -20,5 +20,4 @@
 - [ ] nix-index?
 - [ ] remove unnecessary shell dotfiles?
 - [ ] remove brew "shellenv" init in shell dotfiles?
-- [ ] fastfetch config: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
 - [ ] update neovim config
