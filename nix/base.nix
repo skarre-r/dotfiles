@@ -279,8 +279,17 @@
     };
     CustomSystemPreferences = { };
     CustomUserPreferences = {
-      "com.apple.Safari" = { };
+      "com.apple.Safari" = {
+        AutoFillCreditCardData = 0;
+        AutoFillFromAddressBook = 0;
+        AutoFillMiscellaneousForms = 0;
+        AutoFillPasswords = 0;
+        HomePage = "";
+        IncludeDevelopMenu = 1;
+      };
       "com.knollsoft.Hookshot" = {
+        SUEnableAutomaticChecks = 1;
+        allowAnyShortcut = 1;
         doubleClickTitleBar = 0;
         gapSize = 8;
         hideMenubarIcon = 0;
@@ -289,12 +298,62 @@
         moveCursorAcrossDisplays = 1;
         screenEdgeGapTopNotch = 5;
         screenEdgeGapTop = 25;
+        subsequentExecutionMode = 3;
+        unsnapRestore = 2;
       };
-      "com.lowtechguys.rcmd" = { };
-      "com.lwouis.alt-tab-macos" = { };
-      "com.mitchellh.ghostty" = { };
-      "org.hammerspoon.Hammerspoon" = { };
-      "org.p0deje.Maccy" = { };
+      "com.lowtechguys.rcmd" = {
+        activateAllWindows = 1;
+        allowWindowSwitcher = 0;
+        appSwitcherFeatures = 6;
+        enableAssignHotkey = 0;
+        enableCycleHotkey = 0;
+        hammerspoonInstalled = 1;
+        hideMenubarIcon = 0;
+        hideStaticSettings = 0;
+        popoverClosed = 1;
+        showAppSwitcher = 1;
+        switcherScreenPlacement = 7;
+        tutorialHidden = 1;
+        windowSwitchOSDDelay = 700;
+        windowSwitcherAppearance = ''\\"comfortable\\"''; # TODO?
+      };
+      "com.lwouis.alt-tab-macos" = {
+        appearanceSize = 1;
+        appearanceStyle = 2;
+        appearanceTheme = 1;
+        appearanceVisibility = 1;
+        crashPolicy = 0;
+        hideAppBadges = false;
+        hideSpaceNumberLabels = false;
+        hideStatusIcons = false;
+        hideWindowlessApps = true;
+        holdShortcut = "\\U2318";
+        menubarIcon = 0;
+        mouseHoverEnabled = true;
+        previewFocusedWindow = true;
+        shortcutStyle = 0;
+        showFullscreenWindows = 1;
+        showHiddenWindows = 0;
+        showMinimizedWindows = 1;
+        showTabsAsWindows = false;
+        showTitles = 2;
+        startAtLogin = true;
+        updatePolicy = 1;
+        windowDisplayDelay = 0;
+        windowMaxWidthInRow = 30;
+      };
+      "org.hammerspoon.Hammerspoon" = {
+        HSUploadCrashData = 0;
+        SUAutomaticallyUpdate = 0;
+        SUEnableAutomaticChecks = 1;
+        SUSendProfileInfo = 0;
+      };
+      "org.p0deje.Maccy" = {
+        showApplicationIcons = 1;
+        showFooter = 1;
+        showSearch = 1;
+        showTitle = 1;
+      };
       "pro.betterdisplay.BetterDisplay" = { };
     };
   };
