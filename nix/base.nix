@@ -85,6 +85,7 @@
     uv
     vim
     wget
+    yamllint
     yaml-language-server
     zellij
     zsh
