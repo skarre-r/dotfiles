@@ -29,6 +29,19 @@ if test -e $HOME/.exports
     source $HOME/.exports
 end
 
+# homebrew
+if test -e /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv | source
+end
+
+if test -d /opt/homebrew/share/fish/completions
+    set -p fish_complete_path /opt/homebrew/share/fish/completions
+end
+
+if test -d /opt/homebrew/share/fish/vendor_completions.d
+    set -p fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
+end
+
 # binds
 bind -k up fzf-history-widget
 bind \e\[A fzf-history-widget
