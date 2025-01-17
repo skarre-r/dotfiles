@@ -13,7 +13,9 @@
   - [x] sketchybar: one script file (case $NAME)
   - [x] sketchybar: separate bar config for screen with notch
 - [x] fastfetch config: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
+- [x] sublime text config
 - [ ] fish abbreviations
+- [ ] fish: update gbn function (stash changes)
 - [ ] nix (home-manager) program settings
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md

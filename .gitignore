@@ -10,3 +10,6 @@
 .idea/
 .ssh/*
 !.ssh/config
+Library/Application Support/Sublime Text/Packages/User/*
+!Library/Application Support/Sublime Text/Packages/User/Package Control.sublime-settings
+!Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings
