@@ -1,4 +1,17 @@
 
+.PHONY: install
+install: install-homebrew install-nix install-nix-darwin
+
+# homebrew
+
+BREW_INSTALLED := $(shell command -v /opt/homebrew/bin/brew 2> /dev/null)
+
+.PHONY: install-homebrew
+install-homebrew:
+ifndef BREW_INSTALLED
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+endif
+
 # nix
 
 NIX_INSTALLED := $(shell command -v nix 2> /dev/null)
@@ -19,9 +32,6 @@ ifndef NIX_DARWIN_INSTALLED
 	nix run nix-darwin -- switch --flake ${CURDIR}#default
 endif
 endif
-
-.PHONY: install
-install: install-nix install-nix-darwin
 
 .PHONY: uninstall
 uninstall:
