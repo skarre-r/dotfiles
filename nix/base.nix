@@ -102,6 +102,7 @@
   homebrew.brews = [ "fish-shell/fish-beta-4/fish" ];
   homebrew.casks = [
     "zed"
+    "pika"
     "maccy"
     "ghostty"
     "wezterm"
