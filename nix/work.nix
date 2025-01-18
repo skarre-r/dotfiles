@@ -19,7 +19,6 @@
   ];
   homebrew.casks = [
     "slack"
-    "bruno"
     "goland"
     "raycast"
     "pycharm"

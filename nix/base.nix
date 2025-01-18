@@ -105,6 +105,7 @@
     "zed"
     "pika"
     "maccy"
+    "bruno"
     "ghostty"
     "wezterm"
     "spotify"
