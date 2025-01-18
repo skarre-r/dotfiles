@@ -32,7 +32,6 @@
   ];
   homebrew.masApps = {
     "QuickShade" = 931571202;
-    "System Color Picker" = 1545870783;
   };
   homebrew.onActivation.autoUpdate = lib.mkForce true;
   homebrew.onActivation.cleanup = "zap";
