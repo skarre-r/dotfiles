@@ -6,9 +6,29 @@ case "$NAME" in
         sketchybar --set "$NAME" label="$LABEL"
         ;;
     "battery")
+        CHARGE="$(pmset -g batt | grep -Eo '[[:digit:]]+%' | cut -d% -f1)"
         AC_POWER=$(pmset -g batt | grep 'AC Power')
-        if [[ $AC_POWER != "" ]]; then ICON="􀋦"; else ICON="􀺶"; fi
-        LABEL="$(pmset -g batt | grep -Eo '[[:digit:]]+%' | cut -d% -f1)%"
+        if [[ $AC_POWER != "" ]];
+            then ICON="􀋦"
+        else
+            case ${CHARGE} in
+                9[0-9]|100)
+                    ICON="􀛨"
+                    ;;
+                [6-8][0-9])
+                    ICON="􀺸"
+                    ;;
+                [3-5][0-9])
+                    ICON="􀺶"
+                    ;;
+                [1-2][0-9])
+                    ICON="􀛩"
+                    ;;
+                *)
+                    ICON="􀛪"
+            esac
+        fi
+        LABEL="${CHARGE}%"
         sketchybar --set "$NAME" label="$LABEL" icon="$ICON"
         exit 0
         ;;
