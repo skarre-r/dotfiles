@@ -27,7 +27,7 @@ sketchybar \
     --add item volume right --set volume icon=􀊧 script="$SCRIPT" --subscribe volume volume_change \
     --add item brightness right --set brightness icon=􀆮 script="$SCRIPT" --subscribe brightness brightness_change \
     --add item wifi right --set wifi script="$SCRIPT" --subscribe wifi wifi_change \
-    --add item ip_address right --set ip_address update_freq=60 script="$SCRIPT" \
+    --add item ip_address right --set ip_address update_freq=60 script="$SCRIPT" --subscribe wifi wifi_change \
     --add item app left --set app icon=􀣺 icon.padding_right=12 label.font="SF Pro:Semibold:14.0" script="$SCRIPT" --subscribe app front_app_switched
 
 # force update

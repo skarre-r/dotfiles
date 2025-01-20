@@ -44,7 +44,7 @@ case "$NAME" in
         ;;
     "ip_address")
         LABEL=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
-        if [ "$LABEL" == "" ]; then ICON=""; else ICON="􀤆"; fi
+        if [ "$LABEL" == "" ]; then ICON="􁣡"; else ICON="􀤆"; fi
         sketchybar --set "$NAME" label="$LABEL" icon="$ICON"
         exit 0
         ;;
@@ -66,8 +66,13 @@ case "$NAME" in
         ;;
     "wifi")
         if [ "$INFO" == "" ]; then SSID=$(ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'); else SSID="$INFO"; fi
-        if [ "$SSID" == "" ]; then LABEL="N/A"; else LABEL="$SSID"; fi
-        if [ "$LABEL" == "" ]; then ICON="􀙈"; else ICON="􀙇"; fi
+        if [ "$SSID" == "" ]; then
+            LABEL=""
+            ICON="􀙈"
+        else
+            LABEL="$SSID"
+            ICON="􀙇"
+        fi
         sketchybar --set "$NAME" label="$(echo $LABEL | sed 's/\(.\{18\}\).*/\1.../')" icon="$ICON"
         exit 0
         ;;
