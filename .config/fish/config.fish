@@ -42,6 +42,12 @@ if test -d /opt/homebrew/share/fish/vendor_completions.d
     set -p fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
 end
 
+# fix homebrew vs nix paths
+fish_add_path --path --move "/nix/var/nix/profiles/default/bin"
+fish_add_path --path --move "/run/current-system/sw/bin"
+fish_add_path --path --move "/etc/profiles/per-user/$(/usr/bin/whoami)/bin"
+fish_add_path --path --move "/Users/$(/usr/bin/whoami)/.nix-profile/bin"
+
 # binds
 bind -k up fzf-history-widget
 bind \e\[A fzf-history-widget
