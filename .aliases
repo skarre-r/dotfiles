@@ -23,7 +23,6 @@ alias gif='git --no-pager diff'
 alias gifs='git --no-pager diff --staged'
 alias gb='git --no-pager branch'
 alias gbd='git branch -D'
-# alias switch='git switch'  # TODO: enable if not fish
 alias checkout='git switch'  # git checkout
 alias restore='git restore'
 alias discard='git restore'  # git checkout --
@@ -31,6 +30,7 @@ alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gss='git stash save --include-untracked'
+alias gfp='git fetch --prune'
 alias lg='lazygit'
 
 # docker
