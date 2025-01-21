@@ -30,7 +30,7 @@ alias discard='git restore'  # git checkout --
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gsa='git stash apply'
-alias gss='git stash save'
+alias gss='git stash save --include-untracked'
 alias lg='lazygit'
 
 # docker
