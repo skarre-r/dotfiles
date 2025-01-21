@@ -11,7 +11,6 @@
     "iina"
     "lulu"
     "keka"
-    "itsycal"
     "calibre"
     "openemu"
     "freetube"
@@ -22,7 +21,6 @@
     "little-snitch"
     "monitorcontrol"
     "keyboard-cowboy"
-    "reminders-menubar"
     {
       name = "librewolf";
       args = {

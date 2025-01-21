@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   environment.variables = {
     NIX_MODULE = "work";
@@ -30,8 +30,6 @@
     "Windows App" = 1295203466;
   };
   homebrew.onActivation.cleanup = "none";
-
-  services.jankyborders.hidpi = lib.mkForce false;
 
   system.defaults.dock.persistent-apps = null;
   system.defaults.dock.persistent-others = null;

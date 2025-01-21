@@ -106,6 +106,7 @@
     "pika"
     "maccy"
     "bruno"
+    "itsycal"
     "ghostty"
     "wezterm"
     "spotify"
@@ -121,6 +122,7 @@
     "betterdisplay"
     "rectangle-pro"
     "eloston-chromium"
+    "reminders-menubar"
   ];
   homebrew.masApps = {
     "rcmd" = 1596283165;
@@ -156,19 +158,9 @@
     enable = false;
     package = pkgs.aerospace;
   };
-  services.cachix-agent.enable = false; # TODO
   services.jankyborders = {
     enable = true;
     package = pkgs.jankyborders;
-    hidpi = true;
-    width = 5.0;
-    blur_radius = 0.0;
-    active_color = "0xE5FFFFFF";
-    inactive_color = "0x3FFFFFFF";
-    blacklist = [
-      "pycharm"
-      "goland"
-    ];
   };
   services.sketchybar = {
     enable = true;
