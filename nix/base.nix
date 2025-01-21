@@ -136,6 +136,14 @@
   };
   homebrew.onActivation.autoUpdate = false;
   homebrew.onActivation.upgrade = false;
+  homebrew.global = { }; # TODO
+
+  # TODO: run rc file?
+  launchd.user.agents.jankyborders = {
+    serviceConfig.ProgramArguments = [ "${pkgs.jankyborders}/bin/borders" ];
+    serviceConfig.KeepAlive = true;
+    serviceConfig.RunAtLoad = true;
+  };
 
   programs.fish = {
     enable = true;
@@ -159,7 +167,7 @@
     package = pkgs.aerospace;
   };
   services.jankyborders = {
-    enable = true;
+    enable = false;
     package = pkgs.jankyborders;
   };
   services.sketchybar = {
