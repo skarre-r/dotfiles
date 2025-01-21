@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+options=(
+    style=round
+    active_color=0xE5FFFFFF
+    inactive_color=0x3FFFFFFF
+    background_color=0x00FFFFFF
+    width=5.0
+    hidpi=on
+    ax_focus=off
+    blacklist="pycharm,goland"
+)
+
+borders "${options[@]}"
