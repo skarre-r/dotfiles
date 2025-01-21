@@ -15,8 +15,9 @@
 - [x] fastfetch config: https://github.com/fastfetch-cli/fastfetch/wiki/Configuration
 - [x] sublime text config
 - [x] sketchybar: week number
+- [x] jankyborders config file(s)
+- [x] fish: update gbn function (stash changes)
 - [ ] fish abbreviations
-- [ ] fish: update gbn function (stash changes)
 - [ ] nix (home-manager) program settings
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
@@ -25,4 +26,3 @@
 - [ ] update neovim config
 - [ ] zsh: fix slow startup
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
-- [ ] jankyborders config file(s)
