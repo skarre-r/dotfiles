@@ -98,47 +98,54 @@
     nerd-fonts.meslo-lg
   ];
 
-  homebrew.enable = true;
-  homebrew.taps = [ "fish-shell/fish-beta-4" ];
-  homebrew.brews = [ "fish-shell/fish-beta-4/fish" ];
-  homebrew.casks = [
-    "zed"
-    "pika"
-    "maccy"
-    "bruno"
-    "itsycal"
-    "ghostty"
-    "wezterm"
-    "spotify"
-    "neovide"
-    "alt-tab"
-    "obsidian"
-    "1password"
-    "sf-symbols"
-    "hammerspoon"
-    "proton-mail"
-    "sublime-text"
-    "proton-drive"
-    "betterdisplay"
-    "rectangle-pro"
-    "eloston-chromium"
-    "reminders-menubar"
-  ];
-  homebrew.masApps = {
-    "rcmd" = 1596283165;
-    "Noir" = 1592917505;
-    "Xcode" = 497799835;
-    "Wipr 2" = 1662217862;
-    "Numbers" = 409203825;
-    "Userscripts" = 1463298887;
-    "The Unarchiver" = 425424353;
-    "1Password for Safari" = 1569813296;
+  homebrew = {
+    enable = true;
+    taps = [ "fish-shell/fish-beta-4" ];
+    brews = [ "fish-shell/fish-beta-4/fish" ];
+    casks = [
+      "zed"
+      "pika"
+      "maccy"
+      "bruno"
+      "itsycal"
+      "ghostty"
+      "wezterm"
+      "spotify"
+      "neovide"
+      "alt-tab"
+      "obsidian"
+      "1password"
+      "sf-symbols"
+      "hammerspoon"
+      "proton-mail"
+      "sublime-text"
+      "proton-drive"
+      "betterdisplay"
+      "rectangle-pro"
+      "eloston-chromium"
+      "reminders-menubar"
+    ];
+    masApps = {
+      "rcmd" = 1596283165;
+      "Noir" = 1592917505;
+      "Xcode" = 497799835;
+      "Wipr 2" = 1662217862;
+      "Numbers" = 409203825;
+      "Userscripts" = 1463298887;
+      "The Unarchiver" = 425424353;
+      "1Password for Safari" = 1569813296;
+    };
+    global = {
+      autoUpdate = false;
+      brewfile = false;
+      lockfiles = true;
+    };
+    onActivation = {
+      autoUpdate = false;
+      upgrade = false;
+    };
   };
-  homebrew.onActivation.autoUpdate = false;
-  homebrew.onActivation.upgrade = false;
-  homebrew.global = { }; # TODO
 
-  # TODO: run rc file?
   launchd.user.agents.jankyborders = {
     serviceConfig.ProgramArguments = [ "${pkgs.jankyborders}/bin/borders" ];
     serviceConfig.KeepAlive = true;
@@ -167,7 +174,7 @@
     package = pkgs.aerospace;
   };
   services.jankyborders = {
-    enable = false;
+    enable = false; # launchd.user.agents.jankyborders
     package = pkgs.jankyborders;
   };
   services.sketchybar = {

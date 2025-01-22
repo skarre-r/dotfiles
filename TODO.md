@@ -25,4 +25,5 @@
 - [ ] remove unnecessary shell dotfiles?
 - [ ] update neovim config
 - [ ] zsh: fix slow startup
+- [ ] zsh: .config/zsh/?
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
