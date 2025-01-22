@@ -34,14 +34,6 @@ if test -e /opt/homebrew/bin/brew
     /opt/homebrew/bin/brew shellenv | source
 end
 
-if test -d /opt/homebrew/share/fish/completions
-    set -p fish_complete_path /opt/homebrew/share/fish/completions
-end
-
-if test -d /opt/homebrew/share/fish/vendor_completions.d
-    set -p fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
-end
-
 # fix homebrew vs nix paths
 fish_add_path --path --move "/nix/var/nix/profiles/default/bin"
 fish_add_path --path --move "/run/current-system/sw/bin"
