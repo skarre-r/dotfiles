@@ -253,8 +253,11 @@ disabled = true
 disabled = true
 
 [python]
-symbol = "python "
+format = 'via [${pyenv_prefix}${symbol}(${version} )(\(venv:$virtualenv\) )]($style)'
+version_format = '${major}.${minor}'
+symbol = "python"
 style = "yellow bold"
+pyenv_prefix = 'pyenv '
 
 [quarto]
 disabled = true
