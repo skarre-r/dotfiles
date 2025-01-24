@@ -22,6 +22,7 @@
     "goland"
     "raycast"
     "pycharm"
+    "tableplus"
     "displaylink"
     "microsoft-teams"
     "firefox@developer-edition"
