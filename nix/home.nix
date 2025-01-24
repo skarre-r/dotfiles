@@ -5,6 +5,7 @@
   };
   environment.systemPackages = with pkgs; [
     yt-dlp
+    webcord # TODO
   ];
 
   homebrew.casks = [
