@@ -70,6 +70,7 @@
     pre-commit
     pyenv
     python312
+    python313
     ripgrep
     ruff
     rye
