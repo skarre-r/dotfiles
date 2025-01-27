@@ -34,6 +34,7 @@
     gcc
     gh
     git
+    gitui
     golangci-lint
     go
     gnugrep
@@ -51,6 +52,7 @@
     kubernetes-helm
     kube-linter
     kustomize
+    lazydocker
     lazygit
     lua
     lua-language-server
