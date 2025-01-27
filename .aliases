@@ -31,7 +31,10 @@ alias gsp='git stash pop'
 alias gsa='git stash apply'
 alias gss='git stash save --include-untracked'
 alias gfp='git fetch --prune'
+
+# git tui(s)
 alias lg='lazygit'
+alias gui='gitui'
 
 # docker
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"'
