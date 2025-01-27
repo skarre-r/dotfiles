@@ -147,12 +147,6 @@
     };
   };
 
-  launchd.user.agents.jankyborders = {
-    serviceConfig.ProgramArguments = [ "${pkgs.jankyborders}/bin/borders" ];
-    serviceConfig.KeepAlive = true;
-    serviceConfig.RunAtLoad = true;
-  };
-
   programs.fish = {
     enable = true;
     vendor = {
@@ -170,13 +164,20 @@
   };
 
   services.nix-daemon.enable = true;
-  services.aerospace = {
-    enable = false;
-    package = pkgs.aerospace;
-  };
   services.jankyborders = {
-    enable = false; # launchd.user.agents.jankyborders
+    enable = true;
     package = pkgs.jankyborders;
+    # config:
+    style = "round";
+    order = "below";
+    active_color = "0xE5FFFFFF";
+    inactive_color = "0x3FFFFFFF";
+    background_color = "0x00FFFFFF";
+    width = 5.0;
+    blur_radius = 1.0;
+    ax_focus = false;
+    hidpi = true;
+    blacklist = [ "pycharm,goland" ];
   };
   services.sketchybar = {
     enable = true;
