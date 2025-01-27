@@ -88,6 +88,7 @@
     wget
     yamllint
     yaml-language-server
+    yazi
     zellij
     zsh
   ];
