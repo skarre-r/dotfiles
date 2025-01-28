@@ -120,6 +120,7 @@
       "obsidian"
       "1password"
       "sf-symbols"
+      "zen-browser"
       "hammerspoon"
       "proton-mail"
       "sublime-text"
