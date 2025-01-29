@@ -43,3 +43,6 @@ export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/
 
 # fzf
 export FZF_DEFAULT_OPTS_FILE="$HOME/.fzfrc"
+
+# path
+export PATH="$HOME/bin:$PATH"
