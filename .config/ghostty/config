@@ -36,3 +36,5 @@ auto-update-channel = "stable"
 keybind = global:shift+super+period=toggle_quick_terminal
 keybind = super+backspace=text:\x15
 keybind = super+w=unbind
+keybind = unconsumed:super+up=goto_split:previous
+keybind = unconsumed:super+down=goto_split:next
