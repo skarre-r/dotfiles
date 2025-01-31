@@ -1,1 +1,5 @@
 // https://github.com/extrawurst/gitui/blob/master/THEMES.md
+(
+    selection_fg: Some("Black"),
+    cmdbar_bg: Some("Black")
+)
