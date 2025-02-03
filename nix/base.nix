@@ -189,7 +189,7 @@
   };
 
   # Enable touch id sudo
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.enableSudoTouchIdAuth = false; # TODO
 
   # macOS settings
   system.defaults = {
