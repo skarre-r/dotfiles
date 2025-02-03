@@ -18,12 +18,14 @@
 - [x] jankyborders config file(s)
 - [x] fish: update gbn function (stash changes)
 - [ ] fish abbreviations
-- [ ] nix (home-manager) program settings
+- [ ] nix (home-manager) program settings?
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
+  - [ ] alt-tab (windoe preview)
 - [ ] nix-index?
 - [ ] remove unnecessary shell dotfiles?
 - [ ] update neovim config
 - [ ] zsh: fix slow startup
 - [ ] zsh: .config/zsh/?
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
+- [ ] sketchybar: replace w/ bottom bar???
