@@ -5,9 +5,8 @@
   description = "nix-darwin system flake";
 
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nix-stable.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +21,7 @@
     inputs@{
       self,
       nixpkgs,
+      nix-stable,
       nix-darwin,
       home-manager,
       ...
@@ -59,7 +59,13 @@
         ./nix/base.nix
       ];
 
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+        pkgs-stable = import nix-stable {
+          system = "aarch64-darwin";
+          config.allowUnfree = true;
+        };
+      };
     in
     {
       darwinConfigurations = {
