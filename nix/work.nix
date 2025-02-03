@@ -18,7 +18,9 @@
     "microsoft/mssql-release/mssql-tools18"
   ];
   homebrew.casks = [
+    "yaak"
     "slack"
+    "httpie"
     "goland"
     "raycast"
     "pycharm"
