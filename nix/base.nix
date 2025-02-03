@@ -173,12 +173,12 @@
     package = pkgs.jankyborders;
     # config:
     style = "round";
-    order = "below";
+    order = "above";
     active_color = "0xE5FFFFFF";
     inactive_color = "0x3FFFFFFF";
     background_color = "0x00FFFFFF";
-    width = 5.0;
-    blur_radius = 1.0;
+    width = 1.0;
+    # blur_radius = 1.0;
     ax_focus = false;
     hidpi = true;
     blacklist = [ "pycharm,goland" ];
@@ -334,28 +334,24 @@
         windowSwitchOSDDelay = 700;
         windowSwitcherAppearance = ''\\"comfortable\\"''; # TODO?
       };
+      # TODO: fix
       "com.lwouis.alt-tab-macos" = {
         appearanceSize = 1;
         appearanceStyle = 2;
         appearanceTheme = 1;
         appearanceVisibility = 1;
         crashPolicy = 0;
-        hideAppBadges = false;
-        hideSpaceNumberLabels = false;
-        hideStatusIcons = false;
-        hideWindowlessApps = true;
+        fadeOutAnimation = true;
+        hideSpaceNumberLabels = true;
         holdShortcut = "\\U2318";
         menubarIcon = 0;
-        mouseHoverEnabled = true;
-        previewFocusedWindow = true;
+        previewFocusedWindow = true; # TODO
         shortcutStyle = 0;
         showFullscreenWindows = 1;
         showHiddenWindows = 0;
         showMinimizedWindows = 1;
-        showTabsAsWindows = false;
         showTitles = 2;
-        startAtLogin = true;
-        updatePolicy = 1;
+        updatePolicy = 2;
         windowDisplayDelay = 0;
         windowMaxWidthInRow = 30;
       };
