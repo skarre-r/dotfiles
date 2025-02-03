@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 {
   environment.variables = { };
   environment.shells = with pkgs; [
@@ -7,92 +7,94 @@
     fish
     nushell
   ];
-  environment.systemPackages = with pkgs; [
-    aerospace
-    alejandra
-    argo
-    argocd
-    bash
-    bat
-    bun
-    btop
-    chezmoi
-    cmake
-    colima
-    coreutils
-    ctlptl
-    curl
-    deno
-    direnv
-    docker
-    docker-buildx
-    docker-compose
-    fd
-    fish
-    fastfetch
-    fzf
-    gcc
-    gh
-    git
-    gitui
-    golangci-lint
-    go
-    gnugrep
-    gnumake
-    gopls
-    helmfile
-    helix
-    jankyborders
-    just
-    jq
-    k9s
-    kind
-    ko
-    kubectl
-    kubernetes-helm
-    kube-linter
-    kustomize
-    lazydocker
-    lazygit
-    lua
-    lua-language-server
-    luarocks
-    llvm
-    mas
-    neovim
-    nil
-    nixd
-    nixfmt-rfc-style
-    nodejs
-    nushell
-    opentofu
-    pnpm
-    poetry
-    podman
-    pre-commit
-    pyenv
-    python312
-    python313
-    ripgrep
-    ruff
-    rye
-    sketchybar
-    shellcheck
-    sops
-    sshpass
-    starship
-    stow
-    tilt
-    tmux
-    unzip
-    uv
-    vim
-    wget
-    yamllint
-    yaml-language-server
-    yazi
-    zellij
-    zsh
+  environment.systemPackages = [
+    # stable
+    pkgs-stable.go
+    # unstable
+    pkgs.aerospace
+    pkgs.alejandra
+    pkgs.argo
+    pkgs.argocd
+    pkgs.bash
+    pkgs.bat
+    pkgs.bun
+    pkgs.btop
+    pkgs.chezmoi
+    pkgs.cmake
+    pkgs.colima
+    pkgs.coreutils
+    pkgs.ctlptl
+    pkgs.curl
+    pkgs.deno
+    pkgs.direnv
+    pkgs.docker
+    pkgs.docker-buildx
+    pkgs.docker-compose
+    pkgs.fd
+    pkgs.fish
+    pkgs.fastfetch
+    pkgs.fzf
+    pkgs.gcc
+    pkgs.gh
+    pkgs.git
+    pkgs.gitui
+    pkgs.golangci-lint
+    pkgs.gnugrep
+    pkgs.gnumake
+    pkgs.gopls
+    pkgs.helmfile
+    pkgs.helix
+    pkgs.jankyborders
+    pkgs.just
+    pkgs.jq
+    pkgs.k9s
+    pkgs.kind
+    pkgs.ko
+    pkgs.kubectl
+    pkgs.kubernetes-helm
+    pkgs.kube-linter
+    pkgs.kustomize
+    pkgs.lazydocker
+    pkgs.lazygit
+    pkgs.lua
+    pkgs.lua-language-server
+    pkgs.luarocks
+    pkgs.llvm
+    pkgs.mas
+    pkgs.neovim
+    pkgs.nil
+    pkgs.nixd
+    pkgs.nixfmt-rfc-style
+    pkgs.nodejs
+    pkgs.nushell
+    pkgs.opentofu
+    pkgs.pnpm
+    pkgs.poetry
+    pkgs.podman
+    pkgs.pre-commit
+    pkgs.pyenv
+    pkgs.python312
+    pkgs.python313
+    pkgs.ripgrep
+    pkgs.ruff
+    pkgs.rye
+    pkgs.sketchybar
+    pkgs.shellcheck
+    pkgs.sops
+    pkgs.sshpass
+    pkgs.starship
+    pkgs.stow
+    pkgs.tilt
+    pkgs.tmux
+    pkgs.unzip
+    pkgs.uv
+    pkgs.vim
+    pkgs.wget
+    pkgs.yamllint
+    pkgs.yaml-language-server
+    pkgs.yazi
+    pkgs.zellij
+    pkgs.zsh
   ];
 
   fonts.packages = with pkgs; [
@@ -173,11 +175,11 @@
     package = pkgs.jankyborders;
     # config:
     style = "round";
-    order = "above";
+    order = "below";
     active_color = "0xE5FFFFFF";
     inactive_color = "0x3FFFFFFF";
     background_color = "0x00FFFFFF";
-    width = 1.0;
+    width = 4.5;
     # blur_radius = 1.0;
     ax_focus = false;
     hidpi = true;
