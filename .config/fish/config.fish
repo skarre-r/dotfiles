@@ -1,5 +1,5 @@
 
-# remove the welcom message
+# remove the welcome message
 set -U fish_greeting
 
 # init starship
@@ -12,11 +12,16 @@ function starship_transient_rprompt_func
 end
 
 starship init fish | source
-#enable_transience
+#enable_transience # TODO
 
 # init fzf
 if command -v fzf > /dev/null
     fzf --fish | source
+end
+
+# source abbreviations
+if test -e $HOME/.config/fish/abbr.fish
+    source $HOME/.config/fish/abbr.fish
 end
 
 # source shell aliases
