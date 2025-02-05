@@ -45,6 +45,7 @@
     pkgs.helmfile
     pkgs.helix
     pkgs.jankyborders
+    pkgs.jujutsu
     pkgs.just
     pkgs.jq
     pkgs.k9s
