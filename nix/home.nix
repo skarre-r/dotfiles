@@ -14,7 +14,6 @@
     "keka"
     "calibre"
     "openemu"
-    "freetube"
     "raindropio"
     "yacreader"
     "transmission"
@@ -22,6 +21,12 @@
     "little-snitch"
     "monitorcontrol"
     "keyboard-cowboy"
+    {
+      name = "freetube";
+      args = {
+        no_quarantine = true;
+      };
+    }
     {
       name = "librewolf";
       args = {
