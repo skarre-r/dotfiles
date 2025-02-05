@@ -73,7 +73,8 @@ case "$NAME" in
             LABEL="$SSID"
             ICON="􀙇"
         fi
-        sketchybar --set "$NAME" label="$(echo $LABEL | sed 's/\(.\{18\}\).*/\1.../')" icon="$ICON"
+        # truncate: "$(echo $LABEL | sed 's/\(.\{18\}\).*/\1.../')"
+        sketchybar --set "$NAME" label=$LABEL icon="$ICON"
         exit 0
         ;;
     *)
