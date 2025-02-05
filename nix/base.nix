@@ -10,6 +10,7 @@
   environment.systemPackages = [
     # stable
     pkgs-stable.go
+    pkgs-stable.lazyjj
     # unstable
     pkgs.aerospace
     pkgs.alejandra
@@ -56,6 +57,7 @@
     pkgs.kube-linter
     pkgs.kustomize
     pkgs.lazydocker
+    # pkgs.lazyjj
     pkgs.lazygit
     pkgs.lua
     pkgs.lua-language-server
@@ -78,7 +80,9 @@
     pkgs.python313
     pkgs.ripgrep
     pkgs.ruff
+    pkgs.rustup
     pkgs.rye
+    pkgs.spicetify-cli
     pkgs.sketchybar
     pkgs.shellcheck
     pkgs.sops
@@ -95,6 +99,7 @@
     pkgs.yaml-language-server
     pkgs.yazi
     pkgs.zellij
+    pkgs.zig
     pkgs.zsh
   ];
 
