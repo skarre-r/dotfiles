@@ -57,7 +57,6 @@
     pkgs.kube-linter
     pkgs.kustomize
     pkgs.lazydocker
-    # pkgs.lazyjj
     pkgs.lazygit
     pkgs.lua
     pkgs.lua-language-server
@@ -82,7 +81,6 @@
     pkgs.ruff
     pkgs.rustup
     pkgs.rye
-    pkgs.spicetify-cli
     pkgs.sketchybar
     pkgs.shellcheck
     pkgs.sops
@@ -116,14 +114,15 @@
     brews = [ "fish-shell/fish-beta-4/fish" ];
     casks = [
       "zed"
+      "keka"
       "pika"
       "maccy"
       "bruno"
-      "itsycal"
       "ghostty"
       "wezterm"
       "spotify"
       "neovide"
+      "keymapp"
       "alt-tab"
       "obsidian"
       "1password"
@@ -136,7 +135,6 @@
       "betterdisplay"
       "rectangle-pro"
       "eloston-chromium"
-      "reminders-menubar"
     ];
     masApps = {
       "rcmd" = 1596283165;

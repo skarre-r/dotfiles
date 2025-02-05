@@ -11,16 +11,10 @@
   homebrew.casks = [
     "iina"
     "lulu"
-    "keka"
     "calibre"
-    "openemu"
-    "raindropio"
     "yacreader"
     "transmission"
-    "balenaetcher"
     "little-snitch"
-    "monitorcontrol"
-    "keyboard-cowboy"
     {
       name = "freetube";
       args = {
