@@ -1,0 +1,16 @@
+# https://jj-vcs.github.io/jj/prerelease/config/
+
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[ui]
+color = "auto"
+editor = "vim"
+paginate = "never"        # equivalent to --no-pager
+default-command = ["log"]
+
+[ui.movement]
+edit = false
+
+[user]
+name = "skarre-r"
+email = "59067313+skarre-r@users.noreply.github.com"
