@@ -266,7 +266,7 @@
       "com.apple.springing.enabled" = true;
       "com.apple.swipescrolldirection" = true;
       "com.apple.trackpad.enableSecondaryClick" = true;
-      _HIHideMenuBar = true;
+      _HIHideMenuBar = false;
       AppleFontSmoothing = null;
       AppleICUForce24HourTime = true;
       AppleInterfaceStyle = "Dark";
@@ -319,8 +319,9 @@
         iCloudSync = 1;
         launchOnLogin = 1;
         moveCursorAcrossDisplays = 1;
-        screenEdgeGapTopNotch = 5;
-        screenEdgeGapTop = 25;
+        screenEdgeGapTopNotch = 0; # 5
+        screenEdgeGapTop = 0; # 25
+        screenEdgeGapBottom = 30;
         subsequentExecutionMode = 3;
         unsnapRestore = 2;
       };
