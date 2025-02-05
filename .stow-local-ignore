@@ -5,9 +5,9 @@
 \.gitignore
 \.luarc.json
 nix
+Brewfile.rb
 flake.lock
 flake.nix
-install
 Makefile
 README.md
 stylua.toml
