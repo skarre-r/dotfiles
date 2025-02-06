@@ -81,6 +81,7 @@
     pkgs.ruff
     pkgs.rustup
     pkgs.rye
+    pkgs.skhd
     pkgs.sketchybar
     pkgs.shellcheck
     pkgs.sops
@@ -93,6 +94,7 @@
     pkgs.uv
     pkgs.vim
     pkgs.wget
+    pkgs.yabai
     pkgs.yamllint
     pkgs.yaml-language-server
     pkgs.yazi
@@ -173,7 +175,11 @@
     enableFzfCompletion = true;
   };
 
-  services.nix-daemon.enable = true;
+  services.aerospace = {
+    enable = false;
+    package = pkgs.aerospace;
+  };
+  services.cachix-agent.enable = false;
   services.jankyborders = {
     enable = true;
     package = pkgs.jankyborders;
@@ -189,9 +195,18 @@
     hidpi = true;
     blacklist = [ "pycharm,goland" ];
   };
+  services.nix-daemon.enable = true;
   services.sketchybar = {
     enable = true;
     package = pkgs.sketchybar;
+  };
+  services.skhd = {
+    enable = false;
+    package = pkgs.skhd;
+  };
+  services.yabai = {
+    enable = false;
+    package = pkgs.yabai;
   };
 
   # Enable touch id sudo
