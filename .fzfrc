@@ -1,5 +1,6 @@
 # https://junegunn.github.io/fzf/reference/
 
+--smart-case
 --multi
 --cycle
 --highlight-line
@@ -9,8 +10,11 @@
 --no-info
 --no-scrollbar
 --no-separator
+--no-mouse
+--filepath-word
 --with-nth=2..
 --layout=default
+--history-size=200
 
 # exit with down arrow (fish version):
-#--bind 'down:transform:if test $FZF_POS -le 1; echo "abort"; else; echo "down"; end'
+# --bind 'down:transform:if test $FZF_POS -le 1; echo "abort"; else; echo "down"; end'
