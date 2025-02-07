@@ -28,3 +28,4 @@
   - [ ] alt-tab (window preview)
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
 - [ ] update neovim config
+- [ ] fish function: docker compose down > colima stop > podman machine start (or vice versa)
