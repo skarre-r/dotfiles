@@ -4,6 +4,7 @@
 \.git
 \.gitignore
 \.luarc.json
+\.jj
 nix
 Brewfile.rb
 flake.lock
