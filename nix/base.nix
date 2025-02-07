@@ -19,6 +19,7 @@
     # unstable
     pkgs-unstable.aerospace
     pkgs-unstable.alejandra
+    pkgs-unstable.atuin
     pkgs-unstable.argo
     pkgs-unstable.argocd
     pkgs-unstable.bash
@@ -90,6 +91,7 @@
     pkgs-unstable.rye
     pkgs-unstable.skhd
     pkgs-unstable.sketchybar
+    pkgs-unstable.skim
     pkgs-unstable.shellcheck
     pkgs-unstable.sops
     pkgs-unstable.sshpass
