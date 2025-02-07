@@ -38,6 +38,7 @@
     pkgs-unstable.docker-compose
     pkgs-unstable.fd
     pkgs-unstable.fish
+    pkgs-unstable.fishPlugins.fzf-fish
     pkgs-unstable.fastfetch
     pkgs-unstable.fzf
     pkgs-unstable.gcc
