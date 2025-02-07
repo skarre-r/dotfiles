@@ -1,30 +1,23 @@
 # nix-darwin options: https://mynixos.com/nix-darwin/options
-# home-manager options: https://mynixos.com/home-manager/options
 
 {
   description = "nix-darwin system flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-stable.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
-      nix-stable,
+      nixpkgs-stable,
       nix-darwin,
-      home-manager,
-      ...
     }:
     let
       sharedModules = [
@@ -64,27 +57,19 @@
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
         }
-        # home-manager
-        home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            verbose = true;
-            users.skar = {
-              home.stateVersion = "25.05";
-              programs.home-manager.enable = true;
-              home.packages = [ ];
-            };
-          };
-        }
         # base module
         ./nix/base.nix
       ];
 
       specialArgs = {
-        inherit inputs;
-        pkgs-stable = import nix-stable {
+        inherit self nix-darwin;
+        pkgs-unstable = import nixpkgs {
+          system = "aarch64-darwin";
+          hostPlatform = "aarch64-darwin";
+          buildPlatform = "aarch64-darwin";
+          config.allowUnfree = true;
+        };
+        pkgs-stable = import nixpkgs-stable {
           system = "aarch64-darwin";
           hostPlatform = "aarch64-darwin";
           buildPlatform = "aarch64-darwin";

@@ -1,9 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs-unstable, lib, ... }:
 {
   environment.variables = {
     NIX_MODULE = "home";
   };
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
     yt-dlp
   ];
 

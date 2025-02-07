@@ -19,7 +19,6 @@
 - [x] fish: update gbn function (stash changes)
 - [x] sketchybar: replace w/ bottom bar???
 - [x] fish abbreviations
-- [ ] nix (home-manager) program settings?
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
   - [ ] alt-tab (window preview)

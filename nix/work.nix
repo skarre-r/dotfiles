@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
   environment.variables = {
     NIX_MODULE = "work";
   };
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-unstable; [
     odo
     glab
     vault

@@ -1,7 +1,12 @@
-{ pkgs, pkgs-stable, ... }:
+{
+  pkgs-unstable,
+  pkgs-stable,
+  lib,
+  ...
+}:
 {
   environment.variables = { };
-  environment.shells = with pkgs; [
+  environment.shells = with pkgs-unstable; [
     bashInteractive
     zsh
     fish
@@ -12,98 +17,99 @@
     pkgs-stable.go
     pkgs-stable.lazyjj
     # unstable
-    pkgs.aerospace
-    pkgs.alejandra
-    pkgs.argo
-    pkgs.argocd
-    pkgs.bash
-    pkgs.bat
-    pkgs.bun
-    pkgs.btop
-    pkgs.chezmoi
-    pkgs.cmake
-    pkgs.colima
-    pkgs.coreutils
-    pkgs.ctlptl
-    pkgs.curl
-    pkgs.deno
-    pkgs.direnv
-    pkgs.docker
-    pkgs.docker-buildx
-    pkgs.docker-compose
-    pkgs.fd
-    pkgs.fish
-    pkgs.fastfetch
-    pkgs.fzf
-    pkgs.gcc
-    pkgs.gh
-    pkgs.git
-    pkgs.gitui
-    pkgs.golangci-lint
-    pkgs.gnugrep
-    pkgs.gnumake
-    pkgs.gopls
-    pkgs.helmfile
-    pkgs.helix
-    pkgs.jankyborders
-    pkgs.jujutsu
-    pkgs.just
-    pkgs.jq
-    pkgs.k9s
-    pkgs.kind
-    pkgs.ko
-    pkgs.kubectl
-    pkgs.kubernetes-helm
-    pkgs.kube-linter
-    pkgs.kustomize
-    pkgs.lazydocker
-    pkgs.lazygit
-    pkgs.lua
-    pkgs.lua-language-server
-    pkgs.luarocks
-    pkgs.llvm
-    pkgs.mas
-    pkgs.neovim
-    pkgs.nil
-    pkgs.nixd
-    pkgs.nixfmt-rfc-style
-    pkgs.nodejs
-    pkgs.nushell
-    pkgs.opentofu
-    pkgs.pnpm
-    pkgs.poetry
-    pkgs.podman
-    pkgs.pre-commit
-    pkgs.pyenv
-    pkgs.python312
-    pkgs.python313
-    pkgs.ripgrep
-    pkgs.ruff
-    pkgs.rustup
-    pkgs.rye
-    pkgs.skhd
-    pkgs.sketchybar
-    pkgs.shellcheck
-    pkgs.sops
-    pkgs.sshpass
-    pkgs.starship
-    pkgs.stow
-    pkgs.tilt
-    pkgs.tmux
-    pkgs.unzip
-    pkgs.uv
-    pkgs.vim
-    pkgs.wget
-    pkgs.yabai
-    pkgs.yamllint
-    pkgs.yaml-language-server
-    pkgs.yazi
-    pkgs.zellij
-    pkgs.zig
-    pkgs.zsh
+    pkgs-unstable.aerospace
+    pkgs-unstable.alejandra
+    pkgs-unstable.argo
+    pkgs-unstable.argocd
+    pkgs-unstable.bash
+    pkgs-unstable.bat
+    pkgs-unstable.bun
+    pkgs-unstable.btop
+    pkgs-unstable.chezmoi
+    pkgs-unstable.cmake
+    pkgs-unstable.colima
+    pkgs-unstable.coreutils
+    pkgs-unstable.ctlptl
+    pkgs-unstable.curl
+    pkgs-unstable.deno
+    pkgs-unstable.direnv
+    pkgs-unstable.docker
+    pkgs-unstable.docker-buildx
+    pkgs-unstable.docker-compose
+    pkgs-unstable.fd
+    pkgs-unstable.fish
+    pkgs-unstable.fastfetch
+    pkgs-unstable.fzf
+    pkgs-unstable.gcc
+    pkgs-unstable.gh
+    pkgs-unstable.git
+    pkgs-unstable.gitui
+    pkgs-unstable.golangci-lint
+    pkgs-unstable.gnugrep
+    pkgs-unstable.gnumake
+    pkgs-unstable.gopls
+    pkgs-unstable.helmfile
+    pkgs-unstable.helix
+    pkgs-unstable.jankyborders
+    pkgs-unstable.jujutsu
+    pkgs-unstable.just
+    pkgs-unstable.jq
+    pkgs-unstable.k9s
+    pkgs-unstable.kind
+    pkgs-unstable.ko
+    pkgs-unstable.kubectl
+    pkgs-unstable.kubernetes-helm
+    pkgs-unstable.kube-linter
+    pkgs-unstable.kustomize
+    pkgs-unstable.lazydocker
+    pkgs-unstable.lazygit
+    pkgs-unstable.lua
+    pkgs-unstable.lua-language-server
+    pkgs-unstable.luarocks
+    pkgs-unstable.llvm
+    pkgs-unstable.mas
+    pkgs-unstable.neovim
+    pkgs-unstable.nil
+    pkgs-unstable.nixd
+    pkgs-unstable.nixfmt-rfc-style
+    pkgs-unstable.nix-index
+    pkgs-unstable.nodejs
+    pkgs-unstable.nushell
+    pkgs-unstable.opentofu
+    pkgs-unstable.pnpm
+    pkgs-unstable.poetry
+    pkgs-unstable.podman
+    pkgs-unstable.pre-commit
+    pkgs-unstable.pyenv
+    pkgs-unstable.python312
+    pkgs-unstable.python313
+    pkgs-unstable.ripgrep
+    pkgs-unstable.ruff
+    pkgs-unstable.rustup
+    pkgs-unstable.rye
+    pkgs-unstable.skhd
+    pkgs-unstable.sketchybar
+    pkgs-unstable.shellcheck
+    pkgs-unstable.sops
+    pkgs-unstable.sshpass
+    pkgs-unstable.starship
+    pkgs-unstable.stow
+    pkgs-unstable.tilt
+    pkgs-unstable.tmux
+    pkgs-unstable.unzip
+    pkgs-unstable.uv
+    pkgs-unstable.vim
+    pkgs-unstable.wget
+    pkgs-unstable.yabai
+    pkgs-unstable.yamllint
+    pkgs-unstable.yaml-language-server
+    pkgs-unstable.yazi
+    pkgs-unstable.zellij
+    pkgs-unstable.zig
+    pkgs-unstable.zsh
   ];
 
-  fonts.packages = with pkgs; [
+  fonts.packages = with pkgs-unstable; [
     jetbrains-mono
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
@@ -159,30 +165,61 @@
     };
   };
 
-  programs.fish = {
-    enable = true;
-    vendor = {
-      completions.enable = true;
-      config.enable = true;
-      functions.enable = true;
+  programs = {
+    bash = {
+      enable = true;
+      completion.enable = false;
     };
-  };
-  programs.zsh = {
-    enable = true;
-    enableBashCompletion = true;
-    enableCompletion = true;
-    enableFastSyntaxHighlighting = true;
-    enableFzfCompletion = true;
+    direnv = {
+      enable = true;
+      package = pkgs-unstable.direnv;
+    };
+    fish = {
+      enable = true;
+      package = pkgs-unstable.fish;
+      vendor = {
+        completions.enable = true;
+        config.enable = true;
+        functions.enable = true;
+      };
+    };
+    nix-index = {
+      enable = true;
+      package = pkgs-unstable.nix-index;
+    };
+    tmux = {
+      enable = true;
+      enableFzf = false;
+      enableMouse = true;
+      enableSensible = false;
+      enableVim = false;
+    };
+    vim = {
+      enable = true;
+      package = lib.mkForce pkgs-unstable.vim;
+      enableSensible = false;
+    };
+    zsh = {
+      enable = true;
+      enableBashCompletion = false;
+      enableCompletion = false;
+      enableFastSyntaxHighlighting = false;
+      enableFzfCompletion = false;
+      enableFzfGit = false;
+      enableFzfHistory = false;
+      enableGlobalCompInit = false;
+      enableSyntaxHighlighting = false;
+    };
   };
 
   services.aerospace = {
     enable = false;
-    package = pkgs.aerospace;
+    package = pkgs-unstable.aerospace;
   };
   services.cachix-agent.enable = false;
   services.jankyborders = {
     enable = true;
-    package = pkgs.jankyborders;
+    package = pkgs-unstable.jankyborders;
     # config:
     style = "round";
     order = "below";
@@ -198,15 +235,15 @@
   services.nix-daemon.enable = true;
   services.sketchybar = {
     enable = true;
-    package = pkgs.sketchybar;
+    package = pkgs-unstable.sketchybar;
   };
   services.skhd = {
     enable = false;
-    package = pkgs.skhd;
+    package = pkgs-unstable.skhd;
   };
   services.yabai = {
     enable = false;
-    package = pkgs.yabai;
+    package = pkgs-unstable.yabai;
   };
 
   # Enable touch id sudo
@@ -398,34 +435,6 @@
   users.users."skar" = {
     uid = 501; # default uid
     home = "/Users/skar";
-    shell = pkgs.fish;
-  };
-
-  # home-manager
-  home-manager.backupFileExtension = "backup";
-  home-manager.users.skar.programs = {
-    bash = {
-      enable = false;
-      package = pkgs.bashInteractive;
-      enableCompletion = true;
-    };
-    fish = {
-      enable = false;
-      package = pkgs.fish;
-      generateCompletions = true;
-      preferAbbrs = true;
-      shellInit = ""; # TODO
-    };
-    zsh = {
-      enable = false;
-      package = pkgs.zsh;
-      autocd = true;
-      dotDir = ".config/zsh";
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      historySubstringSearch.enable = true;
-      syntaxHighlighting.enable = true;
-      initExtra = ""; # TODO
-    };
+    shell = pkgs-unstable.fish;
   };
 }
