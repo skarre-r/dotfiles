@@ -20,8 +20,8 @@ if command -v fzf > /dev/null
 end
 
 # source abbreviations
-if test -e $HOME/.config/fish/abbr.fish
-    source $HOME/.config/fish/abbr.fish
+if test -e $HOME/.config/fish/abbreviations.fish
+    source $HOME/.config/fish/abbreviations.fish
 end
 
 # source shell aliases

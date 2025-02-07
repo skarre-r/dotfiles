@@ -17,7 +17,8 @@
 - [x] sketchybar: week number
 - [x] jankyborders config file(s)
 - [x] fish: update gbn function (stash changes)
-- [ ] fish abbreviations
+- [x] sketchybar: replace w/ bottom bar???
+- [x] fish abbreviations
 - [ ] nix (home-manager) program settings?
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
@@ -26,6 +27,5 @@
 - [ ] zsh: fix slow startup???
 - [ ] zsh: .config/zsh/
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
-- [ ] sketchybar: replace w/ bottom bar???
 - [ ] update neovim config
 - [ ] fish: zsh-like history
