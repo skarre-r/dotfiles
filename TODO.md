@@ -21,6 +21,7 @@
 - [x] fish abbreviations
 - [x] zsh: fix slow startup???
 - [ ] fish: zsh-like history
+  - [ ] https://github.com/marlonrichert/zsh-autocomplete
 - [ ] remove unnecessary shell dotfiles?
 - [ ] zsh: .config/zsh/
 - [ ] nix: update CustomUserPreferences (defaults read)

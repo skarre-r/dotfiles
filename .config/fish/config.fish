@@ -45,6 +45,7 @@ fish_add_path --path --move "/run/current-system/sw/bin"
 fish_add_path --path --move "/etc/profiles/per-user/$(/usr/bin/whoami)/bin"
 fish_add_path --path --move "/Users/$(/usr/bin/whoami)/.nix-profile/bin"
 
-# binds
-bind -k up fzf-history-widget
-bind \e\[A fzf-history-widget
+# binds (TODO: history-pager)
+#bind \e\[A fzf-history-widget
+
+fzf_configure_bindings --history=\e\[A  # fzf.fish plugin
