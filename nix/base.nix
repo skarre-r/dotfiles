@@ -382,6 +382,7 @@
         SUAutomaticallyUpdate = 0;
         SUEnableAutomaticChecks = 1;
         SUSendProfileInfo = 0;
+        MJConfigFile = "~/.config/hammerspoon/init.lua";
       };
       "org.p0deje.Maccy" = {
         showApplicationIcons = 1;
