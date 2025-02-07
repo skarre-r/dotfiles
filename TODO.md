@@ -19,12 +19,12 @@
 - [x] fish: update gbn function (stash changes)
 - [x] sketchybar: replace w/ bottom bar???
 - [x] fish abbreviations
+- [x] zsh: fix slow startup???
+- [ ] fish: zsh-like history
+- [ ] remove unnecessary shell dotfiles?
+- [ ] zsh: .config/zsh/
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
   - [ ] alt-tab (window preview)
-- [ ] remove unnecessary shell dotfiles?
-- [ ] zsh: fix slow startup???
-- [ ] zsh: .config/zsh/
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
 - [ ] update neovim config
-- [ ] fish: zsh-like history
