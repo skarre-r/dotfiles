@@ -12,7 +12,7 @@ function starship_transient_rprompt_func
 end
 
 starship init fish | source
-#enable_transience # TODO
+enable_transience
 
 # init fzf
 if command -v fzf > /dev/null
@@ -45,7 +45,11 @@ fish_add_path --path --move "/run/current-system/sw/bin"
 fish_add_path --path --move "/etc/profiles/per-user/$(/usr/bin/whoami)/bin"
 fish_add_path --path --move "/Users/$(/usr/bin/whoami)/.nix-profile/bin"
 
-# binds (TODO: history-pager)
-#bind \e\[A fzf-history-widget
+# history
+if status is-interactive
+    atuin init fish | source
+end
 
-fzf_configure_bindings --history=\e\[A  # fzf.fish plugin
+# bind \e\[A history-pager
+# bind \e\[A fzf-history-widget
+# fzf_configure_bindings --history=\e\[A  # fzf.fish plugin
