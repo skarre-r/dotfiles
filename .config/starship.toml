@@ -289,7 +289,7 @@ zsh_indicator = "zsh"
 nu_indicator = "nu"
 unknown_indicator = ""
 style = "dimmed bold"
-disabled = false
+disabled = true
 
 [shlvl]
 format = '[$symbol$shlvl]($style) - '
