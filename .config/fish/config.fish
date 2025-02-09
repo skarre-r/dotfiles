@@ -2,23 +2,6 @@
 # remove the welcome message
 set -U fish_greeting
 
-# init starship
-function starship_transient_prompt_func
-  starship module character
-end
-
-function starship_transient_rprompt_func
-  starship module time
-end
-
-starship init fish | source
-enable_transience
-
-# init fzf
-if command -v fzf > /dev/null
-    fzf --fish | source
-end
-
 # source abbreviations
 if test -e $HOME/.config/fish/abbreviations.fish
     source $HOME/.config/fish/abbreviations.fish
@@ -45,9 +28,22 @@ fish_add_path --path --move "/run/current-system/sw/bin"
 fish_add_path --path --move "/etc/profiles/per-user/$(/usr/bin/whoami)/bin"
 fish_add_path --path --move "/Users/$(/usr/bin/whoami)/.nix-profile/bin"
 
-# history
+# interactive
 if status is-interactive
-    atuin init fish | source
+    # starship
+    if command -v starship > /dev/null
+        starship init fish | source
+    end
+
+    # history
+    if command -v atuin > /dev/null
+        atuin init fish | source
+    end
+
+    # fzf
+    if command -v fzf > /dev/null
+        fzf --fish | source
+    end
 end
 
 # bind \e\[A history-pager
