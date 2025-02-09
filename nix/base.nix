@@ -70,6 +70,7 @@
     pkgs-unstable.luarocks
     pkgs-unstable.llvm
     pkgs-unstable.mas
+    pkgs-unstable.mcfly
     pkgs-unstable.neovim
     pkgs-unstable.nil
     pkgs-unstable.nixd
@@ -81,6 +82,7 @@
     pkgs-unstable.pnpm
     pkgs-unstable.poetry
     pkgs-unstable.podman
+    pkgs-unstable.postgresql
     pkgs-unstable.pre-commit
     pkgs-unstable.pyenv
     pkgs-unstable.python312
@@ -97,6 +99,7 @@
     pkgs-unstable.sshpass
     pkgs-unstable.starship
     pkgs-unstable.stow
+    pkgs-unstable.sqlite
     pkgs-unstable.tilt
     pkgs-unstable.tmux
     pkgs-unstable.unzip
@@ -137,6 +140,7 @@
       "alt-tab"
       "obsidian"
       "1password"
+      "flashspace"
       "sf-symbols"
       "zen-browser"
       "hammerspoon"
