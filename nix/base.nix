@@ -17,7 +17,6 @@
     pkgs-stable.go
     pkgs-stable.lazyjj
     # unstable
-    pkgs-unstable.aerospace
     pkgs-unstable.alejandra
     pkgs-unstable.atuin
     pkgs-unstable.argo
@@ -106,7 +105,6 @@
     pkgs-unstable.uv
     pkgs-unstable.vim
     pkgs-unstable.wget
-    pkgs-unstable.yabai
     pkgs-unstable.yamllint
     pkgs-unstable.yaml-language-server
     pkgs-unstable.yazi
@@ -139,6 +137,7 @@
       "keymapp"
       "alt-tab"
       "obsidian"
+      "hyperkey"
       "1password"
       "flashspace"
       "sf-symbols"
@@ -162,13 +161,15 @@
       "1Password for Safari" = 1569813296;
     };
     global = {
-      autoUpdate = false;
-      brewfile = false;
-      lockfiles = true;
+      autoUpdate = true;
+      brewfile = true;
+      lockfiles = false;
     };
     onActivation = {
-      autoUpdate = false;
-      upgrade = false;
+      autoUpdate = true;
+      cleanup = "zap";
+      extraFlags = [ ];
+      upgrade = true;
     };
   };
 
@@ -219,10 +220,7 @@
     };
   };
 
-  services.aerospace = {
-    enable = false;
-    package = pkgs-unstable.aerospace;
-  };
+  services.aerospace.enable = false;
   services.cachix-agent.enable = false;
   services.jankyborders = {
     enable = true;
@@ -248,13 +246,10 @@
     enable = false;
     package = pkgs-unstable.skhd;
   };
-  services.yabai = {
-    enable = false;
-    package = pkgs-unstable.yabai;
-  };
+  services.yabai.enable = false;
 
   # Enable touch id sudo
-  security.pam.enableSudoTouchIdAuth = false; # TODO
+  security.pam.enableSudoTouchIdAuth = false;
 
   # macOS settings
   system.defaults = {

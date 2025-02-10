@@ -30,7 +30,6 @@
   homebrew.masApps = {
     "Windows App" = 1295203466;
   };
-  homebrew.onActivation.cleanup = "none";
 
   system.defaults.dock.persistent-apps = null;
   system.defaults.dock.persistent-others = null;
