@@ -430,6 +430,12 @@
         showTitle = 1;
       };
       "pro.betterdisplay.BetterDisplay" = { };
+      "com.knollsoft.Hyperkey" = {
+        SUEnableAutomaticChecks = 0;
+        capsLockRemapped = 2;
+        keyRemap = 1;
+        launchOnLogin = 1;
+      };
     };
   };
 
