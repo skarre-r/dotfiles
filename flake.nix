@@ -4,11 +4,21 @@
   description = "nix-darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+    # nixpkgs
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    };
+    nixpkgs-stable = {
+      url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+    };
+    # nix-darwin
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # nix-homebrew
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
     };
   };
 
@@ -18,6 +28,7 @@
       nixpkgs,
       nixpkgs-stable,
       nix-darwin,
+      nix-homebrew,
     }:
     let
       sharedModules = [
@@ -56,6 +67,16 @@
           # Used for backwards compatibility, please read the changelog before changing.
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
+        }
+        # homebrew
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = false;
+            user = "skar";
+            autoMigrate = true;
+          };
         }
         # base module
         ./nix/base.nix
