@@ -20,9 +20,10 @@
 - [x] sketchybar: replace w/ bottom bar???
 - [x] fish abbreviations
 - [x] zsh: fix slow startup???
-- [ ] fish: zsh-like history
-  - [ ] https://github.com/marlonrichert/zsh-autocomplete
-- [ ] remove unnecessary shell dotfiles?
+- [x] fish: zsh-like history
+  - [x] https://github.com/marlonrichert/zsh-autocomplete
+- [x] remove unnecessary shell dotfiles?
+- [x] nix-homebrew: https://github.com/zhaofengli/nix-homebrew?tab=readme-ov-file#b-existing-homebrew-installation
 - [ ] zsh: .config/zsh/
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
