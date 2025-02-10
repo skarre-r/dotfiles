@@ -1,0 +1,14 @@
+{
+  "showFloatingNotifications": true,
+  "runScriptOnProfileChange": "",
+  "runScriptOnLaunch": "",
+  "changeWorkspaceOnAppAssign": true,
+  "enableIntegrations": false,
+  "runScriptOnWorkspaceChange": "",
+  "checkForUpdatesAutomatically": true,
+  "showMenuBarTitle": true,
+  "centerCursorOnFocusChange": false,
+  "menuBarTitleTemplate": "$WORKSPACE",
+  "enableFocusManagement": false,
+  "centerCursorOnWorkspaceChange": false
+}

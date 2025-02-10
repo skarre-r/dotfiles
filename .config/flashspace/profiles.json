@@ -1,0 +1,12 @@
+{
+  "profiles" : [
+    {
+      "id" : "884EAB49-F763-4200-9785-3E31DA1CA7D5",
+      "workspaces" : [
+
+      ],
+      "name" : "Default"
+    }
+  ],
+  "selectedProfileId" : "884EAB49-F763-4200-9785-3E31DA1CA7D5"
+}
