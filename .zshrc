@@ -38,6 +38,10 @@ if [[ "$ZSH_AUTOCOMPLETE_PATH" != "" ]]; then
     fi
 fi
 
+if command -v atuin > /dev/null; then
+    eval "$(atuin init zsh)"
+fi
+
 if command -v fzf > /dev/null; then
     source <(fzf --zsh)
 fi
