@@ -283,17 +283,18 @@ style = "bold red"
 disabled = true
 
 [shell]
-bash_indicator = "bash"
-fish_indicator = "fish"
-zsh_indicator = "zsh"
-nu_indicator = "nu"
-unknown_indicator = ""
+bash_indicator = "bash "
+fish_indicator = ""
+zsh_indicator = "zsh "
+nu_indicator = "nu "
+unknown_indicator = "? "
+format = '[$indicator]($style)'
 style = "dimmed bold"
-disabled = true
+disabled = false
 
 [shlvl]
-format = '[$symbol$shlvl]($style) - '
-symbol = "lvl "
+format = '[$symbol$shlvl]($style) '
+symbol = "lvl"
 disabled = false
 
 [singularity]
