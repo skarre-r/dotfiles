@@ -5,7 +5,9 @@
   ...
 }:
 {
-  environment.variables = { };
+  environment.variables = {
+    ZSH_AUTOCOMPLETE_PATH = pkgs-unstable.zsh-autocomplete.outPath;
+  };
   environment.shells = with pkgs-unstable; [
     bashInteractive
     zsh
@@ -100,6 +102,7 @@
     pkgs-unstable.stow
     pkgs-unstable.sqlite
     pkgs-unstable.tilt
+    pkgs-unstable.tree-sitter
     pkgs-unstable.tmux
     pkgs-unstable.unzip
     pkgs-unstable.uv
@@ -111,6 +114,8 @@
     pkgs-unstable.zellij
     pkgs-unstable.zig
     pkgs-unstable.zsh
+    pkgs-unstable.zsh-autocomplete
+    pkgs-unstable.xz
   ];
 
   fonts.packages = with pkgs-unstable; [
@@ -211,7 +216,7 @@
       enable = true;
       enableBashCompletion = false;
       enableCompletion = false;
-      enableFastSyntaxHighlighting = false;
+      enableFastSyntaxHighlighting = true;
       enableFzfCompletion = false;
       enableFzfGit = false;
       enableFzfHistory = false;
