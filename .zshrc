@@ -3,19 +3,18 @@
 PROMPT='%~ $ '
 CLICOLOR=1
 
-# TODO: bind CMD+Backspace to 'backward-kill-line'
 bindkey -e
 bindkey "^[[1;3D" backward-word             # Option+Left
 bindkey "^[[1;3C" forward-word              # Option+Right
 bindkey "^[[1;9D" beginning-of-line         # Command+Left
 bindkey "^[[1;9C" end-of-line               # Command+Right
 bindkey "^[[H" beginning-of-line            # Home
-#bindkey "^[[D" beginning-of-line            # ???
 bindkey "^[[F" end-of-line                  # End
-#bindkey "^[[C" end-of-line                  # ???
 bindkey "^[[A" history-search-backward      # Up
 bindkey "^[[B" history-search-forward       # Down
 bindkey '^[^?' backward-kill-word           # Option+Backspace
+# bindkey "^[[D" beginning-of-line
+# bindkey "^[[C" end-of-line
 
 if [ -f $HOME/.aliases ]; then
     source "$HOME/.aliases"
@@ -29,16 +28,34 @@ if [ -f $HOME/.functions ]; then
     source "$HOME/.functions"
 fi
 
-if ! command -v brew > /dev/null
-then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+# fix homebrew vs nix paths
+if [[ -d "/nix/var/nix/profiles/default/bin" ]]; then
+    export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+fi
+if [[ -d "/run/current-system/sw/bin" ]]; then
+    export PATH="/run/current-system/sw/bin:$PATH"
+fi
+if [[ -d "/etc/profiles/per-user/$(/usr/bin/whoami)/bin" ]]; then
+    export PATH="/etc/profiles/per-user/$(/usr/bin/whoami)/bin:$PATH"
+fi
+if [[ -d "/Users/$(/usr/bin/whoami)/.nix-profile/bin" ]]; then
+    export PATH="/Users/$(/usr/bin/whoami)/.nix-profile/bin:$PATH"
 fi
 
-autoload -Uz compinit
-compinit
+# remove duplicate entries in $PATH
+typeset -U path
+
+# zsh-autocomplete
+if [[ "$ZSH_AUTOCOMPLETE_PATH" != "" ]]; then
+    if [[ -f "$ZSH_AUTOCOMPLETE_PATH/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]]; then
+        source "$ZSH_AUTOCOMPLETE_PATH/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+    fi
+fi
 
 if command -v fzf > /dev/null; then
     source <(fzf --zsh)
 fi
 
-eval "$(starship init zsh)"
+if command -v starship > /dev/null; then
+    eval "$(starship init zsh)"
+fi
