@@ -28,20 +28,6 @@ if [ -f $HOME/.functions ]; then
     source "$HOME/.functions"
 fi
 
-# fix homebrew vs nix paths
-if [[ -d "/nix/var/nix/profiles/default/bin" ]]; then
-    export PATH="/nix/var/nix/profiles/default/bin:$PATH"
-fi
-if [[ -d "/run/current-system/sw/bin" ]]; then
-    export PATH="/run/current-system/sw/bin:$PATH"
-fi
-if [[ -d "/etc/profiles/per-user/$(/usr/bin/whoami)/bin" ]]; then
-    export PATH="/etc/profiles/per-user/$(/usr/bin/whoami)/bin:$PATH"
-fi
-if [[ -d "/Users/$(/usr/bin/whoami)/.nix-profile/bin" ]]; then
-    export PATH="/Users/$(/usr/bin/whoami)/.nix-profile/bin:$PATH"
-fi
-
 # remove duplicate entries in $PATH
 typeset -U path
 
