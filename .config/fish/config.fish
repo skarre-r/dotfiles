@@ -17,11 +17,6 @@ if test -e $HOME/.exports
     source $HOME/.exports
 end
 
-# homebrew
-if test -e /opt/homebrew/bin/brew
-    /opt/homebrew/bin/brew shellenv | source
-end
-
 # fix homebrew vs nix paths
 fish_add_path --path --move "/nix/var/nix/profiles/default/bin"
 fish_add_path --path --move "/run/current-system/sw/bin"
