@@ -293,9 +293,9 @@ style = "dimmed bold"
 disabled = false
 
 [shlvl]
-format = '[$symbol$shlvl]($style) '
-symbol = "lvl"
-disabled = false
+format = '[$symbol$shlvl]($style) - '
+symbol = "lvl "
+disabled = true
 
 [singularity]
 disabled = true
