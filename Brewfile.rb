@@ -1,6 +1,7 @@
 # This file isn't actually used for anything
 # except for keeping track of unused homebrew casks, etc.
 
+cask "utm"
 cask "yaak"
 cask "lasso"
 cask "fleet"
