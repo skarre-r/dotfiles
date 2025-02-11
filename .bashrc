@@ -15,14 +15,14 @@ if [ -f $HOME/.functions ]; then
     source "$HOME/.functions"
 fi
 
-if ! command -v brew > /dev/null
-then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+if command -v starship > /dev/null; then
+    eval "$(starship init bash)"
 fi
 
+if command -v atuin > /dev/null; then
+    eval "$(atuin init bash)"
+fi
 
 if command -v fzf > /dev/null; then
     eval "$(fzf --bash)"
 fi
-
-eval "$(starship init bash)"
