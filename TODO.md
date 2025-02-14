@@ -31,3 +31,4 @@
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
 - [ ] update neovim config
 - [ ] fish function: docker compose down > colima stop > podman machine start (or vice versa)
+- [ ] nix/ brew: "global" lock file/ brewfile?
