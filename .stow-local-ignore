@@ -5,10 +5,12 @@
 \.gitignore
 \.luarc.json
 \.jj
+icns
 nix
 Brewfile.rb
 flake.lock
 flake.nix
+icons.sh
 Makefile
 README.md
 stylua.toml
