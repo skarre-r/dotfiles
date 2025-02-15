@@ -1,0 +1,9 @@
+#!/usr/bin/env fish
+
+# TODO:
+# 1. check if 'fileicon' is installed
+# 2. list files in $HOME/icns (if the directory/ symlink exists)
+# 3. for each <name>.icns file, try to find a corresponding <name>.app in /Applications
+# 4. if found, run `fileicon set /Applications/<name>.app $HOME/icns/<name>.icns`
+
+exit 0
