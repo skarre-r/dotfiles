@@ -128,7 +128,10 @@
   homebrew = {
     enable = true;
     taps = [ "fish-shell/fish-beta-4" ];
-    brews = [ "fish-shell/fish-beta-4/fish" ];
+    brews = [
+      "fish-shell/fish-beta-4/fish"
+      "fileicon"
+    ];
     casks = [
       "zed"
       "keka"
@@ -242,7 +245,6 @@
     hidpi = true;
     blacklist = [ "pycharm,goland" ];
   };
-  services.nix-daemon.enable = true;
   services.sketchybar = {
     enable = true;
     package = pkgs-unstable.sketchybar;
