@@ -79,6 +79,7 @@
     pkgs-unstable.nix-index
     pkgs-unstable.nodejs
     pkgs-unstable.nushell
+    pkgs-unstable.openssh
     pkgs-unstable.opentofu
     pkgs-unstable.pnpm
     pkgs-unstable.poetry
