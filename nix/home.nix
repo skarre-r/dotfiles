@@ -13,6 +13,7 @@
     "calibre"
     "yacreader"
     "transmission"
+    "balenaetcher"
     "little-snitch"
     {
       name = "freetube";
