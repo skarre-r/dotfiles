@@ -3,13 +3,13 @@
   environment.variables = {
     NIX_MODULE = "work";
   };
-  environment.systemPackages = with pkgs-unstable; [
-    odo
-    glab
-    vault
-    unixODBC
-    openshift
-    azure-cli
+  environment.systemPackages = [
+    pkgs-unstable.odo
+    pkgs-unstable.glab
+    # pkgs-unstable.vault
+    pkgs-unstable.unixODBC
+    pkgs-unstable.openshift
+    pkgs-unstable.azure-cli
   ];
 
   homebrew.taps = [ "microsoft/mssql-release" ];
