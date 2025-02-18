@@ -158,6 +158,7 @@
       "betterdisplay"
       "rectangle-pro"
       "eloston-chromium"
+      "safari-technology-preview"
     ];
     masApps = {
       "rcmd" = 1596283165;
