@@ -2,11 +2,25 @@
   "profiles" : [
     {
       "id" : "884EAB49-F763-4200-9785-3E31DA1CA7D5",
+      "name" : "Default",
       "workspaces" : [
 
-      ],
-      "name" : "Default"
+      ]
+    },
+    {
+      "id" : "7580EFCA-57B0-4189-812F-F760BC8BDB54",
+      "name" : "Home",
+      "workspaces" : [
+
+      ]
+    },
+    {
+      "id" : "8F6FC776-145E-479F-8732-44EBDB24861C",
+      "name" : "Work",
+      "workspaces" : [
+
+      ]
     }
   ],
-  "selectedProfileId" : "884EAB49-F763-4200-9785-3E31DA1CA7D5"
+  "selectedProfileId" : "8F6FC776-145E-479F-8732-44EBDB24861C"
 }

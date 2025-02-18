@@ -1,14 +1,16 @@
 {
-  "showFloatingNotifications": true,
-  "runScriptOnProfileChange": "",
-  "runScriptOnLaunch": "",
-  "changeWorkspaceOnAppAssign": true,
-  "enableIntegrations": false,
-  "runScriptOnWorkspaceChange": "",
-  "checkForUpdatesAutomatically": true,
-  "showMenuBarTitle": true,
-  "centerCursorOnFocusChange": false,
-  "menuBarTitleTemplate": "$WORKSPACE",
-  "enableFocusManagement": false,
-  "centerCursorOnWorkspaceChange": false
+  "centerCursorOnFocusChange" : false,
+  "centerCursorOnWorkspaceChange" : true,
+  "changeWorkspaceOnAppAssign" : true,
+  "checkForUpdatesAutomatically" : true,
+  "enableFocusManagement" : true,
+  "enableIntegrations" : false,
+  "focusNextWorkspaceWindow" : "cmd+ctrl+opt+shift+right",
+  "focusPreviousWorkspaceWindow" : "cmd+ctrl+opt+shift+left",
+  "menuBarTitleTemplate" : "$WORKSPACE",
+  "runScriptOnLaunch" : "",
+  "runScriptOnProfileChange" : "",
+  "runScriptOnWorkspaceChange" : "",
+  "showFloatingNotifications" : true,
+  "showMenuBarTitle" : true
 }
