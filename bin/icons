@@ -22,6 +22,17 @@ for filePath in $HOME/icns/*.icns
     if test -e $applicationPath
         fileicon set $applicationPath $filePath
     end
+end
+
+if test -e $HOME/icns/sudo
+    for filePath in $HOME/icns/sudo/*.icns
+        set fileName (basename $filePath)
+        set applicationName (string split .icns $fileName)
+        set applicationPath "/Applications/$applicationName[1].app"
+        if test -e $applicationPath
+            sudo fileicon set $applicationPath $filePath
+        end
+    end
 
 end
 
