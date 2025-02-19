@@ -3,8 +3,9 @@
   environment.variables = {
     NIX_MODULE = "home";
   };
-  environment.systemPackages = with pkgs-unstable; [
-    yt-dlp
+  environment.systemPackages = [
+    pkgs-unstable.yt-dlp
+    pkgs-unstable.ryubing # ryujinx
   ];
 
   homebrew.casks = [
