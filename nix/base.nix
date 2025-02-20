@@ -102,6 +102,7 @@
     pkgs-unstable.starship
     pkgs-unstable.stow
     pkgs-unstable.sqlite
+    pkgs-unstable.taplo
     pkgs-unstable.tilt
     pkgs-unstable.tree-sitter
     pkgs-unstable.tmux
