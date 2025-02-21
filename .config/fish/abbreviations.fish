@@ -16,3 +16,6 @@ abbr --add "jgf" jj git fetch
 
 # lazyjj
 abbr --add "lj" lazyjj
+
+# misc
+abbr --add "pager" bat --paging=always
