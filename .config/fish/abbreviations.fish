@@ -1,5 +1,8 @@
 # abbreviations (aliases): https://fishshell.com/docs/current/cmds/abbr.html
 
+# git
+abbr --add "grv" git remote -v
+
 # jujutsu
 abbr --add "js" jj status
 abbr --add "jl" jj log
