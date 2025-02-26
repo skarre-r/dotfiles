@@ -364,7 +364,16 @@
       TrackpadThreeFingerDrag = false;
       TrackpadThreeFingerTapGesture = 0;
     };
-    CustomSystemPreferences = { };
+    CustomSystemPreferences = {
+      # "Apple Global Domain" = {
+      #   NSUserKeyEquivalents = {
+      #     Minimise = "@~^$\\Uf715";
+      #     "Minimise All" = "@~^$\\Uf713";
+      #     Minimize = "@~^$\\Uf716";
+      #     "Minimize All" = "@~^$\\Uf714";
+      #   };
+      # };
+    };
     CustomUserPreferences = {
       "com.apple.Safari" = {
         AutoFillCreditCardData = 0;
