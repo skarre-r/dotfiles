@@ -5,6 +5,8 @@ abbr --add "grv" git remote -v
 
 # github
 abbr --add "github" gh
+abbr --add "ghr" github-repo
+abbr --add "ghp" github-project
 
 # jujutsu
 abbr --add "js" jj status
