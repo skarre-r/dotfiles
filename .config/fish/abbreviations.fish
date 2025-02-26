@@ -3,6 +3,9 @@
 # git
 abbr --add "grv" git remote -v
 
+# github
+abbr --add "github" gh
+
 # jujutsu
 abbr --add "js" jj status
 abbr --add "jl" jj log
