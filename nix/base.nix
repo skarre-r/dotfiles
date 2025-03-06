@@ -129,9 +129,8 @@
 
   homebrew = {
     enable = true;
-    taps = [ "fish-shell/fish-beta-4" ];
+    taps = [ ];
     brews = [
-      "fish-shell/fish-beta-4/fish"
       "fileicon"
     ];
     casks = [
@@ -259,7 +258,7 @@
   services.yabai.enable = false;
 
   # Enable touch id sudo
-  security.pam.enableSudoTouchIdAuth = false;
+  security.pam.services.sudo_local.touchIdAuth = false;
 
   # macOS settings
   system.defaults = {
