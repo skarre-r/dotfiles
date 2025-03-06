@@ -5,6 +5,8 @@
 \.gitignore
 \.luarc.json
 \.jj
+\.env
+\.env.example
 nix
 Brewfile.rb
 flake.lock
