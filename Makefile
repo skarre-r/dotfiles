@@ -1,3 +1,5 @@
+include .env
+export
 
 .PHONY: install
 install: install-homebrew install-nix install-nix-darwin
