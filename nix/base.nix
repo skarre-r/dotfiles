@@ -1,126 +1,125 @@
 {
-  pkgs-unstable,
-  pkgs-stable,
+  pkgs,
   lib,
   ...
 }:
 {
   environment.variables = {
-    ZSH_AUTOCOMPLETE_PATH = pkgs-unstable.zsh-autocomplete.outPath;
+    ZSH_AUTOCOMPLETE_PATH = pkgs.zsh-autocomplete.outPath;
   };
-  environment.shells = with pkgs-unstable; [
+  environment.shells = with pkgs; [
     bashInteractive
     zsh
     fish
     nushell
   ];
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # stable
-    pkgs-stable.go
-    pkgs-stable.lazyjj
+    stable.go
+    stable.lazyjj
     # unstable
-    pkgs-unstable.alejandra
-    pkgs-unstable.atuin
-    pkgs-unstable.argo
-    pkgs-unstable.argocd
-    pkgs-unstable.bash
-    pkgs-unstable.bat
-    pkgs-unstable.bun
-    pkgs-unstable.btop
-    pkgs-unstable.chezmoi
-    pkgs-unstable.cmake
-    pkgs-unstable.colima
-    pkgs-unstable.coreutils
-    pkgs-unstable.ctlptl
-    pkgs-unstable.curl
-    pkgs-unstable.deno
-    pkgs-unstable.direnv
-    pkgs-unstable.docker
-    pkgs-unstable.docker-buildx
-    pkgs-unstable.docker-compose
-    pkgs-unstable.fd
-    pkgs-unstable.fish
-    pkgs-unstable.fishPlugins.fzf-fish
-    pkgs-unstable.fastfetch
-    pkgs-unstable.fzf
-    pkgs-unstable.gcc
-    pkgs-unstable.gh
-    pkgs-unstable.git
-    pkgs-unstable.gitui
-    pkgs-unstable.golangci-lint
-    pkgs-unstable.gnugrep
-    pkgs-unstable.gnumake
-    pkgs-unstable.gopls
-    pkgs-unstable.helmfile
-    pkgs-unstable.helix
-    pkgs-unstable.jankyborders
-    pkgs-unstable.jujutsu
-    pkgs-unstable.just
-    pkgs-unstable.jq
-    pkgs-unstable.k9s
-    pkgs-unstable.kind
-    pkgs-unstable.ko
-    pkgs-unstable.kubectl
-    pkgs-unstable.kubernetes-helm
-    pkgs-unstable.kube-linter
-    pkgs-unstable.kustomize
-    pkgs-unstable.lazydocker
-    pkgs-unstable.lazygit
-    pkgs-unstable.lua
-    pkgs-unstable.lua-language-server
-    pkgs-unstable.luarocks
-    pkgs-unstable.llvm
-    pkgs-unstable.mas
-    pkgs-unstable.mcfly
-    pkgs-unstable.neovim
-    pkgs-unstable.nil
-    pkgs-unstable.nixd
-    pkgs-unstable.nixfmt-rfc-style
-    pkgs-unstable.nix-index
-    pkgs-unstable.nodejs
-    pkgs-unstable.nushell
-    pkgs-unstable.openssh
-    pkgs-unstable.opentofu
-    pkgs-unstable.pnpm
-    pkgs-unstable.poetry
-    pkgs-unstable.podman
-    pkgs-unstable.postgresql
-    pkgs-unstable.pre-commit
-    pkgs-unstable.pyenv
-    pkgs-unstable.python312
-    pkgs-unstable.python313
-    pkgs-unstable.ripgrep
-    pkgs-unstable.ruff
-    pkgs-unstable.rustup
-    pkgs-unstable.rye
-    pkgs-unstable.skhd
-    pkgs-unstable.sketchybar
-    pkgs-unstable.skim
-    pkgs-unstable.shellcheck
-    pkgs-unstable.sops
-    pkgs-unstable.sshpass
-    pkgs-unstable.starship
-    pkgs-unstable.stow
-    pkgs-unstable.sqlite
-    pkgs-unstable.taplo
-    pkgs-unstable.tilt
-    pkgs-unstable.tree-sitter
-    pkgs-unstable.tmux
-    pkgs-unstable.unzip
-    pkgs-unstable.uv
-    pkgs-unstable.vim
-    pkgs-unstable.wget
-    pkgs-unstable.yamllint
-    pkgs-unstable.yaml-language-server
-    pkgs-unstable.yazi
-    pkgs-unstable.zellij
-    pkgs-unstable.zig
-    pkgs-unstable.zsh
-    pkgs-unstable.zsh-autocomplete
-    pkgs-unstable.xz
+    alejandra
+    atuin
+    argo
+    argocd
+    bash
+    bat
+    bun
+    btop
+    chezmoi
+    cmake
+    colima
+    coreutils
+    ctlptl
+    curl
+    deno
+    direnv
+    docker
+    docker-buildx
+    docker-compose
+    fd
+    fish
+    fishPlugins.fzf-fish
+    fastfetch
+    fzf
+    gcc
+    gh
+    git
+    gitui
+    golangci-lint
+    gnugrep
+    gnumake
+    gopls
+    helmfile
+    helix
+    jankyborders
+    jujutsu
+    just
+    jq
+    k9s
+    kind
+    ko
+    kubectl
+    kubernetes-helm
+    kube-linter
+    kustomize
+    lazydocker
+    lazygit
+    lua
+    lua-language-server
+    luarocks
+    llvm
+    mas
+    mcfly
+    neovim
+    nil
+    nixd
+    nixfmt-rfc-style
+    nix-index
+    nodejs
+    nushell
+    openssh
+    opentofu
+    pnpm
+    poetry
+    podman
+    postgresql
+    pre-commit
+    pyenv
+    python312
+    python313
+    ripgrep
+    ruff
+    rustup
+    rye
+    skhd
+    sketchybar
+    skim
+    shellcheck
+    sops
+    sshpass
+    starship
+    stow
+    sqlite
+    taplo
+    tilt
+    tree-sitter
+    tmux
+    unzip
+    uv
+    vim
+    wget
+    yamllint
+    yaml-language-server
+    yazi
+    zellij
+    zig
+    zsh
+    zsh-autocomplete
+    xz
   ];
 
-  fonts.packages = with pkgs-unstable; [
+  fonts.packages = with pkgs; [
     jetbrains-mono
     nerd-fonts.jetbrains-mono
     nerd-fonts.symbols-only
@@ -190,11 +189,11 @@
     };
     direnv = {
       enable = true;
-      package = pkgs-unstable.direnv;
+      package = pkgs.direnv;
     };
     fish = {
       enable = true;
-      package = pkgs-unstable.fish;
+      package = pkgs.fish;
       vendor = {
         completions.enable = true;
         config.enable = true;
@@ -203,7 +202,7 @@
     };
     nix-index = {
       enable = true;
-      package = pkgs-unstable.nix-index;
+      package = pkgs.nix-index;
     };
     tmux = {
       enable = true;
@@ -214,7 +213,7 @@
     };
     vim = {
       enable = true;
-      package = lib.mkForce pkgs-unstable.vim;
+      package = lib.mkForce pkgs.vim;
       enableSensible = false;
     };
     zsh = {
@@ -234,7 +233,7 @@
   services.cachix-agent.enable = false;
   services.jankyborders = {
     enable = true;
-    package = pkgs-unstable.jankyborders;
+    package = pkgs.jankyborders;
     # config:
     style = "round";
     order = "below";
@@ -249,11 +248,11 @@
   };
   services.sketchybar = {
     enable = true;
-    package = pkgs-unstable.sketchybar;
+    package = pkgs.sketchybar;
   };
   services.skhd = {
     enable = false;
-    package = pkgs-unstable.skhd;
+    package = pkgs.skhd;
   };
   services.yabai.enable = false;
 
@@ -461,6 +460,6 @@
   users.users."skar" = {
     uid = 501; # default uid
     home = "/Users/skar";
-    shell = pkgs-unstable.fish;
+    shell = pkgs.fish;
   };
 }

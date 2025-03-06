@@ -29,13 +29,15 @@
       nixpkgs-stable,
       nix-darwin,
       nix-homebrew,
-    }:
+      ...
+    }@inputs:
     let
       sharedModules = [
         # nix(pkgs) settings
         {
           # Auto optimise?
           nix.optimise.automatic = true;
+
           # Cache settings
           nix.settings.substituters = [ "https://cache.nixos.org" ];
           nix.settings.trusted-public-keys = [
@@ -56,19 +58,35 @@
             "skar"
           ];
           nix.extraOptions = '''';
+
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
+
           # Architecture
           nixpkgs.hostPlatform = "aarch64-darwin";
           nixpkgs.buildPlatform = "aarch64-darwin";
+
           # Allow "unfree" packages.
           nixpkgs.config.allowUnfree = true;
+
+          # TODO: use this instead of overlays???
+          # nixpkgs.pkgs = import <nixpkgs> {};
+
+          # Overlays ???
+          nixpkgs.overlays = [
+            (final: _prev: {
+              stable = import nixpkgs-stable { inherit (final) system config; };
+            })
+          ];
+
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
+
           # Used for backwards compatibility, please read the changelog before changing.
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
         }
+
         # homebrew
         nix-homebrew.darwinModules.nix-homebrew
         {
@@ -79,35 +97,20 @@
             autoMigrate = true;
           };
         }
+
         # base module
         ./nix/base.nix
       ];
-
-      specialArgs = {
-        inherit self nix-darwin;
-        pkgs-unstable = import nixpkgs {
-          system = "aarch64-darwin";
-          hostPlatform = "aarch64-darwin";
-          buildPlatform = "aarch64-darwin";
-          config.allowUnfree = true;
-        };
-        pkgs-stable = import nixpkgs-stable {
-          system = "aarch64-darwin";
-          hostPlatform = "aarch64-darwin";
-          buildPlatform = "aarch64-darwin";
-          config.allowUnfree = true;
-        };
-      };
     in
     {
       darwinConfigurations = {
         "home" = nix-darwin.lib.darwinSystem {
           modules = sharedModules ++ [ ./nix/home.nix ];
-          specialArgs = specialArgs;
+          specialArgs = { inherit inputs; };
         };
         "work" = nix-darwin.lib.darwinSystem {
           modules = sharedModules ++ [ ./nix/work.nix ];
-          specialArgs = specialArgs;
+          specialArgs = { inherit inputs; };
         };
       };
     };

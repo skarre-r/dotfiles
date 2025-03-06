@@ -1,15 +1,15 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   environment.variables = {
     NIX_MODULE = "work";
   };
-  environment.systemPackages = [
-    pkgs-unstable.odo
-    pkgs-unstable.glab
-    # pkgs-unstable.vault
-    pkgs-unstable.unixODBC
-    pkgs-unstable.openshift
-    pkgs-unstable.azure-cli
+  environment.systemPackages = with pkgs; [
+    odo
+    glab
+    # vault
+    unixODBC
+    openshift
+    azure-cli
   ];
 
   homebrew.taps = [ "microsoft/mssql-release" ];

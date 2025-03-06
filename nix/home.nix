@@ -1,11 +1,11 @@
-{ pkgs-unstable, lib, ... }:
+{ pkgs, lib, ... }:
 {
   environment.variables = {
     NIX_MODULE = "home";
   };
-  environment.systemPackages = [
-    pkgs-unstable.yt-dlp
-    pkgs-unstable.ryubing # ryujinx
+  environment.systemPackages = with pkgs; [
+    yt-dlp
+    # ryubing # ryujinx
   ];
 
   homebrew.casks = [
