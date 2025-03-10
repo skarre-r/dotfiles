@@ -39,7 +39,7 @@
     docker-compose
     fd
     fish
-    fishPlugins.fzf-fish
+    # fishPlugins.fzf-fish
     fastfetch
     fzf
     gcc
