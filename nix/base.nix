@@ -34,6 +34,7 @@
     curl
     deno
     direnv
+    diskus
     docker
     docker-buildx
     docker-compose
@@ -52,6 +53,8 @@
     gopls
     helmfile
     helix
+    hexyl
+    hyperfine
     jankyborders
     jujutsu
     just
@@ -80,6 +83,7 @@
     nushell
     openssh
     opentofu
+    pastel
     pnpm
     poetry
     podman
@@ -162,11 +166,9 @@
     masApps = {
       "rcmd" = 1596283165;
       "Noir" = 1592917505;
-      "Xcode" = 497799835;
       "Wipr 2" = 1662217862;
       "Numbers" = 409203825;
       "Userscripts" = 1463298887;
-      "The Unarchiver" = 425424353;
       "1Password for Safari" = 1569813296;
     };
     global = {

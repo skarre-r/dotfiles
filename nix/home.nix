@@ -30,6 +30,7 @@
     }
   ];
   homebrew.masApps = {
+    "Xcode" = 497799835;
     "QuickShade" = 931571202;
   };
 

@@ -16,3 +16,5 @@ cask "monitorcontrol"
 cask "keyboard-cowboy"
 cask "reminders-menubar"
 cask "karabiner-elements"
+
+mas "The Unarchiver", id: 425424353
