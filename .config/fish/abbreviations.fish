@@ -7,6 +7,9 @@ abbr --add "grv" git remote -v
 abbr --add "github" gh
 abbr --add "ghr" github-repo
 abbr --add "ghp" github-project
+abbr --add "prs" gh pr list
+abbr --add "issues" gh issue list
+abbr --add "iss" gh issue list
 
 # jujutsu
 abbr --add "js" jj status
