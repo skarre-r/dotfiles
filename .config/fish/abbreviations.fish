@@ -8,8 +8,12 @@ abbr --add "github" gh
 abbr --add "ghr" github-repo
 abbr --add "ghp" github-project
 abbr --add "prs" gh pr list
+abbr --add "pr" github-pr
 abbr --add "issues" gh issue list
 abbr --add "iss" gh issue list
+abbr --add "actions" gh run list
+abbr --add "act" gh run view --web
+
 
 # jujutsu
 abbr --add "js" jj status
