@@ -11,7 +11,77 @@
       "id" : "7580EFCA-57B0-4189-812F-F760BC8BDB54",
       "name" : "Home",
       "workspaces" : [
-
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Safari",
+              "iconPath" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns",
+              "name" : "Safari"
+            },
+            {
+              "bundleIdentifier" : "com.spotify.client",
+              "iconPath" : "/Applications/Spotify.app/Contents/Resources/Icon.icns",
+              "name" : "Spotify"
+            },
+            {
+              "bundleIdentifier" : "io.freetubeapp.freetube",
+              "iconPath" : "/Applications/FreeTube.app/Contents/Resources/icon.icns",
+              "name" : "FreeTube"
+            },
+            {
+              "bundleIdentifier" : "com.apple.reminders",
+              "iconPath" : "/System/Applications/Reminders.app/Contents/Resources/AppIcon.icns",
+              "name" : "Reminders"
+            },
+            {
+              "bundleIdentifier" : "ch.protonmail.desktop",
+              "iconPath" : "/Applications/Proton Mail.app/Contents/Resources/electron.icns",
+              "name" : "Proton Mail"
+            },
+            {
+              "bundleIdentifier" : "org.chromium.Chromium",
+              "iconPath" : "/Applications/Chromium.app/Contents/Resources/app.icns",
+              "name" : "Chromium"
+            },
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
+              "name" : "Zen"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "8F2165CB-3252-467D-9DE1-F6E8A10B6A42",
+          "name" : "Workspace 1",
+          "symbolIconName" : "macwindow.on.rectangle"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "dev.zed.Zed",
+              "iconPath" : "/Applications/Zed.app/Contents/Resources/Zed.icns",
+              "name" : "Zed"
+            },
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "com.apple.SafariTechnologyPreview",
+              "iconPath" : "/Applications/Safari Technology Preview.app/Contents/Resources/AppIcon-SafariTechnologyPreview.icns",
+              "name" : "Safari Technology Preview"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "9735C16D-DDE6-49DC-B9BB-DCCD6B45F967",
+          "name" : "Workspace 2",
+          "symbolIconName" : "apple.terminal.on.rectangle"
+        }
       ]
     },
     {
@@ -22,5 +92,5 @@
       ]
     }
   ],
-  "selectedProfileId" : "8F6FC776-145E-479F-8732-44EBDB24861C"
+  "selectedProfileId" : "7580EFCA-57B0-4189-812F-F760BC8BDB54"
 }
