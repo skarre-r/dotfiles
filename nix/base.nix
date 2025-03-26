@@ -14,10 +14,6 @@
     nushell
   ];
   environment.systemPackages = with pkgs; [
-    # stable
-    stable.go
-    stable.lazyjj
-    # unstable
     alejandra
     atuin
     argo
@@ -40,7 +36,6 @@
     docker-compose
     fd
     fish
-    # fishPlugins.fzf-fish
     fastfetch
     fzf
     gcc
@@ -50,6 +45,7 @@
     golangci-lint
     gnugrep
     gnumake
+    go
     gopls
     helmfile
     helix
@@ -68,6 +64,7 @@
     kustomize
     lazydocker
     lazygit
+    lazyjj
     lua
     lua-language-server
     luarocks
