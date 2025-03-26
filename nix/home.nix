@@ -5,7 +5,6 @@
   };
   environment.systemPackages = with pkgs; [
     yt-dlp
-    # ryubing # ryujinx
   ];
 
   homebrew.casks = [
@@ -13,6 +12,7 @@
     "lulu"
     "calibre"
     "yacreader"
+    "libreoffice"
     "transmission"
     "balenaetcher"
     "little-snitch"
