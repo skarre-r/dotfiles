@@ -8,6 +8,7 @@
   ];
 
   homebrew.casks = [
+    "mpv"
     "iina"
     "lulu"
     "calibre"
