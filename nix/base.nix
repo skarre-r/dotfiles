@@ -34,6 +34,7 @@
     docker
     docker-buildx
     docker-compose
+    eza
     fd
     fish
     fastfetch
