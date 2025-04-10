@@ -12,7 +12,7 @@ function github-pr
         echo "failed to run git: fatal: not a git repository (or any of the parent directories): .git"
         return 1
     end
-    set -f pr (gh pr list --json number,title,headRefName,labels,url --template '{{range .}}{{tablerow .number .title .headRefName .url}}{{end}}' | fzf --accept-nth=1 --print-query | tail -1)
+    set -f pr (gh pr list --json number,title,headRefName,labels,url --template '{{range .}}{{tablerow .number .title .headRefName .url}}{{end}}' | fzf --accept-nth=1)
     if test -n "$pr"
         gh pr view "$pr" --web
         return 0

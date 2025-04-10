@@ -5,7 +5,7 @@ function github-repo
             echo "run the 'github-repos' first function to fetch github repositories"
             return 1
         end
-        set -f url (github-repos | fzf --print-query | tail -1)
+        set -f url (github-repos | fzf)
         if test -n "$url"
             open --url $url
             return 0
