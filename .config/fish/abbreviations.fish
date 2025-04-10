@@ -13,6 +13,7 @@ abbr --add "issues" gh issue list
 abbr --add "iss" gh issue list
 abbr --add "actions" gh run list
 abbr --add "act" gh run view --web
+abbr --add "prc" github-pr-close
 
 
 # jujutsu
