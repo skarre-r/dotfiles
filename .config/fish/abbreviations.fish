@@ -3,17 +3,22 @@
 # git
 abbr --add "grv" git remote -v
 
-# github
+# github cli
 abbr --add "github" gh
-abbr --add "ghr" github-repo
-abbr --add "ghp" github-project
 abbr --add "prs" gh pr list
-abbr --add "pr" github-pr
 abbr --add "issues" gh issue list
 abbr --add "iss" gh issue list
 abbr --add "actions" gh run list
 abbr --add "act" gh run view --web
 
+# github cli + fzf fish functions
+abbr --add "ghr" github-repo
+abbr --add "ghp" github-project
+abbr --add "pr" github-pull-requests open
+abbr --add "pro" github-pull-requests open
+abbr --add "prc" github-pull-requests close
+abbr --add "prm" github-pull-requests merge
+abbr --add "prms" github-pull-requests squash
 
 # jujutsu
 abbr --add "js" jj status

@@ -34,6 +34,7 @@
     docker
     docker-buildx
     docker-compose
+    eza
     fd
     fish
     fastfetch
@@ -50,6 +51,8 @@
     helmfile
     helix
     hexyl
+    htmx-lsp
+    htmx-lsp2
     hyperfine
     jankyborders
     jujutsu
