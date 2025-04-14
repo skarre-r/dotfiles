@@ -7,11 +7,6 @@ if test -e $HOME/.config/fish/abbreviations.fish
     source $HOME/.config/fish/abbreviations.fish
 end
 
-# source shell aliases
-if test -e $HOME/.aliases
-    source $HOME/.aliases
-end
-
 # source environment variables
 if test -e $HOME/.exports
     source $HOME/.exports

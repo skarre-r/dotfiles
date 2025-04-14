@@ -1,7 +1,43 @@
 # abbreviations (aliases): https://fishshell.com/docs/current/cmds/abbr.html
 
+# terminal
+abbr --add ".." cd ..
+abbr --add "cd.." cd ..
+abbr --add "dush" du -sh *
+
+# ls / eza
+abbr --add "ls" eza -l
+abbr --add "lsa" eza -la
+
 # git
+abbr --add "g" git
+abbr --add "gst" git status
 abbr --add "grv" git remote -v
+abbr --add "gl" git --no-pager- log --oneline -n 20
+abbr --add "glog" git log --oneline
+abbr --add "gif" git --no-pager diff
+abbr --add "gifs" git --no-pager diff --staged
+abbr --add "gb" git --no-pager branch
+abbr --add "gbd" git branch -D
+abbr --add "gsl" git stash list
+abbr --add "gsp" git stash pop
+abbr --add "gsa" git stash apply
+abbr --add "gss" git stash save
+abbr --add "gssa" git stash save --include-untraced
+abbr --add "gfp" git fetch --prune
+
+abbr --add "add" git add
+abbr --add "adda" git update-index --again
+abbr --add "cmt" git commit -m
+abbr --add "amend" git commit --amend
+abbr --add "push" git push
+abbr --add "pull" git pull
+abbr --add "checkout" git switch
+abbr --add "restore" git restore
+abbr --add "discard" git restore
+
+# git tui
+abbr --add "lg" lazygit
 
 # github cli
 abbr --add "github" gh
@@ -34,5 +70,30 @@ abbr --add "jgf" jj git fetch
 # lazyjj
 abbr --add "lj" lazyjj
 
+# vim/ neovim
+abbr --add "v" vim
+abbr --add "nv" nvim
+abbr --add "neovim" nvim
+
+# tmux
+abbr --add "tmux-split-down" tmux split-window
+abbr --add "tmux-split-right" tmux split-window -hf
+
+# docker
+abbr --add "dps" docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"
+abbr --add "dpsp" docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}"
+
+# podman
+abbr --add "pps" podman ps -a
+abbr --add "ppsw" podman ps -a -w 1
+abbr --add "pkp" podman kube play
+abbr --add "pkr" podman kube play --replace
+abbr --add "pkd" podman kube down
+
 # misc
+abbr --add "pn" pnpm
+abbr --add "ff" fastfetch
+abbr --add "ip" ipconfig getifaddr en0
+abbr --add "week" date +%V
 abbr --add "pager" bat --paging=always
+abbr --add "plistbuddy" /usr/libexec/PlistBuddy
