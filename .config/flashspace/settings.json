@@ -5,12 +5,24 @@
   "checkForUpdatesAutomatically" : true,
   "enableFocusManagement" : true,
   "enableIntegrations" : false,
-  "focusNextWorkspaceWindow" : "cmd+ctrl+opt+shift+right",
-  "focusPreviousWorkspaceWindow" : "cmd+ctrl+opt+shift+left",
+  "enablePictureInPictureSupport" : true,
+  "enableSpaceControl" : false,
+  "enableSpaceControlAnimations" : true,
+  "floatingApps" : [
+    {
+      "bundleIdentifier" : "io.freetubeapp.freetube",
+      "iconPath" : "/Applications/FreeTube.app/Contents/Resources/icon.icns",
+      "name" : "FreeTube"
+    }
+  ],
+  "menuBarDisplayAliases" : "",
   "menuBarTitleTemplate" : "$WORKSPACE",
   "runScriptOnLaunch" : "",
   "runScriptOnProfileChange" : "",
   "runScriptOnWorkspaceChange" : "",
   "showFloatingNotifications" : true,
-  "showMenuBarTitle" : true
+  "showMenuBarTitle" : false,
+  "spaceControlCurrentDisplayWorkspaces" : false,
+  "switchToNextWorkspace" : "cmd+ctrl+opt+shift+right",
+  "switchToPreviousWorkspace" : "cmd+ctrl+opt+shift+left"
 }
