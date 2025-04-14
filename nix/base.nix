@@ -150,6 +150,7 @@
       "alt-tab"
       "obsidian"
       "hyperkey"
+      "vscodium"
       "1password"
       "flashspace"
       "sf-symbols"
