@@ -14,7 +14,7 @@ abbr --add "g" git
 abbr --add "gs" git status -sb
 abbr --add "gst" git status
 abbr --add "grv" git remote -v
-abbr --add "gl" git --no-pager- log --oneline -n 20
+abbr --add "gl" git --no-pager log --oneline -n 20
 abbr --add "glog" git log --oneline
 abbr --add "gif" git --no-pager diff
 abbr --add "gifs" git --no-pager diff --staged
