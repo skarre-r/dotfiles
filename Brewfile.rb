@@ -1,7 +1,7 @@
 # This file isn't actually used for anything
 # except for keeping track of unused homebrew casks, etc.
 
-cask "utm"
+cask "mpv"
 cask "yaak"
 cask "lasso"
 cask "fleet"
@@ -12,6 +12,7 @@ cask "itsycal"
 cask "superkey"
 cask "wireshark"
 cask "raindropio"
+cask "libreoffice"
 cask "monitorcontrol"
 cask "keyboard-cowboy"
 cask "reminders-menubar"

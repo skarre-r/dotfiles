@@ -8,12 +8,13 @@
   ];
 
   homebrew.casks = [
-    "mpv"
+    "utm"
     "iina"
     "lulu"
     "calibre"
+    "element"
+    "keymapp"
     "yacreader"
-    "libreoffice"
     "transmission"
     "balenaetcher"
     "little-snitch"

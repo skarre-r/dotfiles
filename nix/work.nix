@@ -20,7 +20,6 @@
   homebrew.casks = [
     "slack"
     "goland"
-    "raycast"
     "pycharm"
     "tableplus"
     "displaylink"
