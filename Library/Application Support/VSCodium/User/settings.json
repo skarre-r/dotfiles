@@ -14,7 +14,6 @@
     "workbench.fontAliasing": "auto",
     "workbench.editor.closeOnFileDelete": true,
     "window.nativeFullScreen": false,
-    "explorer.fileNesting.enabled": true,
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
     "terminal.external.osxExec": "Ghostty.app",
@@ -40,5 +39,10 @@
     "go.inlayHints.rangeVariableTypes": true,
     "go.lintTool": "golangci-lint",
     "go.showWelcome": false,
-    "go.survey.prompt": false
+    "go.survey.prompt": false,
+    "prettier.configPath": ".prettierrc",
+    "prettier.prettierPath": "./node_modules/prettier",
+    "redhat.telemetry.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "explorer.compactFolders": false
 }
