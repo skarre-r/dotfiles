@@ -1,5 +1,6 @@
 {
-  "centerCursorOnFocusChange" : false,
+  "alternativeDisplays" : "",
+  "centerCursorOnFocusChange" : true,
   "centerCursorOnWorkspaceChange" : true,
   "changeWorkspaceOnAppAssign" : true,
   "checkForUpdatesAutomatically" : true,
@@ -8,6 +9,8 @@
   "enablePictureInPictureSupport" : true,
   "enableSpaceControl" : false,
   "enableSpaceControlAnimations" : true,
+  "enableSwipeGestures" : false,
+  "enableWorkspaceTransitions" : false,
   "floatingApps" : [
     {
       "bundleIdentifier" : "io.freetubeapp.freetube",
@@ -15,14 +18,32 @@
       "name" : "FreeTube"
     }
   ],
+  "focusFrontmostWindow" : false,
   "menuBarDisplayAliases" : "",
   "menuBarTitleTemplate" : "$WORKSPACE",
+  "pipApps" : [
+
+  ],
+  "pipScreenCornerOffset" : 15,
   "runScriptOnLaunch" : "",
   "runScriptOnProfileChange" : "",
   "runScriptOnWorkspaceChange" : "",
   "showFloatingNotifications" : true,
   "showMenuBarTitle" : false,
+  "skipEmptyWorkspacesOnSwitch" : false,
   "spaceControlCurrentDisplayWorkspaces" : false,
+  "spaceControlMaxColumns" : 6,
+  "swipeDown3FingerAction" : "none",
+  "swipeDown4FingerAction" : "none",
+  "swipeLeft3FingerAction" : "previousWorkspace",
+  "swipeLeft4FingerAction" : "none",
+  "swipeRight3FingerAction" : "nextWorkspace",
+  "swipeRight4FingerAction" : "none",
+  "swipeThreshold" : 0.2,
+  "swipeUp3FingerAction" : "none",
+  "swipeUp4FingerAction" : "none",
   "switchToNextWorkspace" : "cmd+ctrl+opt+shift+right",
-  "switchToPreviousWorkspace" : "cmd+ctrl+opt+shift+left"
+  "switchToPreviousWorkspace" : "cmd+ctrl+opt+shift+left",
+  "workspaceTransitionDimming" : 0.2,
+  "workspaceTransitionDuration" : 0.3
 }

@@ -24,11 +24,6 @@
               "name" : "Spotify"
             },
             {
-              "bundleIdentifier" : "io.freetubeapp.freetube",
-              "iconPath" : "/Applications/FreeTube.app/Contents/Resources/icon.icns",
-              "name" : "FreeTube"
-            },
-            {
               "bundleIdentifier" : "com.apple.reminders",
               "iconPath" : "/System/Applications/Reminders.app/Contents/Resources/AppIcon.icns",
               "name" : "Reminders"
@@ -52,12 +47,17 @@
               "bundleIdentifier" : "app.zen-browser.zen",
               "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
               "name" : "Zen"
+            },
+            {
+              "bundleIdentifier" : "com.apple.Preview",
+              "iconPath" : "/System/Applications/Preview.app/Contents/Resources/AppIcon.icns",
+              "name" : "Preview"
             }
           ],
           "display" : "Built-in Retina Display",
           "id" : "8F2165CB-3252-467D-9DE1-F6E8A10B6A42",
           "name" : "Workspace 1",
-          "symbolIconName" : "macwindow.on.rectangle"
+          "symbolIconName" : "bolt.fill"
         },
         {
           "apps" : [
@@ -75,12 +75,47 @@
               "bundleIdentifier" : "com.apple.SafariTechnologyPreview",
               "iconPath" : "/Applications/Safari Technology Preview.app/Contents/Resources/AppIcon-SafariTechnologyPreview.icns",
               "name" : "Safari Technology Preview"
+            },
+            {
+              "bundleIdentifier" : "com.vscodium",
+              "iconPath" : "/Applications/VSCodium.app/Contents/Resources/VSCodium.icns",
+              "name" : "VSCodium"
+            },
+            {
+              "bundleIdentifier" : "com.jetbrains.goland",
+              "iconPath" : "/Applications/GoLand.app/Contents/Resources/goland.icns",
+              "name" : "GoLand"
+            },
+            {
+              "bundleIdentifier" : "com.jetbrains.pycharm",
+              "iconPath" : "/Applications/PyCharm.app/Contents/Resources/pycharm.icns",
+              "name" : "PyCharm"
+            },
+            {
+              "bundleIdentifier" : "com.apple.dt.Xcode",
+              "iconPath" : "/Applications/Xcode.app/Contents/Resources/Xcode.icns",
+              "name" : "Xcode"
+            },
+            {
+              "bundleIdentifier" : "com.neovide.neovide",
+              "iconPath" : "/Applications/Neovide.app/Contents/Resources/Neovide.icns",
+              "name" : "Neovide"
+            },
+            {
+              "bundleIdentifier" : "com.usebruno.app",
+              "iconPath" : "/Applications/Bruno.app/Contents/Resources/icon.icns",
+              "name" : "Bruno"
+            },
+            {
+              "bundleIdentifier" : "com.github.wez.wezterm",
+              "iconPath" : "/Applications/WezTerm.app/Contents/Resources/terminal.icns",
+              "name" : "WezTerm"
             }
           ],
           "display" : "Built-in Retina Display",
           "id" : "9735C16D-DDE6-49DC-B9BB-DCCD6B45F967",
           "name" : "Workspace 2",
-          "symbolIconName" : "apple.terminal.on.rectangle"
+          "symbolIconName" : "bolt.fill"
         }
       ]
     },
