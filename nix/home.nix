@@ -5,6 +5,7 @@
   };
   environment.systemPackages = with pkgs; [
     cilium-cli
+    hubble
     yt-dlp
   ];
 
