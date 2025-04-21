@@ -19,8 +19,6 @@
   ];
   homebrew.casks = [
     "slack"
-    "goland"
-    "pycharm"
     "tableplus"
     "displaylink"
     "microsoft-teams"

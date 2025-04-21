@@ -142,6 +142,8 @@
       "pika"
       "maccy"
       "bruno"
+      "goland"
+      "pycharm"
       "ghostty"
       "wezterm"
       "spotify"
