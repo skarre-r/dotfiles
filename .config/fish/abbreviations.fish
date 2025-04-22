@@ -5,9 +5,13 @@ abbr --add ".." cd ..
 abbr --add "cd.." cd ..
 abbr --add "dush" du -sh *
 
-# ls / eza
-abbr --add "ls" eza -l
-abbr --add "lsa" eza -la
+# ls
+abbr --add "ls" ls -l
+abbr --add "lsa" ls -la
+
+# eza
+abbr --add "els" eza -l
+abbr --add "elsa" eza -la
 
 # git
 abbr --add "g" git
@@ -81,8 +85,8 @@ abbr --add "tmux-split-down" tmux split-window
 abbr --add "tmux-split-right" tmux split-window -hf
 
 # docker
-abbr --add "dps" docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}"
-abbr --add "dpsp" docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}"
+abbr --add "dps" docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\"
+abbr --add "dpsp" docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.State}}\t{{.RunningFor}}\t{{.Status}}\t{{.Networks}}\t{{.Ports}}\"
 
 # podman
 abbr --add "pps" podman ps -a
