@@ -5,7 +5,10 @@
   };
   environment.systemPackages = with pkgs; [
     cilium-cli
+    go-task
     hubble
+    just
+    mage
     yt-dlp
   ];
 
