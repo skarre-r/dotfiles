@@ -4,6 +4,7 @@
     NIX_MODULE = "home";
   };
   environment.systemPackages = with pkgs; [
+    cloudflared
     cilium-cli
     go-task
     hubble
