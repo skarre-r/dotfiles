@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     cloudflared
     cilium-cli
+    cmctl
     go-task
     hubble
     just
