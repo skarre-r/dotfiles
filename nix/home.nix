@@ -7,6 +7,7 @@
     cloudflared
     cilium-cli
     cmctl
+    fluxcd
     go-task
     hubble
     just
