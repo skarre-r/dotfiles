@@ -56,6 +56,7 @@
     hyperfine
     jankyborders
     jujutsu
+    jjui
     just
     jq
     k9s
@@ -82,6 +83,8 @@
     nodejs
     nushell
     openssh
+    # openssh_gssapi
+    # openssh_hpnWithKerberos
     opentofu
     pastel
     pnpm
