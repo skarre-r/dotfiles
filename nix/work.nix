@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     odo
     glab
+    krb5
     # vault
     unixODBC
     openshift
