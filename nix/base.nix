@@ -255,7 +255,7 @@
     blacklist = [ "pycharm,goland" ];
   };
   services.sketchybar = {
-    enable = true;
+    enable = false;
     package = pkgs.sketchybar;
   };
   services.skhd = {
@@ -400,7 +400,8 @@
         moveCursorAcrossDisplays = 1;
         screenEdgeGapTopNotch = 0; # 5
         screenEdgeGapTop = 0; # 25
-        screenEdgeGapBottom = 30;
+        # screenEdgeGapBottom = 30;
+        screenEdgeGapBottom = 0;
         subsequentExecutionMode = 3;
         unsnapRestore = 2;
       };
