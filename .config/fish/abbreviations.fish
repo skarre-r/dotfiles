@@ -94,6 +94,7 @@ abbr --add "ppsw" podman ps -a -w 1
 abbr --add "pkp" podman kube play
 abbr --add "pkr" podman kube play --replace
 abbr --add "pkd" podman kube down
+abbr --add "pprmaf" podman pod rm --all --force
 
 # misc
 abbr --add "pn" pnpm
