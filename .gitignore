@@ -1,4 +1,5 @@
 **/.DS_Store
+.config/btop/*.log
 .config/fish/*
 !.config/fish/functions
 !.config/fish/abbreviations.fish
