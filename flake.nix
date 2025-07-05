@@ -19,8 +19,8 @@
     # nix-homebrew
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "nix-darwin";
+      # inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nix-darwin.follows = "nix-darwin";
     };
   };
 
@@ -87,6 +87,8 @@
           # Used for backwards compatibility, please read the changelog before changing.
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
+
+          system.primaryUser = "skar";
         }
 
         # homebrew
