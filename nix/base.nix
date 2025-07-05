@@ -143,6 +143,7 @@
       "zed"
       "keka"
       "pika"
+      "slack"
       "maccy"
       "bruno"
       "orion"

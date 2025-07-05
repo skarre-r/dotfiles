@@ -19,7 +19,6 @@
     "microsoft/mssql-release/mssql-tools18"
   ];
   homebrew.casks = [
-    "slack"
     "tableplus"
     "displaylink"
     "microsoft-teams"
