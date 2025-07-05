@@ -53,7 +53,7 @@ endif
 home:
 ifdef NIX_INSTALLED
 ifdef NIX_DARWIN_INSTALLED
-	darwin-rebuild switch --flake ${CURDIR}#home
+	sudo darwin-rebuild switch --flake ${CURDIR}#home
 endif
 endif
 
@@ -61,7 +61,7 @@ endif
 work:
 ifdef NIX_INSTALLED
 ifdef NIX_DARWIN_INSTALLED
-	darwin-rebuild switch --flake ${CURDIR}#work
+	sudo darwin-rebuild switch --flake ${CURDIR}#work
 endif
 endif
 
@@ -75,7 +75,7 @@ NIX_MODULE_TARGET := $(shell echo "${CURDIR}#${NIX_MODULE}")
 
 .PHONY: nix
 nix: check-nix-module
-	darwin-rebuild switch --flake ${NIX_MODULE_TARGET}
+	sudo darwin-rebuild switch --flake ${NIX_MODULE_TARGET}
 
 .PHONY: rebuild
 rebuild: nix
