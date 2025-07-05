@@ -145,13 +145,13 @@
       "pika"
       "maccy"
       "bruno"
+      "orion"
       "goland"
       "pycharm"
       "ghostty"
       "wezterm"
       "spotify"
       "neovide"
-      "keymapp"
       "alt-tab"
       "obsidian"
       "hyperkey"
@@ -159,21 +159,18 @@
       "1password"
       "flashspace"
       "sf-symbols"
-      "zen-browser"
       "hammerspoon"
+      "libreoffice"
       "proton-mail"
       "sublime-text"
       "proton-drive"
       "betterdisplay"
       "rectangle-pro"
-      "eloston-chromium"
-      "safari-technology-preview"
     ];
     masApps = {
       "rcmd" = 1596283165;
       "Noir" = 1592917505;
       "Wipr 2" = 1662217862;
-      "Numbers" = 409203825;
       "Userscripts" = 1463298887;
       "1Password for Safari" = 1569813296;
     };

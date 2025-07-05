@@ -23,6 +23,7 @@
     "tableplus"
     "displaylink"
     "microsoft-teams"
+    "eloston-chromium"
     "firefox@developer-edition"
   ];
   homebrew.masApps = {
