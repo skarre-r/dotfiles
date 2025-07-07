@@ -137,6 +137,7 @@
     enable = true;
     taps = [ ];
     brews = [
+      "mas"
       "fileicon"
     ];
     casks = [
@@ -152,7 +153,6 @@
       "ghostty"
       "wezterm"
       "spotify"
-      "neovide"
       "alt-tab"
       "obsidian"
       "hyperkey"
@@ -174,6 +174,7 @@
       "Wipr 2" = 1662217862;
       "Userscripts" = 1463298887;
       "1Password for Safari" = 1569813296;
+      "Obsidian Web Clipper" = 6720708363;
     };
     global = {
       autoUpdate = true;
