@@ -24,6 +24,7 @@
   - [x] https://github.com/marlonrichert/zsh-autocomplete
 - [x] remove unnecessary shell dotfiles?
 - [x] nix-homebrew: https://github.com/zhaofengli/nix-homebrew?tab=readme-ov-file#b-existing-homebrew-installation
+- [x] nix + brew: "global" lock/ bundle file/ brewfile?
 - [ ] zsh: .config/zsh/
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
@@ -31,4 +32,3 @@
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
 - [ ] update neovim config
 - [ ] fish function: docker compose down > colima stop > podman machine start (or vice versa)
-- [ ] nix/ brew: "global" lock file/ brewfile?
