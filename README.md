@@ -1,15 +1,12 @@
 # dotfiles
 
 ```shell
+# install nix & nix-darwin
 make install
-```
 
-```shell
-make home
-# or
-make work
-```
+# run nix-darwin
+just nix
 
-```shell
-make stow
+# run stow
+just stow
 ```
