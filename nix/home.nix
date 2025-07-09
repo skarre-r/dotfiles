@@ -8,10 +8,8 @@
     cilium-cli
     cmctl
     fluxcd
-    go-task
     hubble
     just
-    mage
     yt-dlp
   ];
 
