@@ -28,6 +28,7 @@
     "transmission"
     "balenaetcher"
     "little-snitch"
+    "jellyfin-media-player"
     {
       name = "freetube";
       args = {
