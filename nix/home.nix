@@ -15,6 +15,7 @@
     yt-dlp
   ];
 
+  homebrew.taps = [ "brewforge/extras" ];
   homebrew.casks = [
     "utm"
     "iina"
@@ -29,6 +30,7 @@
     "balenaetcher"
     "little-snitch"
     "jellyfin-media-player"
+    "brewforge/extras/ryujinx-ryubing"
     {
       name = "freetube";
       args = {
