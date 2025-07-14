@@ -45,6 +45,7 @@
     gitui
     golangci-lint
     gnugrep
+    gettext
     gnumake
     go
     gopls
