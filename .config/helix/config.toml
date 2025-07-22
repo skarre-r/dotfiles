@@ -1,1 +1,79 @@
 # https://docs.helix-editor.com/configuration.html
+
+theme = "monokai_pro"
+
+[editor]
+mouse = true
+line-number = "absolute"
+cursorline = true
+auto-completion = true
+path-completion = true
+auto-format = true
+auto-info = true
+bufferline = "multiple"
+color-modes = true
+default-line-ending = "lf"
+insert-final-newline = true
+popup-border = "all"
+
+[editor.lsp]
+enable = true
+
+[keys.normal]
+A-left = "move_prev_word_start"
+A-right = "move_next_word_start"
+Meta-left = "goto_line_start"
+Meta-right = "goto_line_end"
+A-up = [
+    "extend_to_line_bounds",
+    "delete_selection",
+    "move_line_up",
+    "paste_before",
+]
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+S-A-up = [
+    "extend_to_line_bounds",
+    "yank",
+    "open_above",
+    "normal_mode",
+    "replace_with_yanked",
+    "collapse_selection",
+]
+S-A-down = [
+    "extend_to_line_bounds",
+    "yank",
+    "open_below",
+    "normal_mode",
+    "replace_with_yanked",
+    "collapse_selection",
+]
+
+
+[keys.insert]
+A-left = "move_prev_word_start"
+A-right = "move_next_word_start"
+Meta-left = "goto_line_start"
+Meta-right = "goto_line_end"
+A-up = [
+    "extend_to_line_bounds",
+    "delete_selection",
+    "move_line_up",
+    "paste_before",
+]
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+S-A-up = [
+    "extend_to_line_bounds",
+    "yank",
+    "open_above",
+    "normal_mode",
+    "replace_with_yanked",
+    "collapse_selection",
+]
+S-A-down = [
+    "extend_to_line_bounds",
+    "yank",
+    "open_below",
+    "normal_mode",
+    "replace_with_yanked",
+    "collapse_selection",
+]
