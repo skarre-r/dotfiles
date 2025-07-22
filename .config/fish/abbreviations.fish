@@ -80,6 +80,9 @@ abbr --add "v" vim
 abbr --add "nv" nvim
 abbr --add "neovim" nvim
 
+# helix
+abbr --add "helix" hx
+
 # tmux
 abbr --add "tmux-split-down" tmux split-window
 abbr --add "tmux-split-right" tmux split-window -hf
