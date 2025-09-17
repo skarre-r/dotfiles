@@ -20,6 +20,7 @@
     "tableplus"
     "displaylink"
     "microsoft-teams"
+    "microsoft-outlook"
     "ungoogled-chromium"
     "firefox@developer-edition"
   ];
