@@ -75,6 +75,7 @@
     luarocks
     llvm
     mas
+    mc
     mcfly
     neovim
     nil
