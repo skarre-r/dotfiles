@@ -1,17 +1,18 @@
 # abbreviations (aliases): https://fishshell.com/docs/current/cmds/abbr.html
 
-# terminal
-abbr --add ".." cd ..
-abbr --add "cd.." cd ..
-abbr --add "dush" du -sh *
+# cd / zoxide
+# abbr --add ".." cd ..
+# abbr --add "cd.." cd ..
+abbr --add "cd" z
 
-# ls
-abbr --add "ls" ls -l
-abbr --add "lsa" ls -la
+# ls / eza
+# abbr --add "ls" ls -l
+# abbr --add "lsa" ls -la
+abbr --add "ls" eza -l
+abbr --add "lsa" eza -la
 
-# eza
-abbr --add "els" eza -l
-abbr --add "elsa" eza -la
+# find/ fd
+abbr --add "find" fd
 
 # git
 abbr --add "g" git
@@ -103,6 +104,7 @@ abbr --add "pprmaf" podman pod rm --all --force
 abbr --add "pn" pnpm
 abbr --add "ff" fastfetch
 abbr --add "ip" ipconfig getifaddr en0
+abbr --add "dush" du -sh *
 abbr --add "week" date +%V
 abbr --add "pager" bat --paging=always
 abbr --add "plistbuddy" /usr/libexec/PlistBuddy
