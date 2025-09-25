@@ -123,6 +123,7 @@
     yazi
     zellij
     zig
+    zoxide
     zsh
     zsh-autocomplete
     xz
