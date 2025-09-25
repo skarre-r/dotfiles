@@ -34,6 +34,10 @@ if status is-interactive
     if command -v fzf > /dev/null
         fzf --fish | source
     end
+
+    if command -v zoxide > /dev/null
+        zoxide init fish | source
+    end
 end
 
 # bind \e\[A history-pager
