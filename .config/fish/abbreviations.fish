@@ -11,7 +11,7 @@ abbr --add "lsa" eza -la
 abbr --add "find" fd
 
 # cat / bat
-abbr --add "cat" bat
+abbr --add "cat" bat --paging=never
 
 # git
 abbr --add "g" git
