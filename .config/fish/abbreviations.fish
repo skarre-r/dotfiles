@@ -1,18 +1,17 @@
 # abbreviations (aliases): https://fishshell.com/docs/current/cmds/abbr.html
 
 # cd / zoxide
-# abbr --add ".." cd ..
-# abbr --add "cd.." cd ..
 abbr --add "cd" z
 
 # ls / eza
-# abbr --add "ls" ls -l
-# abbr --add "lsa" ls -la
 abbr --add "ls" eza -l
 abbr --add "lsa" eza -la
 
-# find/ fd
+# find / fd
 abbr --add "find" fd
+
+# cat / bat
+abbr --add "cat" bat
 
 # git
 abbr --add "g" git
