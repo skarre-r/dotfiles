@@ -22,6 +22,7 @@
     bat
     bun
     btop
+    broot
     chezmoi
     cmake
     colima
@@ -89,6 +90,7 @@
     # openssh_hpnWithKerberos
     opentofu
     pastel
+    pls
     pnpm
     poetry
     podman
