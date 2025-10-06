@@ -20,6 +20,7 @@
     "tableplus"
     "displaylink"
     "microsoft-teams"
+    "citrix-workspace"
     "microsoft-outlook"
     "ungoogled-chromium"
     "firefox@developer-edition"
