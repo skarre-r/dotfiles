@@ -78,6 +78,7 @@
     mas
     mc
     mcfly
+    mise
     neovim
     nil
     nixd
