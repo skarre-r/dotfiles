@@ -416,7 +416,7 @@
         appSwitcherFeatures = 6;
         enableAssignHotkey = 0;
         enableCycleHotkey = 0;
-        hammerspoonInstalled = 1;
+        # hammerspoonInstalled = 1;
         hideMenubarIcon = 0;
         hideStaticSettings = 0;
         popoverClosed = 1;
@@ -447,13 +447,13 @@
         windowDisplayDelay = 0;
         windowMaxWidthInRow = 30;
       };
-      "org.hammerspoon.Hammerspoon" = {
-        HSUploadCrashData = 0;
-        SUAutomaticallyUpdate = 0;
-        SUEnableAutomaticChecks = 1;
-        SUSendProfileInfo = 0;
-        MJConfigFile = "~/.config/hammerspoon/init.lua";
-      };
+      # "org.hammerspoon.Hammerspoon" = {
+      #   HSUploadCrashData = 0;
+      #   SUAutomaticallyUpdate = 0;
+      #   SUEnableAutomaticChecks = 1;
+      #   SUSendProfileInfo = 0;
+      #   MJConfigFile = "~/.config/hammerspoon/init.lua";
+      # };
       "org.p0deje.Maccy" = {
         showApplicationIcons = 1;
         showFooter = 1;
