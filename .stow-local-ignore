@@ -7,10 +7,14 @@
 \.jj
 \.env
 \.env.example
+\.stow-local-ignore
+bin
+icns
 nix
 Brewfile.rb
 flake.lock
 flake.nix
+justfile
 Makefile
 README.md
 stylua.toml
