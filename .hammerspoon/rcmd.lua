@@ -4,12 +4,11 @@ RCMD_SCRIPT_VERSION = 0.22
 
 RCMD_LOG_TMP_DIR = "/tmp/rcmd-script-logs"
 hs.fs.mkdir(RCMD_LOG_TMP_DIR)
-hs.window.filter.allowedWindowRoles = { "AXFloatingWindow", "AXStandardWindow", "AXSystemDialog",
-    "AXSystemFloatingWindow" }
+hs.window.filter.allowedWindowRoles = {"AXFloatingWindow", "AXStandardWindow", "AXSystemDialog", "AXSystemFloatingWindow"}
 
 function rcmdMap(tbl, f)
     local t = {}
-    for k, v in pairs(tbl) do
+    for k,v in pairs(tbl) do
         t[k] = f(v)
     end
     return t
@@ -17,7 +16,7 @@ end
 
 function rcmdFilter(tbl, f)
     local t = {}
-    for k, v in pairs(tbl) do
+    for k,v in pairs(tbl) do
         if f(v) then
             t[k] = v
         end
@@ -27,7 +26,7 @@ end
 
 function rcmdFilterArray(tbl, f)
     local t = {}
-    for k, v in pairs(tbl) do
+    for k,v in pairs(tbl) do
         if f(v) then
             table.insert(t, v)
         end
@@ -55,9 +54,9 @@ function rcmdEncodeWindow(window, focusedID)
     local id = window:id()
     local app = window:application()
     if not app then
-        return { title = window:title(), id = id, bundleIdentifier = "", focused = (id == focusedID) }
+        return {title=window:title(), id=id, bundleIdentifier="", focused=(id == focusedID)}
     end
-    return { title = window:title(), id = id, bundleIdentifier = app:bundleID(), focused = (id == focusedID) }
+    return {title=window:title(), id=id, bundleIdentifier=app:bundleID(), focused=(id == focusedID)}
 end
 
 function rcmdJSON(windows)
@@ -103,7 +102,7 @@ function getWindowFilter(params)
         params.app = hs.application.applicationForPID(params.pid):name()
     end
 
-    local filters = { allowRoles = { "AXFloatingWindow", "AXStandardWindow", "AXSystemDialog", "AXSystemFloatingWindow" } }
+    local filters = {allowRoles={"AXFloatingWindow", "AXStandardWindow", "AXSystemDialog", "AXSystemFloatingWindow"}}
 
     if params.unfocused then
         filters.focused = false
@@ -113,7 +112,7 @@ function getWindowFilter(params)
     end
 
     if rcmdWF[params.app] == nil then
-        local f = hs.window.filter.new { [params.app] = filters }
+        local f = hs.window.filter.new{[params.app] = filters}
         f:setSortOrder(hs.window.filter.sortByFocusedLast)
         f:subscribe(hs.window.filter.windowsChanged, rcmdWindowsChanged)
         rcmdWindows[params.app] = f:getWindows()
@@ -148,7 +147,7 @@ function rcmdCallbackWS(message)
         end
         local wid = w:id()
 
-        for _ in pairs({ 1, 2 }) do
+        for _ in pairs({1, 2}) do
             local wf, windows = getWindowFilter(params)
 
             if not wf then
@@ -217,8 +216,7 @@ function rcmdCallbackWS(message)
                     params.app,
                     function(exitCode, stdOut, stdErr)
                         if params.name then
-                            io.open(RCMD_LOG_TMP_DIR .. "/" .. params.name, "w"):write(tostring(exitCode) ..
-                            "\n" .. stdOut .. "\n" .. stdErr):close()
+                            io.open(RCMD_LOG_TMP_DIR .. "/" .. params.name, "w"):write(tostring(exitCode) .. "\n" .. stdOut .. "\n" .. stdErr):close()
                         end
                     end,
                     params.args)
@@ -228,8 +226,7 @@ function rcmdCallbackWS(message)
                     params.app,
                     function(exitCode, stdOut, stdErr)
                         if params.name then
-                            io.open(RCMD_LOG_TMP_DIR .. "/" .. params.name, "w"):write(tostring(exitCode) ..
-                            "\n" .. stdOut .. "\n" .. stdErr):close()
+                            io.open(RCMD_LOG_TMP_DIR .. "/" .. params.name, "w"):write(tostring(exitCode) .. "\n" .. stdOut .. "\n" .. stdErr):close()
                         end
                     end)
                 t:start()
@@ -306,10 +303,10 @@ function rcmdCallback(method, path, headers, data)
     local params = hs.json.decode(body)
     params.cmd = string.sub(path, 2)
 
-    return rcmdCallbackWS(hs.json.encode(params)), 200, { ["Content-Type"] = "application/json" }
+    return rcmdCallbackWS(hs.json.encode(params)), 200, {["Content-Type"] = "application/json"}
 end
 
-rcmdWFAll = hs.window.filter.new { default = { allowRoles = { "AXFloatingWindow", "AXStandardWindow", "AXSystemDialog", "AXSystemFloatingWindow" } } }
+rcmdWFAll = hs.window.filter.new{default={allowRoles={"AXFloatingWindow", "AXStandardWindow", "AXSystemDialog", "AXSystemFloatingWindow"}}}
 rcmdWFAll:setSortOrder(hs.window.filter.sortByFocusedLast)
 rcmdWFAll:subscribe(hs.window.filter.windowsChanged, rcmdWindowsChangedAll)
 rcmdWFAll:subscribe(hs.window.filter.windowTitleChanged, rcmdWindowsChangedAll)
