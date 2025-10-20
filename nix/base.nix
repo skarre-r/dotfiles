@@ -43,7 +43,7 @@
     gcc
     gh
     git
-    gitui
+    # gitui
     golangci-lint
     gnugrep
     gettext
