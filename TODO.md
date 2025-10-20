@@ -28,7 +28,6 @@
 - [ ] zsh: .config/zsh/
 - [ ] nix: update CustomUserPreferences (defaults read)
   - [ ] rectangle: https://github.com/rxhanson/Rectangle/blob/main/TerminalCommands.md
-  - [ ] alt-tab (window preview)
 - [ ] disable minimize (CMD+m) keyboard shortcut(s)?
 - [ ] update neovim config
-- [ ] fish function: docker compose down > colima stop > podman machine start (or vice versa)
+- [ ] fish function: docker compose down > colima stop > podman machine start (or vice versa)?
