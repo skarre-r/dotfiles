@@ -25,6 +25,7 @@
     "telegram"
     "yacreader"
     "raindropio"
+    "qbittorrent"
     "transmission"
     "balenaetcher"
     "little-snitch"
