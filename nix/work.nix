@@ -23,6 +23,7 @@
     "citrix-workspace"
     "microsoft-outlook"
     "ungoogled-chromium"
+    "microsoft-auto-update"
     "firefox@developer-edition"
   ];
   homebrew.masApps = {
