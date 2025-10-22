@@ -39,7 +39,3 @@ if status is-interactive
         zoxide init fish | source
     end
 end
-
-# bind \e\[A history-pager
-# bind \e\[A fzf-history-widget
-# fzf_configure_bindings --history=\e\[A  # fzf.fish plugin
