@@ -90,6 +90,7 @@
     # openssh_gssapi
     # openssh_hpnWithKerberos
     opentofu
+    pandoc
     pastel
     pls
     pnpm
