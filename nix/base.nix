@@ -16,7 +16,7 @@
   environment.systemPackages = with pkgs; [
     alejandra
     atuin
-    argo
+    # argo-workflows
     argocd
     bash
     bat
