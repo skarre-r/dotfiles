@@ -155,6 +155,7 @@
       "maccy"
       "bruno"
       "orion"
+      "tidal"
       "typora"
       "goland"
       "thorium"
