@@ -124,6 +124,7 @@
     uv
     vim
     wget
+    yamlfmt
     yamllint
     yaml-language-server
     yazi
