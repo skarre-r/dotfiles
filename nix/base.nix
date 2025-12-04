@@ -158,6 +158,7 @@
       "bruno"
       "orion"
       "tidal"
+      "qobuz"
       "typora"
       "goland"
       "thorium"
