@@ -67,6 +67,7 @@
     kubectl
     kubernetes-helm
     kube-linter
+    kube-score
     kustomize
     lazydocker
     lazygit
@@ -98,6 +99,7 @@
     podman
     postgresql
     pre-commit
+    prettier
     pyenv
     python312
     python313
