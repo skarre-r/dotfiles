@@ -98,6 +98,10 @@ abbr --add "pkp" podman kube play
 abbr --add "pkr" podman kube play --replace
 abbr --add "pkd" podman kube down
 abbr --add "pprmaf" podman pod rm --all --force
+abbr --add "pm" podman machine
+abbr --add "pms" podman machine start
+abbr --add "pmu" podman machine start
+abbr --add "pmd" podman machine stop
 
 # misc
 abbr --add "pn" pnpm
