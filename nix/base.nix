@@ -180,6 +180,7 @@
       "proton-drive"
       "betterdisplay"
       "rectangle-pro"
+      "helium-browser"
     ];
     masApps = {
       "rcmd" = 1596283165;
