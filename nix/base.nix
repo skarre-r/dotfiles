@@ -30,6 +30,7 @@
     ctlptl
     curl
     deno
+    dillo
     direnv
     diskus
     docker
@@ -76,6 +77,7 @@
     lua-language-server
     luarocks
     llvm
+    lynx
     mas
     mc
     mcfly
@@ -170,6 +172,7 @@
       "obsidian"
       "hyperkey"
       "vscodium"
+      "waterfox"
       "1password"
       "flashspace"
       "sf-symbols"
