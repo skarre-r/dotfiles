@@ -24,6 +24,7 @@
     btop
     broot
     chezmoi
+    cilium-cli
     cmake
     colima
     coreutils
