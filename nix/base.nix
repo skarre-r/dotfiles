@@ -14,6 +14,7 @@
     nushell
   ];
   environment.systemPackages = with pkgs; [
+    act
     alejandra
     atuin
     # argo-workflows
