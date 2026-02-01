@@ -79,7 +79,7 @@
     lua
     lua-language-server
     luarocks
-    llvm
+    # llvm
     lynx
     mas
     mc
@@ -103,7 +103,7 @@
     poetry
     podman
     postgresql
-    pre-commit
+    #pre-commit
     prettier
     pyenv
     python312
