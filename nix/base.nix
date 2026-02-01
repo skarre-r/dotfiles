@@ -51,6 +51,7 @@
     gnugrep
     gettext
     gnumake
+    gnused
     go
     gopls
     helmfile
@@ -270,7 +271,7 @@
     # blur_radius = 1.0;
     ax_focus = false;
     hidpi = true;
-    blacklist = [ "pycharm,goland" ];
+    blacklist = [ "pycharm,goland,books" ];
   };
   services.sketchybar = {
     enable = false;
