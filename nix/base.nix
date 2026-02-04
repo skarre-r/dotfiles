@@ -53,6 +53,7 @@
     gnugrep
     gettext
     gnumake
+    gnused
     go
     gopls
     helmfile
@@ -80,7 +81,7 @@
     lua
     lua-language-server
     luarocks
-    llvm
+    # llvm
     lynx
     mas
     mc
@@ -104,7 +105,7 @@
     poetry
     podman
     postgresql
-    pre-commit
+    #pre-commit
     prettier
     pyenv
     python312
@@ -276,7 +277,7 @@
     # blur_radius = 1.0;
     ax_focus = false;
     hidpi = true;
-    blacklist = [ "pycharm,goland" ];
+    blacklist = [ "pycharm,goland,books" ];
   };
   services.sketchybar = {
     enable = false;
