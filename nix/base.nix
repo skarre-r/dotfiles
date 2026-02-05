@@ -22,7 +22,6 @@
     bash
     bat
     blesh
-    buf
     bun
     btop
     broot
@@ -110,8 +109,6 @@
     pyenv
     python312
     python313
-    protoc-gen-go
-    protoc-gen-connect-go
     prek
     ripgrep
     ruff

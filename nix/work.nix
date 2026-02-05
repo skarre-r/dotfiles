@@ -4,11 +4,14 @@
     NIX_MODULE = "work";
   };
   environment.systemPackages = with pkgs; [
+    buf
     odo
     krb5
     unixODBC
     openshift
     azure-cli
+    protoc-gen-go
+    protoc-gen-connect-go
   ];
 
   homebrew.taps = [ "microsoft/mssql-release" ];
