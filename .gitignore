@@ -6,6 +6,7 @@
 !.config/fish/config.fish
 .config/pypoetry/*
 !.config/pypoetry/config.toml
+.config/vim/.netrwhist
 .config/zed/*
 !.config/zed/*.json
 .ignore/
